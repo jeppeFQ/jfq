@@ -9,7 +9,7 @@ format:
 ```{=html}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <div class="custom-sidebar">
-  <div class="sidebar-icon" onclick="toggleSidebar()">☰</div>
+    <div class="sidebar-icon" onclick="toggleSidebar()">&#9776;</div> 
   <div class="sidebar-content">
     <h3>Contact</h3>
     <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
@@ -34,6 +34,7 @@ Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesua
 ```{r}
 #| echo: false
 #| column: margin
+#| class: custom-margin-note
 
 knitr::kable(
   mtcars[1:3, 1:3]
@@ -42,40 +43,30 @@ knitr::kable(
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
-::: {.column-margin}
+::: {.column-margin style="color: #222;"}
 
 Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, !
 
 :::
 
-# Programming
+# Methods
 
-## Project 1 {#project1}
+Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
+## Regression {#project1}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
 ```{r}
-#| child: "projects/project1.qmd"
+#| child: "workshop/regression.qmd"
 ```
-
 
 ## Project 2 {#project2}
 
-```{r}
-#| child: "projects/project1.qmd"
-```
-
-# Methods 
-
-## Project 3 {#project3}
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
 ```{r}
-#| child: "projects/project1.qmd"
-```
-
-## Project 4 {#project4}
-
-```{r}
-#| child: "projects/project1.qmd"
+#| child: "workshop/decomposition.qmd"
 ```
 
 
@@ -94,23 +85,17 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 
 ```{=html}
 <style>
-  /* Styling for all h1 (Part) headers with fold icons */
+  /* Styling for all h1 headers (visible by default, no icon) */
   main h1 {
-    cursor: pointer;
     font-weight: bold;
     color: #333;
   }
-  main h1::after {
-    content: " ▼"; /* Adds an arrow icon for Parts */
-  }
-  main h1.collapsed::after {
-    content: " ►"; /* Changes icon when Part is collapsed */
-  }
 
-  /* Styling for h2 (Section) headers under Parts */
+  /* Styling for h2 headers with fold icons */
   main h2 {
     cursor: pointer;
     font-weight: bold;
+    color: #333;
   }
   main h2::after {
     content: " ▼"; /* Adds an arrow icon for visibility */
@@ -122,40 +107,7 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Select all Part headers (h1) within the main content area
-    const parts = document.querySelectorAll("main h1");
-
-    parts.forEach((part, index) => {
-      part.style.cursor = "pointer";
-
-      // Collect all elements under this Part until the next h1
-      let nextSibling = part.nextElementSibling;
-      const partContent = [];
-
-      while (nextSibling && nextSibling.tagName !== "H1") {
-        partContent.push(nextSibling);
-        nextSibling = nextSibling.nextElementSibling;
-      }
-
-      // If this is the first h1 header, show it expanded by default
-      if (index === 0) {
-        part.classList.add("expanded"); // Keeps the icon consistent
-      } else {
-        // Hide content initially for other h1 headers
-        partContent.forEach(element => element.style.display = "none");
-      }
-
-      // Toggle visibility of the Part content on click
-      part.addEventListener("click", () => {
-        const isVisible = partContent[0].style.display === "block";
-        partContent.forEach(element => {
-          element.style.display = isVisible ? "none" : "block";
-        });
-        part.classList.toggle("collapsed", !isVisible);
-      });
-    });
-
-    // Select all Section headers (h2) within the main content under each Part
+    // Select all Section headers (h2) within the main content
     const sections = document.querySelectorAll("main h2");
 
     sections.forEach(section => {
@@ -175,7 +127,7 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 
       // Toggle visibility of the Section content on click
       section.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevents toggling the parent h1
+        event.stopPropagation(); // Prevents toggling the parent
         const isVisible = sectionContent[0].style.display === "block";
         sectionContent.forEach(element => {
           element.style.display = isVisible ? "none" : "block";
@@ -188,3 +140,32 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 
 ```
 :::
+
+
+# Programming  
+
+Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+
+## Git {#git}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/git.qmd"
+```
+
+## Plain text {#plaintext}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/plaintext.qmd"
+```
+
+## API's {#api}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/api.qmd"
+```

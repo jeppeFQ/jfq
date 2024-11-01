@@ -25,5 +25,10 @@ format:
   html:
     css: styles.css
     theme:
-      - lux
+      - lux # morph, superhero, united, lux
+    include-before-body:
+      - https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Lora:wght@700&family=Roboto+Mono:wght@400&display=swap
     toc: true
+
+execute:
+  freeze: auto
