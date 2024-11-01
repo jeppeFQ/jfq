@@ -4,35 +4,32 @@
 
 /* Base container styling for full-screen width */
 body, .content, .container, main {
-  width: 100%; /* Use the full width of the screen */
-  max-width: 100%; /* Remove any max-width constraint */
-  margin: 0; /* Remove default margins */
-  padding: 0 0px; /* Optional: Add side padding for readability */
-  box-sizing: border-box; /* Include padding in the width */
+  width: 100%;          /* Full screen width */
+  max-width: 100%;      /* Remove max-width constraint */
+  margin: 0;            /* Remove default margins */
+  padding: 0;           /* No padding by default */
+  box-sizing: border-box; /* Include padding in width */
 }
 
-/* Responsive max width settings for larger screens */
+/* Responsive max width for different screen sizes */
 @media (min-width: 1200px) {
   body, .content, .container, main {
-    max-width: 1200px; /* Limit width on large screens */
+    max-width: 2000px;  /* Set a maximum width for large screens */
   }
 }
-
 @media (min-width: 992px) and (max-width: 1199px) {
   body, .content, .container, main {
-    max-width: 992px; /* Set a comfortable width for medium screens */
+    max-width: 992px;   /* Set comfortable width for medium screens */
   }
 }
-
 @media (min-width: 768px) and (max-width: 991px) {
   body, .content, .container, main {
-    max-width: 768px; /* Set width for tablet screens */
+    max-width: 768px;   /* Set width for tablet screens */
   }
 }
-
 @media (max-width: 767px) {
   body, .content, .container, main {
-    max-width: 100%; /* Full width on small screens */
+    max-width: 100%;    /* Full width on small screens */
   }
 }
 
@@ -40,191 +37,198 @@ body, .content, .container, main {
    Background Color Styling
    ========================== */
 
-/* Apply a soft off-white, greyish color to the background */
 body {
-  background-color: #f5f5f5; /* Light grey off-white */
-  color: #222; /* Text color for readability */
+  background-color: #f5f5f5; /* Light grey off-white for readability */
+  color: #222;               /* Dark text color for contrast */
 }
 
-/* Optional: Set container backgrounds to match or be slightly lighter */
 .container, .content, main {
-  background-color: #f5f5f5; /* Consistent with body background */
+  background-color: #f5f5f5; /* Consistent background with body */
 }
 
-/* Optional: Adjust text and link colors for contrast on a light background */
-a {
-  color: #007acc; /* Adjust link color to stand out on light background */
-}
-a:hover {
-  color: #005f99; /* Darker color for hover effect */
-}
-
-/* Optional: Set header and footer to match the off-white look */
 header, footer {
-  background-color: #f5f5f5;
+  background-color: #f5f5f5; /* Off-white background for header and footer */
 }
 
 /* ==========================
    Header Styling
    ========================== */
 
-/* Main page title (h1) styling */
 h1 {
-  font-size: 2.5em; /* Large font size for main headings */
-  font-weight: normal; /* Normal weight for clean appearance */
-  color: #222; /* Dark color for main headings */
+  font-size: 2.5em;     /* Large font size for main headings */
+  font-weight: normal;  /* Normal weight for clean appearance */
+  color: #222;          /* Dark color for main headings */
 }
 
-/* Secondary headings (h2, h3) styling */
 h2, h3 {
-  color: #555; /* Softer color for lower-level headings */
+  color: #555;          /* Softer color for subheadings */
 }
 
 /* ==========================
    Navbar Styling
    ========================== */
 
-/* Navbar base styling */
 .navbar {
-  background-color: transparent !important; /* Transparent background */
-  box-shadow: none; /* Remove any shadow effect */
+  background-color: transparent !important; /* Transparent navbar */
+  box-shadow: none;        /* No shadow */
   justify-content: center; /* Center-align navbar items */
-  border: none; /* Remove navbar borders */
-  padding-top: 0 !important; /* Remove extra padding above the first link */
-  margin-top: 0; /* Remove any additional margin above the navbar */
+  border: none;            /* Remove borders */
 }
 
-/* Logo styling for visibility and control size */
 .navbar-brand img {
-  max-height: 30px; /* Limit height */
-  display: inline-block !important; /* Display on all screens */
-  width: 15px; /* Set specific width */
-  height: auto; /* Maintain aspect ratio */
+  max-height: 30px;       /* Logo height */
+  width: 15px;            /* Set specific width */
+  height: auto;           /* Maintain aspect ratio */
 }
 
-/* Navbar icon styling to make it extend below the navbar */
-.navbar-icon {
-  max-height: 60px; /* Increase the size of the icon */
-  width: auto; /* Maintain aspect ratio */
-  position: relative; /* Allow positioning adjustments */
-  top: 10px; /* Move the icon downwards */
-  margin-top: -10px; /* Adjust to extend icon visually below the navbar */
-}
-
-/* Optional: Control the navbar height to avoid affecting icon positioning */
-.navbar {
-  min-height: 40px; /* Set a specific height for the navbar */
-}
-
-
-/* ==========================
-   Navbar Styling
-   ========================== */
-
-/* Navbar base styling */
-.navbar {
-  background-color: transparent !important; /* Transparent background */
-  box-shadow: none; /* Remove any shadow effect */
-  justify-content: flex-start; /* Align navbar items to the top */
-  border: none; /* Remove navbar borders */
-}
-
-/* Always display navbar links in a vertical stack */
-.navbar-collapse {
-  display: flex !important; /* Ensure links are displayed */
-  flex-direction: column; /* Stack links vertically */
-  align-items: flex-start; /* Align links to the left */
-  justify-content: flex-start; /* Align links to the top */
-  padding-top: 10px; /* Optional: add padding to top of links */
-}
-
-/* Navbar link styling with reduced vertical spacing */
-/* Navbar link styling with increased space between links */
+/* Navbar links styling */
 .navbar-nav .nav-item .nav-link {
-  font-size: 12px; /* Font size for links */
-  padding: 8px 8px; /* Increased padding for more vertical space */
-  margin: 2px 0; /* Optional: add vertical margin for even more spacing */
-  line-height: 1.2 !important; /* Set line height for spacing control */
-  display: flex;
-  align-items: center; /* Center-align text and icon if any */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  font-size: 14px;        /* Link font size */
+  padding: 1px 3px;       /* Link padding */
+  line-height: 1.2 !important; /* Line height */
+  display: flex;          /* Aligns icon and text */
+  align-items: center;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* Add icon (circle) to the left side of each link */
+/* Icon for each navbar link */
 .navbar-nav .nav-item .nav-link::before {
-  content: "\25cb"; /* Unicode for hollow circle ○ */
-  display: inline-block;
-  margin-right: 4px; /* Space between icon and link */
-  transition: color 0.3s ease; /* Smooth transition for icon color */
+  content: "\25cb";        /* Hollow circle icon */
+  margin-right: 4px;       /* Space between icon and link */
 }
 
-/* Keep icon filled for active page link */
-.navbar-nav .nav-item .nav-link.active::before,
-.navbar-nav .nav-item .nav-link:focus::before,
-.navbar-nav .nav-item .nav-link:active::before,
-.navbar-nav .nav-item .nav-link:visited::before {
-  content: "\25cf"; /* Unicode for filled circle ● */
-  color: #000; /* Filled circle color */
+.navbar-nav .nav-item .nav-link.active::before {
+  content: "\25cf";        /* Filled circle for active link */
+  color: #000;
 }
 
-/* Hover color for icon */
 .navbar-nav .nav-item .nav-link:hover::before {
-  color: #555; /* Softer hover color for the icon */
+  color: #555;             /* Hover color for icon */
 }
 
-/* Hide the burger icon (mobile menu toggle) completely */
-.navbar-toggler {
-  display: none !important; /* Remove the burger icon */
-}
-
-
-/* ==========================
-   Remove Circle from Logo/Icon
-   ========================== */
-
-/* Ensure no circle appears next to the logo or burger icon */
-.navbar-brand::before,
-.navbar-toggler::before {
-  content: none !important; /* Remove any ::before content on logo and burger icon */
-}
-
-/* ==========================
-   Prevent Navbar Collapse
-   ========================== */
-
-/* Hide the burger icon */
+/* Hide the burger icon (menu toggle) */
 .navbar-toggler {
   display: none !important; /* Remove burger icon completely */
 }
 
 /* ==========================
-   Custom Mobile Menu Icon
+   Sidebar Styling
    ========================== */
 
-/* Hide default hamburger icon */
-.navbar-toggler-icon {
-  display: none;
+.custom-sidebar {
+  position: fixed;       /* Fixed to bottom-right of screen */
+  bottom: 20px;
+  right: 20px;
+  width: 240px;          /* Sidebar width */
+  padding: 10px;         /* Padding inside the sidebar */
+  background-color: transparent; /* Transparent background */
+  font-size: 13px;       /* Sidebar text size */
+  line-height: 1.1;      /* Space between lines */
+  z-index: 1000;         /* Ensures sidebar is above other content */
 }
 
-/* Optional: Adjust width and styling for ToC on the right side */
-/* Ensure ToC remains visible on narrow screens */
+/* Sidebar heading */
+.custom-sidebar h3 {
+  margin-top: 0;
+  font-size: 15px;       /* Adjust heading size */
+}
+
+/* Sidebar paragraph spacing */
+.custom-sidebar p {
+  margin: 0.5em 0;       /* Space between sections */
+  display: flex;
+  align-items: center;   /* Align icons with text */
+}
+
+.custom-sidebar p a {
+  font-size: 13px;       /* Link font size */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Sidebar icons spacing */
+.custom-sidebar .email-icon {
+  margin-right: 10px;    /* Space to right of email icon */
+}
+.custom-sidebar .phone-icon {
+  margin-right: 8px;     /* Space to right of phone icon */
+}
+.custom-sidebar .linkedin-icon {
+  margin-right: 12px;    /* Space to right of LinkedIn icon */
+}
+
+/* ==========================
+   Sidebar Collapsed State on Small Screens
+   ========================== */
+
+.sidebar-icon {
+  display: none;         /* Hide icon by default */
+  cursor: pointer;       /* Pointer cursor for clickable icon */
+  font-size: 24px;       /* Icon size */
+}
+
+.sidebar-content {
+  display: block;        /* Show content by default */
+}
+
+@media (max-width: 768px) {
+  .custom-sidebar {
+    width: auto;         /* Adjust width for smaller screens */
+    padding: 5px;
+  }
+  
+  .sidebar-icon {
+    display: block;      /* Show icon on narrow screens */
+  }
+  
+  .sidebar-content {
+    display: none;       /* Hide sidebar content by default */
+  }
+  
+  .sidebar-content.visible {
+    display: block;      /* Show content when toggled */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for contrast */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 240px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ==========================
+   ToC Styling
+   ========================== */
+
 .toc-right {
   display: block !important; /* Always display the ToC */
-  position: fixed; /* Fix the ToC position on the right */
-  right: 20px; /* Adjust spacing from the right edge */
-  top: 100px; /* Adjust spacing from the top */
-  width: 200px; /* Set width for the ToC */
-  max-height: calc(100vh - 120px); /* Limit height to fit the screen */
-  overflow-y: auto; /* Enable scrolling if content overflows */
-  background-color: #f9f9f9; /* Optional: add background for readability */
+  position: fixed;           /* Fix position on the right */
+  right: 20px;
+  top: 100px;
+  width: 200px;              /* ToC width */
+  max-height: calc(100vh - 120px); /* Limited height */
+  overflow-y: auto;          /* Scrollable if needed */
+  background-color: #f9f9f9;
   padding: 10px;
-  border-radius: 8px; /* Optional: rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-  z-index: 1000; /* Ensure ToC appears above other content */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-/* Adjust main content margin to accommodate ToC on narrow screens */
 .main-content {
-  margin-right: 220px; /* Make space for the ToC on the right */
+  margin-right: 220px;       /* Space for ToC on the right */
 }
 
+/* ==========================
+   Link Colors
+   ========================== */
+
+.navbar a {
+  color: #222;              /* Default color for navbar links */
+}
+
+.navbar a:hover {
+  color: #ff5722;           /* Hover color for navbar links */
+}
