@@ -1,0 +1,140 @@
+---
+title: "Projects"
+format:
+  html:
+    toc: true
+    toc-depth: 2 
+---
+
+Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+
+# Programming
+
+## Project 1 {#project1}
+
+
+```{r}
+#| child: "projects/project1.qmd"
+```
+
+
+## Project 2 {#project2}
+
+```{r}
+#| child: "projects/project1.qmd"
+```
+
+# Methods 
+
+## Project 3 {#project3}
+
+```{r}
+#| child: "projects/project1.qmd"
+```
+
+## Project 4 {#project4}
+
+```{r}
+#| child: "projects/project1.qmd"
+```
+
+::: {.cell}
+
+```{=html}
+<style>
+  /* Styling for all h1 (Part) headers with fold icons */
+  main h1 {
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+  }
+  main h1::after {
+    content: " ▼"; /* Adds an arrow icon for Parts */
+  }
+  main h1.collapsed::after {
+    content: " ►"; /* Changes icon when Part is collapsed */
+  }
+
+  /* Styling for h2 (Section) headers under Parts */
+  main h2 {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  main h2::after {
+    content: " ▼"; /* Adds an arrow icon for visibility */
+  }
+  main h2.collapsed::after {
+    content: " ►"; /* Changes icon when section is collapsed */
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Select all Part headers (h1) within the main content area
+    const parts = document.querySelectorAll("main h1");
+
+    parts.forEach((part, index) => {
+      part.style.cursor = "pointer";
+
+      // Collect all elements under this Part until the next h1
+      let nextSibling = part.nextElementSibling;
+      const partContent = [];
+
+      while (nextSibling && nextSibling.tagName !== "H1") {
+        partContent.push(nextSibling);
+        nextSibling = nextSibling.nextElementSibling;
+      }
+
+      // If this is the first h1 header, show it expanded by default
+      if (index === 0) {
+        part.classList.add("expanded"); // Keeps the icon consistent
+      } else {
+        // Hide content initially for other h1 headers
+        partContent.forEach(element => element.style.display = "none");
+      }
+
+      // Toggle visibility of the Part content on click
+      part.addEventListener("click", () => {
+        const isVisible = partContent[0].style.display === "block";
+        partContent.forEach(element => {
+          element.style.display = isVisible ? "none" : "block";
+        });
+        part.classList.toggle("collapsed", !isVisible);
+      });
+    });
+
+    // Select all Section headers (h2) within the main content under each Part
+    const sections = document.querySelectorAll("main h2");
+
+    sections.forEach(section => {
+      section.style.cursor = "pointer";
+
+      // Collect all elements under this Section until the next h2 or h1
+      let nextSibling = section.nextElementSibling;
+      const sectionContent = [];
+
+      while (nextSibling && nextSibling.tagName !== "H2" && nextSibling.tagName !== "H1") {
+        sectionContent.push(nextSibling);
+        nextSibling = nextSibling.nextElementSibling;
+      }
+
+      // Hide the Section content by default
+      sectionContent.forEach(element => element.style.display = "none");
+
+      // Toggle visibility of the Section content on click
+      section.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevents toggling the parent h1
+        const isVisible = sectionContent[0].style.display === "block";
+        sectionContent.forEach(element => {
+          element.style.display = isVisible ? "none" : "block";
+        });
+        section.classList.toggle("collapsed", !isVisible);
+      });
+    });
+  });
+</script>
+
+```
+:::

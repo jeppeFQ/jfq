@@ -14,8 +14,12 @@ website:
         href: about.qmd
       - text: Projects
         href: projects.qmd
+      - text: Workshops
+        href: workshop.qmd
       - text: Publications
         href: publications.qmd
+      - text: cv
+        href: cv.qmd
 
 format:
   html:
