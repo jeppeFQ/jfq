@@ -14,7 +14,7 @@ body, .content, .container, main {
 /* Responsive max width settings for larger screens */
 @media (min-width: 1200px) {
   body, .content, .container, main {
-    max-width: 1200px; /* Limit width on large screens */
+    max-width: 2000px; /* Limit width on large screens */
   }
 }
 
@@ -49,14 +49,6 @@ body {
 /* Optional: Set container backgrounds to match or be slightly lighter */
 .container, .content, main {
   background-color: #f5f5f5; /* Consistent with body background */
-}
-
-/* Optional: Adjust text and link colors for contrast on a light background */
-a {
-  color: #007acc; /* Adjust link color to stand out on light background */
-}
-a:hover {
-  color: #005f99; /* Darker color for hover effect */
 }
 
 /* Optional: Set header and footer to match the off-white look */
@@ -94,33 +86,6 @@ h2, h3 {
   margin-top: 0; /* Remove any additional margin above the navbar */
 }
 
-/* Logo styling for visibility and control size */
-.navbar-brand img {
-  max-height: 30px; /* Limit height */
-  display: inline-block !important; /* Display on all screens */
-  width: 15px; /* Set specific width */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Navbar icon styling to make it extend below the navbar */
-.navbar-icon {
-  max-height: 60px; /* Increase the size of the icon */
-  width: auto; /* Maintain aspect ratio */
-  position: relative; /* Allow positioning adjustments */
-  top: 10px; /* Move the icon downwards */
-  margin-top: -10px; /* Adjust to extend icon visually below the navbar */
-}
-
-/* Optional: Control the navbar height to avoid affecting icon positioning */
-.navbar {
-  min-height: 40px; /* Set a specific height for the navbar */
-}
-
-
-/* ==========================
-   Navbar Styling
-   ========================== */
-
 /* Navbar base styling */
 .navbar {
   background-color: transparent !important; /* Transparent background */
@@ -135,15 +100,15 @@ h2, h3 {
   flex-direction: column; /* Stack links vertically */
   align-items: flex-start; /* Align links to the left */
   justify-content: flex-start; /* Align links to the top */
-  padding-top: 10px; /* Optional: add padding to top of links */
+  padding-top: 20px; /* Optional: add padding to top of links */
 }
 
 /* Navbar link styling with reduced vertical spacing */
 /* Navbar link styling with increased space between links */
 .navbar-nav .nav-item .nav-link {
-  font-size: 12px; /* Font size for links */
-  padding: 8px 8px; /* Increased padding for more vertical space */
-  margin: 2px 0; /* Optional: add vertical margin for even more spacing */
+  font-size: 14px; /* Font size for links */
+  padding: 1px 0px; /* Increased padding for more vertical space */
+  margin: 0px 0px; /* Optional: add vertical margin for even more spacing */
   line-height: 1.2 !important; /* Set line height for spacing control */
   display: flex;
   align-items: center; /* Center-align text and icon if any */
@@ -228,3 +193,118 @@ h2, h3 {
   margin-right: 220px; /* Make space for the ToC on the right */
 }
 
+
+
+
+
+
+
+/* Default color for navbar links */
+.navbar a {
+  color: #222;
+}
+
+/* Hover color for navbar links */
+.navbar a:hover {
+  color: #ff5722;
+}
+
+
+/* Increase margin width for wider sidenotes */
+.margin, .sidenote {
+  width: 30%;  /* Adjust this percentage to control the width */
+  max-width: 250px;  /* Set a max width if needed */
+}
+
+/* Adjust the main content width to accommodate the larger margin */
+.content {
+  width: 100%;  /* Adjust this to keep layout balanced */
+}
+
+
+
+.main-container {
+  margin-right: 0; /* Adjust as needed for sidebar width */
+}
+
+.custom-sidebar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 240px;
+  padding: 10px;
+  background-color: transparent;
+  font-size: 13px; /* Adjust sidebar text size */
+  line-height: 1.1; /* Space between lines */
+  z-index: 1000;
+}
+
+.custom-sidebar h3 {
+  margin-top: 0;
+  font-size: 15px; /* Adjust heading size */
+}
+
+.custom-sidebar p {
+  margin: 0.5em 0; /* Adjust space between text sections */
+  display: flex;
+  align-items: center; /* Align icons with text */
+}
+
+.custom-sidebar p a {
+  font-size: 13px; /* Adjust link size if needed */
+  text-decoration: none;
+}
+
+
+/* Default - Show sidebar content and hide icon */
+.sidebar-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.sidebar-content {
+  display: block;
+}
+
+/* Fold sidebar content on narrow screens */
+@media (max-width: 768px) {
+  .custom-sidebar {
+    width: auto;
+    padding: 5px;
+  }
+
+  .sidebar-icon {
+    display: block; /* Show icon on narrow screens */
+  }
+
+  .sidebar-content {
+    display: none; /* Hide sidebar content by default on narrow screens */
+  }
+
+  .sidebar-content.visible {
+    display: block; /* Show content when icon is clicked */
+    background-color: rgba(0, 0, 0, 0.8); /* Optional - dark overlay for visibility */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 240px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+.custom-sidebar .email-icon {
+  margin-right: 10px;
+}
+
+.custom-sidebar .phone-icon {
+  margin-right: 8px;
+}
+
+.custom-sidebar .linkedin-icon {
+  margin-right: 12px;
+}

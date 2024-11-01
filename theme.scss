@@ -1,0 +1,53 @@
+/*-- scss:defaults --*/
+/* Place your default variables and settings here */
+
+$primary-color: red;
+$hover-color: darkred;
+$visited-color: purple;
+
+/*-- scss:mixins --*/
+/* Place any SCSS mixins here (optional) */
+
+/* Example mixin (optional):
+@mixin link-styles($color, $hover-color, $visited-color) {
+  color: $color;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:visited {
+    color: $visited-color;
+  }
+}
+*/
+
+/*-- scss:rules --*/
+/* Place your main styles here */
+
+a {
+  color: $primary-color;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:visited {
+    color: $visited-color;
+  }
+}
+
+/* Optional: ToC-specific link styling */
+.toc a {
+  color: #333;
+
+  &:hover {
+    color: #ff5722;
+  }
+
+  &.active {
+    font-weight: bold;
+    color: #000;
+  }
+}
+
