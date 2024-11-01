@@ -48,34 +48,38 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 
 :::
 
-# Programming
+# Programming  
 
-## Project 1 {#project1}
-
+## Git {#git}
 
 ```{r}
-#| child: "projects/project1.qmd"
+#| child: "workshop/git.qmd"
 ```
 
+## Plain text {#plaintext}
+
+```{r}
+#| child: "workshop/plaintext.qmd"
+```
+
+## API's {#api}
+
+```{r}
+#| child: "workshop/api.qmd"
+```
+
+# Methods
+
+## Regression {#project1}
+
+```{r}
+#| child: "workshop/regression.qmd"
+```
 
 ## Project 2 {#project2}
 
 ```{r}
-#| child: "projects/project1.qmd"
-```
-
-# Methods 
-
-## Project 3 {#project3}
-
-```{r}
-#| child: "projects/project1.qmd"
-```
-
-## Project 4 {#project4}
-
-```{r}
-#| child: "projects/project1.qmd"
+#| child: "workshop/decomposition.qmd"
 ```
 
 

@@ -27,3 +27,6 @@ format:
     theme:
       - lux
     toc: true
+
+execute:
+  freeze: auto

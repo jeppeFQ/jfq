@@ -21,14 +21,14 @@ Hi! I'm a side note!
 
 
 ```{r}
-#| child: "projects/project1.qmd"
+#| child: "projects/direk.qmd"
 ```
 
 
 ## MNcontact {#MNcontact}
 
 ```{r}
-#| child: "projects/project1.qmd"
+#| child: "projects/mncontact.qmd"
 ```
 
 
