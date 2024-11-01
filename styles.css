@@ -2,57 +2,49 @@
    General Page Styling
    ========================== */
 
-/* Base container styling for full-screen width */
+/* Set the container to full width */
 body, .content, .container, main {
-  width: 100%; /* Use the full width of the screen */
-  max-width: 100%; /* Remove any max-width constraint */
-  margin: 0; /* Remove default margins */
-  padding: 0 0px; /* Optional: Add side padding for readability */
-  box-sizing: border-box; /* Include padding in the width */
+  width: 100%;              /* Use the full width of the screen */
+  max-width: 100%;          /* Remove any max-width constraint */
+  margin: 0;                /* Remove default margins */
+  padding: 0;               /* Optional: Adjust for readability */
+  box-sizing: border-box;   /* Include padding in element width */
 }
 
-/* Responsive max width settings for larger screens */
+/* Responsive max-width settings for different screen sizes */
 @media (min-width: 1200px) {
   body, .content, .container, main {
-    max-width: 2000px; /* Limit width on large screens */
+    max-width: 2000px;      /* Limit width for large screens */
   }
 }
-
 @media (min-width: 992px) and (max-width: 1199px) {
   body, .content, .container, main {
-    max-width: 992px; /* Set a comfortable width for medium screens */
+    max-width: 992px;       /* Medium screen width */
   }
 }
-
 @media (min-width: 768px) and (max-width: 991px) {
   body, .content, .container, main {
-    max-width: 768px; /* Set width for tablet screens */
+    max-width: 768px;       /* Tablet screen width */
   }
 }
-
 @media (max-width: 767px) {
   body, .content, .container, main {
-    max-width: 100%; /* Full width on small screens */
+    max-width: 100%;        /* Full width for small screens */
   }
 }
 
 /* ==========================
-   Background Color Styling
+   Background and Color Styling
    ========================== */
 
-/* Apply a soft off-white, greyish color to the background */
+/* Body background and text color */
 body {
-  background-color: #f5f5f5; /* Light grey off-white */
-  color: #222; /* Text color for readability */
+  background-color: #f5f5f5; /* Light grey */
+  color: #222;               /* Dark text color */
 }
 
-/* Optional: Set container backgrounds to match or be slightly lighter */
-.container, .content, main {
-  background-color: #f5f5f5; /* Consistent with body background */
-}
-
-/* Optional: Set header and footer to match the off-white look */
-header, footer {
+/* Set background for containers to match body */
+.container, .content, main, header, footer {
   background-color: #f5f5f5;
 }
 
@@ -60,149 +52,191 @@ header, footer {
    Header Styling
    ========================== */
 
-/* Main page title (h1) styling */
+/* Styling for main page title (h1) */
 h1 {
-  font-size: 2.5em; /* Large font size for main headings */
-  font-weight: normal; /* Normal weight for clean appearance */
-  color: #222; /* Dark color for main headings */
+  font-size: 2.5em;          /* Large font for main heading */
+  font-weight: normal;       /* Normal weight for clean look */
+  color: #222;               /* Dark color */
 }
 
-/* Secondary headings (h2, h3) styling */
+/* Secondary headings (h2, h3) */
 h2, h3 {
-  color: #555; /* Softer color for lower-level headings */
+  color: #555;               /* Softer color for readability */
 }
 
 /* ==========================
    Navbar Styling
    ========================== */
 
-/* Navbar base styling */
+/* Base styling for navbar */
 .navbar {
   background-color: transparent !important; /* Transparent background */
-  box-shadow: none; /* Remove any shadow effect */
-  justify-content: center; /* Center-align navbar items */
-  border: none; /* Remove navbar borders */
-  padding-top: 0 !important; /* Remove extra padding above the first link */
-  margin-top: 0; /* Remove any additional margin above the navbar */
+  box-shadow: none;            /* No shadow */
+  border: none;                /* No border */
+  justify-content: center;     /* Center navbar items */
+  padding-top: 0 !important;   /* Remove extra padding */
 }
 
+/* Set navbar link font and remove all-caps transformation */
 .navbar .navbar-nav .nav-link {
-  text-transform: none !important;
-}
-
-
-/* Navbar base styling */
-.navbar {
-  background-color: transparent !important; /* Transparent background */
-  box-shadow: none; /* Remove any shadow effect */
-  justify-content: flex-start; /* Align navbar items to the top */
-  border: none; /* Remove navbar borders */
-}
-
-/* Always display navbar links in a vertical stack */
-.navbar-collapse {
-  display: flex !important; /* Ensure links are displayed */
-  flex-direction: column; /* Stack links vertically */
-  align-items: flex-start; /* Align links to the left */
-  justify-content: flex-start; /* Align links to the top */
-  padding-top: 20px; /* Optional: add padding to top of links */
-}
-
-/* Navbar link styling with reduced vertical spacing */
-/* Navbar link styling with increased space between links */
-.navbar-nav .nav-item .nav-link {
-  font-size: 14px; /* Font size for links */
-  padding: 1px 3px; /* Increased padding for more vertical space */
-  margin: 0px 0px; /* Optional: add vertical margin for even more spacing */
-  line-height: 1.2 !important; /* Set line height for spacing control */
+  font-family: 'Roboto', sans-serif;  /* Custom font */
+  text-transform: none;               /* Normal text */
+  font-size: 14px;                    /* Link font size */
+  padding: 1px 3px;                   /* Adjust padding */
+  line-height: 1.2 !important;        /* Line height for spacing */
   display: flex;
-  align-items: center; /* Center-align text and icon if any */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  align-items: center;
+  transition: color 0.3s ease;        /* Smooth color transition */
 }
 
-/* Add icon (circle) to the left side of each link */
+/* Add hollow circle to left of navbar links */
 .navbar-nav .nav-item .nav-link::before {
-  content: "\25cb"; /* Unicode for hollow circle ○ */
+  content: "\25cb";                   /* Unicode for hollow circle */
   display: inline-block;
-  margin-right: 4px; /* Space between icon and link */
-  transition: color 0.3s ease; /* Smooth transition for icon color */
+  margin-right: 4px;                  /* Space between icon and text */
+  transition: color 0.3s ease;        /* Transition on hover */
 }
 
-/* Keep icon filled for active page link */
+/* Style for active link (filled circle) */
 .navbar-nav .nav-item .nav-link.active::before,
 .navbar-nav .nav-item .nav-link:focus::before,
 .navbar-nav .nav-item .nav-link:active::before,
 .navbar-nav .nav-item .nav-link:visited::before {
-  content: "\25cf"; /* Unicode for filled circle ● */
-  color: #000; /* Filled circle color */
+  content: "\25cf";                   /* Unicode for filled circle */
+  color: #000;
 }
 
 /* Hover color for icon */
 .navbar-nav .nav-item .nav-link:hover::before {
-  color: #555; /* Softer hover color for the icon */
+  color: #555;
 }
 
-/* Hide the burger icon (mobile menu toggle) completely */
-.navbar-toggler {
-  display: none !important; /* Remove the burger icon */
-}
-
-
-/* ==========================
-   Remove Circle from Logo/Icon
-   ========================== */
-
-/* Ensure no circle appears next to the logo or burger icon */
-.navbar-brand::before,
-.navbar-toggler::before {
-  content: none !important; /* Remove any ::before content on logo and burger icon */
+/* Hide mobile menu toggle (burger icon) */
+.navbar-toggler, .navbar-toggler-icon {
+  display: none !important;
 }
 
 /* ==========================
-   Prevent Navbar Collapse
+   Sidebar and TOC Styling
    ========================== */
 
-/* Hide the burger icon */
-.navbar-toggler {
-  display: none !important; /* Remove burger icon completely */
-}
-
-/* ==========================
-   Custom Mobile Menu Icon
-   ========================== */
-
-/* Hide default hamburger icon */
-.navbar-toggler-icon {
-  display: none;
-}
-
-/* Optional: Adjust width and styling for ToC on the right side */
-/* Ensure ToC remains visible on narrow screens */
-.toc-right {
-  display: block !important; /* Always display the ToC */
-  position: fixed; /* Fix the ToC position on the right */
-  right: 20px; /* Adjust spacing from the right edge */
-  top: 100px; /* Adjust spacing from the top */
-  width: 200px; /* Set width for the ToC */
-  max-height: calc(100vh - 120px); /* Limit height to fit the screen */
-  overflow-y: auto; /* Enable scrolling if content overflows */
-  background-color: #f9f9f9; /* Optional: add background for readability */
+/* Sidebar styling for custom fixed sidebar */
+.custom-sidebar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 240px;
   padding: 10px;
-  border-radius: 8px; /* Optional: rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-  z-index: 1000; /* Ensure ToC appears above other content */
+  background-color: transparent;
+  font-size: 10px;
+  line-height: 1;
+  z-index: 1000;
 }
 
-/* Adjust main content margin to accommodate ToC on narrow screens */
-.main-content {
-  margin-right: 220px; /* Make space for the ToC on the right */
+/* Sidebar icons */
+.custom-sidebar .email-icon,
+.custom-sidebar .phone-icon,
+.custom-sidebar .linkedin-icon {
+  margin-right: 8px;        /* Icon spacing */
+}
+
+/* Responsive adjustments for sidebar on small screens */
+@media (max-width: 2000px) {
+  .custom-sidebar {
+    width: auto;
+    padding: 5px;
+  }
+  
+/* Styling for the hamburger icon */
+.sidebar-icon {
+  display: block;
+  cursor: pointer;
+  font-size: 30px;             /* Size of the hamburger icon */
+  color: #222;                 /* Icon color */
+  padding: 10px;
+  position: fixed;             /* Fix position on the screen */
+  bottom: 20px;                /* Distance from the bottom of the screen */
+  right: 20px;                 /* Distance from the right of the screen */
+  z-index: 1001;               /* Ensure it’s above other content */
+}
+
+/* Sidebar content (contact info) styling */
+.sidebar-content {
+  display: none;               /* Hidden by default */
+  background-color: #f5f5f5; 
+  color: #222;
+  padding: 10px;
+  border-radius: 8px;
+  position: fixed;
+  bottom: 60px;                /* Distance above the icon */
+  right: 20px;                 /* Align with the icon */
+  width: 240px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Show sidebar content when it has the 'visible' class */
+.sidebar-content.visible {
+  display: block;
+}
+
+/* Optional styling for contact icons and links */
+.sidebar-content h3 {
+  margin-top: 0;
+  font-size: 15px;
+}
+.sidebar-content p {
+  margin: 0.5em 0;
+  display: flex;
+  align-items: center;
+}
+.sidebar-content a {
+  font-size: 13px;
+  color: #222;
+  text-decoration: none;
+}
+.sidebar-content a:hover {
+  color: #aaa;               /* Change color on hover */
+}
+
+/* Icon styling */
+.email-icon, .phone-icon, .linkedin-icon {
+  margin-right: 4px;         /* Space between icon and text */
 }
 
 
+/* ==========================
+   Margin Notes and Sidenotes Styling
+   ========================== */
 
+/* Adjust width for sidenotes and margin notes */
+.margin, .sidenote {
+  width: 30%;
+  max-width: 250px;
+  font-family: 'Roboto Mono', monospace; /* Custom font */
+  font-size: 0.9em;
+}
 
+/* Custom color styling for R output in margin */
+.custom-margin-note {
+  color: #222;
+  font-size: 0.9em;
+}
 
+/* ==========================
+   Font and Header Text Settings
+   ========================== */
 
+/* Apply font to body */
+body {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+/* Apply custom font to all headers and override all-caps */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: none !important;  /* Remove uppercase styling */
+}
 
 /* Default color for navbar links */
 .navbar a {
@@ -212,140 +246,4 @@ h2, h3 {
 /* Hover color for navbar links */
 .navbar a:hover {
   color: grey;
-}
-
-
-/* Increase margin width for wider sidenotes */
-.margin, .sidenote {
-  width: 30%;  /* Adjust this percentage to control the width */
-  max-width: 250px;  /* Set a max width if needed */
-}
-
-/* Adjust the main content width to accommodate the larger margin */
-.content {
-  width: 100%;  /* Adjust this to keep layout balanced */
-}
-
-
-
-.main-container {
-  margin-right: 0; /* Adjust as needed for sidebar width */
-}
-
-.custom-sidebar {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 240px;
-  padding: 10px;
-  background-color: transparent;
-  font-size: 13px; /* Adjust sidebar text size */
-  line-height: 1.1; /* Space between lines */
-  z-index: 1000;
-}
-
-.custom-sidebar h3 {
-  margin-top: 0;
-  font-size: 15px; /* Adjust heading size */
-}
-
-.custom-sidebar p {
-  margin: 0.5em 0; /* Adjust space between text sections */
-  display: flex;
-  align-items: center; /* Align icons with text */
-}
-
-.custom-sidebar p a {
-  font-size: 13px; /* Adjust link size if needed */
-  text-decoration: none;
-}
-
-
-/* Default - Show sidebar content and hide icon */
-.sidebar-icon {
-  display: none;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-.sidebar-content {
-  display: block;
-}
-
-/* Fold sidebar content on narrow screens */
-@media (max-width: 768px) {
-  .custom-sidebar {
-    width: auto;
-    padding: 5px;
-  }
-
-  .sidebar-icon {
-    display: block; /* Show icon on narrow screens */
-  }
-
-  .sidebar-content {
-    display: none; /* Hide sidebar content by default on narrow screens */
-  }
-
-  .sidebar-content.visible {
-    display: block; /* Show content when icon is clicked */
-    background-color: rgba(0, 0, 0, 0.8); /* Optional - dark overlay for visibility */
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    width: 240px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-}
-
-
-.custom-sidebar .email-icon {
-  margin-right: 10px;
-}
-
-.custom-sidebar .phone-icon {
-  margin-right: 8px;
-}
-
-.custom-sidebar .linkedin-icon {
-  margin-right: 12px;
-}
-
-
-
-
-h1, h2, h3, h4, h5, h6 {
-  text-transform: none !important;
-}
-
-
-/* Apply font to body text */
-body {
-  font-family: 'Roboto Mono', sans-serif;
-}
-
-/* Apply font to all headers */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', serif;
-}
-
-/* Apply font to sidenotes */
-.sidenote {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.9em; /* Adjust size if necessary */
-}
-
-/* Set the navbar font */
-.navbar .navbar-nav .nav-link {
-  font-family: 'Roboto', sans-serif; /* Replace 'Roboto' with your chosen font */
-  text-transform: none; /* Ensure text-transform is overridden if needed */
-}
-
-/* Custom style for margin notes from R output */
-.custom-margin-note {
-  color: #222; /* Replace with the color you want */
-  font-size: 0.9em; /* Optional: adjust font size */
 }
