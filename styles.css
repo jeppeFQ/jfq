@@ -1,0 +1,238 @@
+/* ==========================
+   General Page Styling
+   ========================== */
+
+/* Base container styling for full-screen width */
+body, .content, .container, main {
+  width: 100%; /* Use the full width of the screen */
+  max-width: 100%; /* Remove any max-width constraint */
+  margin: 0; /* Remove default margins */
+  padding: 0 20px; /* Optional: Add side padding for readability */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Responsive max width settings for larger screens */
+@media (min-width: 1200px) {
+  body, .content, .container, main {
+    max-width: 1200px; /* Limit width on large screens */
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  body, .content, .container, main {
+    max-width: 992px; /* Set a comfortable width for medium screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body, .content, .container, main {
+    max-width: 768px; /* Set width for tablet screens */
+  }
+}
+
+@media (max-width: 767px) {
+  body, .content, .container, main {
+    max-width: 100%; /* Full width on small screens */
+  }
+}
+
+/* ==========================
+   Header Styling
+   ========================== */
+
+/* Main page title (h1) styling */
+h1 {
+  font-size: 2.5em; /* Large font size for main headings */
+  font-weight: normal; /* Normal weight for clean appearance */
+  color: #222; /* Dark color for main headings */
+}
+
+/* Secondary headings (h2, h3) styling */
+h2, h3 {
+  color: #555; /* Softer color for lower-level headings */
+}
+
+/* ==========================
+   Navbar Styling
+   ========================== */
+
+/* Navbar base styling */
+.navbar {
+  background-color: transparent !important; /* Transparent background */
+  box-shadow: none; /* Remove any shadow effect */
+  justify-content: center; /* Center-align navbar items */
+  border: none; /* Remove navbar borders */
+  padding-top: 0 !important; /* Remove extra padding above the first link */
+  margin-top: 0; /* Remove any additional margin above the navbar */
+}
+
+/* Logo styling for visibility and control size */
+.navbar-brand img {
+  max-height: 30px; /* Limit height */
+  display: inline-block !important; /* Display on all screens */
+  width: 15px; /* Set specific width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Navbar icon styling to make it extend below the navbar */
+.navbar-icon {
+  max-height: 60px; /* Increase the size of the icon */
+  width: auto; /* Maintain aspect ratio */
+  position: relative; /* Allow positioning adjustments */
+  top: 10px; /* Move the icon downwards */
+  margin-top: -10px; /* Adjust to extend icon visually below the navbar */
+}
+
+/* Optional: Control the navbar height to avoid affecting icon positioning */
+.navbar {
+  min-height: 40px; /* Set a specific height for the navbar */
+}
+
+
+/* ==========================
+   Navbar Styling
+   ========================== */
+
+/* Navbar base styling */
+.navbar {
+  background-color: transparent !important; /* Transparent background */
+  box-shadow: none; /* Remove any shadow effect */
+  justify-content: flex-start; /* Align navbar items to the top */
+  border: none; /* Remove navbar borders */
+}
+
+/* Always display navbar links in a vertical stack */
+.navbar-collapse {
+  display: flex !important; /* Ensure links are displayed */
+  flex-direction: column; /* Stack links vertically */
+  align-items: flex-start; /* Align links to the left */
+  justify-content: flex-start; /* Align links to the top */
+  padding-top: 10px; /* Optional: add padding to top of links */
+}
+
+/* Navbar link styling with reduced vertical spacing */
+/* Navbar link styling with increased space between links */
+.navbar-nav .nav-item .nav-link {
+  font-size: 12px; /* Font size for links */
+  padding: 8px 8px; /* Increased padding for more vertical space */
+  margin: 2px 0; /* Optional: add vertical margin for even more spacing */
+  line-height: 1.2 !important; /* Set line height for spacing control */
+  display: flex;
+  align-items: center; /* Center-align text and icon if any */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Add icon (circle) to the left side of each link */
+.navbar-nav .nav-item .nav-link::before {
+  content: "\25cb"; /* Unicode for hollow circle ○ */
+  display: inline-block;
+  margin-right: 4px; /* Space between icon and link */
+  transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+/* Keep icon filled for active page link */
+.navbar-nav .nav-item .nav-link.active::before,
+.navbar-nav .nav-item .nav-link:focus::before,
+.navbar-nav .nav-item .nav-link:active::before,
+.navbar-nav .nav-item .nav-link:visited::before {
+  content: "\25cf"; /* Unicode for filled circle ● */
+  color: #000; /* Filled circle color */
+}
+
+/* Hover color for icon */
+.navbar-nav .nav-item .nav-link:hover::before {
+  color: #555; /* Softer hover color for the icon */
+}
+
+/* Hide the burger icon (mobile menu toggle) completely */
+.navbar-toggler {
+  display: none !important; /* Remove the burger icon */
+}
+
+
+/* ==========================
+   Remove Circle from Logo/Icon
+   ========================== */
+
+/* Ensure no circle appears next to the logo or burger icon */
+.navbar-brand::before,
+.navbar-toggler::before {
+  content: none !important; /* Remove any ::before content on logo and burger icon */
+}
+
+/* ==========================
+   Prevent Navbar Collapse
+   ========================== */
+
+/* Hide the burger icon */
+.navbar-toggler {
+  display: none !important; /* Remove burger icon completely */
+}
+
+/* ==========================
+   Custom Mobile Menu Icon
+   ========================== */
+
+/* Hide default hamburger icon */
+.navbar-toggler-icon {
+  display: none;
+}
+
+/* Optional: Adjust width and styling for ToC on the right side */
+/* Ensure ToC remains visible on narrow screens */
+.toc-right {
+  display: block !important; /* Always display the ToC */
+  position: fixed; /* Fix the ToC position on the right */
+  right: 20px; /* Adjust spacing from the right edge */
+  top: 100px; /* Adjust spacing from the top */
+  width: 200px; /* Set width for the ToC */
+  max-height: calc(100vh - 120px); /* Limit height to fit the screen */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  background-color: #f9f9f9; /* Optional: add background for readability */
+  padding: 10px;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  z-index: 1000; /* Ensure ToC appears above other content */
+}
+
+/* Adjust main content margin to accommodate ToC on narrow screens */
+.main-content {
+  margin-right: 220px; /* Make space for the ToC on the right */
+}
+
+
+
+
+
+
+/* Custom ToC link styling */
+#custom-toc .toc-link {
+  display: block;
+  color: #007acc;
+  text-decoration: none;
+  margin: 5px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#custom-toc .toc-link:hover {
+  color: #005fa3;
+}
+
+/* Next button styling */
+.next-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 20px;
+  background-color: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #005fa3;
+}
