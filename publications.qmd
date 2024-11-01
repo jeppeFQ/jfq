@@ -1,9 +1,4 @@
 ---
-title: "Publications"
+title: "pubs"
 ---
 
-About this site
-
-```{r}
-1 + 1
-```

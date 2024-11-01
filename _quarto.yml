@@ -18,7 +18,7 @@ website:
         href: workshop.qmd
       - text: Publications
         href: publications.qmd
-      - text: cv
+      - text: CV
         href: cv.qmd
 
 format:
@@ -26,9 +26,4 @@ format:
     css: styles.css
     theme:
       - lux
-      - theme.scss
-    include-before-body:
-      - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
     toc: true
-
-
