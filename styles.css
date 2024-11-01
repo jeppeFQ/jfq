@@ -232,3 +232,54 @@ h2, h3 {
 .navbar a:hover {
   color: #ff5722;           /* Hover color for navbar links */
 }
+
+
+
+
+/* ToC Container Styling */
+.toc {
+  background-color: transparent !important; /* Make ToC fully transparent */
+  padding: 10px;
+  border: none !important;
+  box-shadow: none !important;
+  width: 240px;
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* ToC Links - Default State */
+.toc a, .toc a:link, .toc a:visited {
+  color: #333 !important;              /* Override default link color */
+  text-decoration: none !important;    /* Remove underline */
+  padding: 5px 0;                      /* Add spacing between links */
+  display: block;
+  background-color: transparent !important;
+}
+
+/* ToC Links - Hover State */
+.toc a:hover {
+  color: #ff5722 !important;           /* Change color on hover */
+  text-decoration: underline !important; /* Optional underline on hover */
+}
+
+/* ToC Links - Active State */
+.toc a.active {
+  font-weight: bold !important;        /* Emphasize active link */
+  color: #000 !important;              /* Color for active link */
+  background-color: transparent !important;
+}
+
+
+/* Responsive ToC Adjustments for Small Screens */
+@media (max-width: 768px) {
+  .toc {
+    position: static;                       /* Normal flow on small screens */
+    width: 100%;                            /* Full width on small screens */
+    padding: 10px;
+    z-index: 1000;
+  }
+}
+

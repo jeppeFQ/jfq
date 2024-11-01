@@ -22,7 +22,6 @@ website:
 
 format:
   html:
-    theme: cosmo
     css: styles.css
     include-before-body:
       - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
