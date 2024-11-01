@@ -7,7 +7,7 @@ body, .content, .container, main {
   width: 100%; /* Use the full width of the screen */
   max-width: 100%; /* Remove any max-width constraint */
   margin: 0; /* Remove default margins */
-  padding: 0 20px; /* Optional: Add side padding for readability */
+  padding: 0 0px; /* Optional: Add side padding for readability */
   box-sizing: border-box; /* Include padding in the width */
 }
 
@@ -34,6 +34,34 @@ body, .content, .container, main {
   body, .content, .container, main {
     max-width: 100%; /* Full width on small screens */
   }
+}
+
+/* ==========================
+   Background Color Styling
+   ========================== */
+
+/* Apply a soft off-white, greyish color to the background */
+body {
+  background-color: #f5f5f5; /* Light grey off-white */
+  color: #222; /* Text color for readability */
+}
+
+/* Optional: Set container backgrounds to match or be slightly lighter */
+.container, .content, main {
+  background-color: #f5f5f5; /* Consistent with body background */
+}
+
+/* Optional: Adjust text and link colors for contrast on a light background */
+a {
+  color: #007acc; /* Adjust link color to stand out on light background */
+}
+a:hover {
+  color: #005f99; /* Darker color for hover effect */
+}
+
+/* Optional: Set header and footer to match the off-white look */
+header, footer {
+  background-color: #f5f5f5;
 }
 
 /* ==========================
@@ -200,39 +228,3 @@ h2, h3 {
   margin-right: 220px; /* Make space for the ToC on the right */
 }
 
-
-
-
-
-
-/* Custom ToC link styling */
-#custom-toc .toc-link {
-  display: block;
-  color: #007acc;
-  text-decoration: none;
-  margin: 5px 0;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#custom-toc .toc-link:hover {
-  color: #005fa3;
-}
-
-/* Next button styling */
-.next-button {
-  display: inline-block;
-  padding: 8px 16px;
-  margin-top: 20px;
-  background-color: #007acc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.next-button:hover {
-  background-color: #005fa3;
-}

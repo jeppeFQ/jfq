@@ -7,7 +7,7 @@ website:
   navbar:
     background: transparent
     left:
-      - text: "<img src='images/monster.png' alt='Logo' style='height: 50px; vertical-align: middle;'>"
+      - text: "<img src='images/monster.png' alt='Logo' style='vertical-align: middle;'>"
         href: index.qmd 
     right:
       - text: About
