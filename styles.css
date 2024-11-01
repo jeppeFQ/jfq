@@ -86,6 +86,11 @@ h2, h3 {
   margin-top: 0; /* Remove any additional margin above the navbar */
 }
 
+.navbar .navbar-nav .nav-link {
+  text-transform: none !important;
+}
+
+
 /* Navbar base styling */
 .navbar {
   background-color: transparent !important; /* Transparent background */
@@ -107,7 +112,7 @@ h2, h3 {
 /* Navbar link styling with increased space between links */
 .navbar-nav .nav-item .nav-link {
   font-size: 14px; /* Font size for links */
-  padding: 1px 0px; /* Increased padding for more vertical space */
+  padding: 1px 3px; /* Increased padding for more vertical space */
   margin: 0px 0px; /* Optional: add vertical margin for even more spacing */
   line-height: 1.2 !important; /* Set line height for spacing control */
   display: flex;
@@ -206,7 +211,7 @@ h2, h3 {
 
 /* Hover color for navbar links */
 .navbar a:hover {
-  color: #ff5722;
+  color: grey;
 }
 
 
@@ -307,4 +312,40 @@ h2, h3 {
 
 .custom-sidebar .linkedin-icon {
   margin-right: 12px;
+}
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: none !important;
+}
+
+
+/* Apply font to body text */
+body {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+/* Apply font to all headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', serif;
+}
+
+/* Apply font to sidenotes */
+.sidenote {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em; /* Adjust size if necessary */
+}
+
+/* Set the navbar font */
+.navbar .navbar-nav .nav-link {
+  font-family: 'Roboto', sans-serif; /* Replace 'Roboto' with your chosen font */
+  text-transform: none; /* Ensure text-transform is overridden if needed */
+}
+
+/* Custom style for margin notes from R output */
+.custom-margin-note {
+  color: #222; /* Replace with the color you want */
+  font-size: 0.9em; /* Optional: adjust font size */
 }
