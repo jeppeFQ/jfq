@@ -106,16 +106,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#programming" id="toc-programming" class="nav-link active" data-scroll-target="#programming">Programming</a>
+  <li><a href="#methods" id="toc-methods" class="nav-link active" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#project1" id="toc-project1" class="nav-link" data-scroll-target="#project1">Regression</a></li>
+  <li><a href="#project2" id="toc-project2" class="nav-link" data-scroll-target="#project2">Project 2</a></li>
+  </ul></li>
+  <li><a href="#programming" id="toc-programming" class="nav-link" data-scroll-target="#programming">Programming</a>
   <ul class="collapse">
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
   <li><a href="#plaintext" id="toc-plaintext" class="nav-link" data-scroll-target="#plaintext">Plain text</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API’s</a></li>
-  </ul></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
-  <ul class="collapse">
-  <li><a href="#project1" id="toc-project1" class="nav-link" data-scroll-target="#project1">Regression</a></li>
-  <li><a href="#project2" id="toc-project2" class="nav-link" data-scroll-target="#project2">Project 2</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -144,15 +144,17 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <div class="custom-sidebar">
-    <div class="sidebar-icon" onclick="toggleSidebar()">☰</div> 
-  <div class="sidebar-content">
-    <h3 class="anchored">Contact</h3>
-    <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p><i class="fas fa-phone-alt phone-icon"></i> Phone: (123) 456-7890</p>
-    <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
-  </div>
+    <!-- Replace hamburger icon with Font Awesome icon -->
+    <div class="sidebar-icon" onclick="toggleSidebar()">
+        <i class="fa-solid fa-address-book"></i>
+    </div> 
+    <div class="sidebar-content">
+        <h3 class="anchored">Contact</h3>
+        <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        <p><i class="fas fa-phone-alt phone-icon"></i> Phone: (123) 456-7890</p>
+        <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+    </div>
 </div>
-
 <script>
   function toggleSidebar() {
     const sidebarContent = document.querySelector('.sidebar-content');
@@ -198,32 +200,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="no-row-height column-margin column-container"><div class="" style="color: #222;">
 <p>Hi! I’m a side note …………………………………. ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, !</p>
-</div></div><section id="programming" class="level1">
-<h1>Programming</h1>
-<p>Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
-<section id="git" class="level2">
-<h2 class="anchored" data-anchor-id="git">Git</h2>
-<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
-<section id="git-and-versioncontrol" class="level3">
-<h3 class="anchored" data-anchor-id="git-and-versioncontrol"><code>.git</code> and versioncontrol</h3>
-</section>
-</section>
-<section id="plaintext" class="level2">
-<h2 class="anchored" data-anchor-id="plaintext">Plain text</h2>
-<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
-<section id="plain-text" class="level3">
-<h3 class="anchored" data-anchor-id="plain-text">Plain text</h3>
-</section>
-</section>
-<section id="api" class="level2">
-<h2 class="anchored" data-anchor-id="api">API’s</h2>
-<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
-<section id="apis" class="level3">
-<h3 class="anchored" data-anchor-id="apis">API’s</h3>
-</section>
-</section>
-</section>
-<section id="methods" class="level1">
+</div></div><section id="methods" class="level1">
 <h1>Methods</h1>
 <p>Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
 <section id="project1" class="level2">
@@ -309,6 +286,31 @@ LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">your
 </script>
 
 </div>
+</section>
+</section>
+</section>
+<section id="programming" class="level1">
+<h1>Programming</h1>
+<p>Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
+<section id="git" class="level2">
+<h2 class="anchored" data-anchor-id="git">Git</h2>
+<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
+<section id="git-and-versioncontrol" class="level3">
+<h3 class="anchored" data-anchor-id="git-and-versioncontrol"><code>.git</code> and versioncontrol</h3>
+</section>
+</section>
+<section id="plaintext" class="level2">
+<h2 class="anchored" data-anchor-id="plaintext">Plain text</h2>
+<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
+<section id="plain-text" class="level3">
+<h3 class="anchored" data-anchor-id="plain-text">Plain text</h3>
+</section>
+</section>
+<section id="api" class="level2">
+<h2 class="anchored" data-anchor-id="api">API’s</h2>
+<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
+<section id="apis" class="level3">
+<h3 class="anchored" data-anchor-id="apis">API’s</h3>
 
 
 </section>

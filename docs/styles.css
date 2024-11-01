@@ -75,6 +75,23 @@ h2, h3 {
   border: none;                /* No border */
   justify-content: center;     /* Center navbar items */
   padding-top: 0 !important;   /* Remove extra padding */
+  width: 100%;                 /* Full width for small screens */
+}
+
+/* Ensure navbar and links are always visible */
+.navbar-collapse {
+  display: flex !important;               /* Ensure navbar is always visible */
+  flex-direction: row;                    /* Display links in a row */
+  align-items: center;                    /* Center-align items vertically */
+  justify-content: space-around;          /* Space links evenly across */
+}
+
+/* Stack navbar links vertically on narrow screens */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    flex-direction: column;               /* Stack links vertically */
+    align-items: flex-start;              /* Left-align links */
+  }
 }
 
 /* Set navbar link font and remove all-caps transformation */
@@ -82,9 +99,9 @@ h2, h3 {
   font-family: 'Roboto', sans-serif;  /* Custom font */
   text-transform: none;               /* Normal text */
   font-size: 14px;                    /* Link font size */
-  padding: 1px 3px;                   /* Adjust padding */
+  padding: 8px 10px;                  /* Adjust padding */
   line-height: 1.2 !important;        /* Line height for spacing */
-  display: flex;
+  display: inline-block;              /* Inline display for links */
   align-items: center;
   transition: color 0.3s ease;        /* Smooth color transition */
 }
@@ -133,25 +150,11 @@ h2, h3 {
   z-index: 1000;
 }
 
-/* Sidebar icons */
-.custom-sidebar .email-icon,
-.custom-sidebar .phone-icon,
-.custom-sidebar .linkedin-icon {
-  margin-right: 8px;        /* Icon spacing */
-}
-
-/* Responsive adjustments for sidebar on small screens */
-@media (max-width: 2000px) {
-  .custom-sidebar {
-    width: auto;
-    padding: 5px;
-  }
-  
-/* Styling for the hamburger icon */
+/* Styling for the custom sidebar icon (Font Awesome) */
 .sidebar-icon {
   display: block;
   cursor: pointer;
-  font-size: 30px;             /* Size of the hamburger icon */
+  font-size: 30px;             /* Size of the icon */
   color: #222;                 /* Icon color */
   padding: 10px;
   position: fixed;             /* Fix position on the screen */
@@ -203,7 +206,6 @@ h2, h3 {
 .email-icon, .phone-icon, .linkedin-icon {
   margin-right: 4px;         /* Space between icon and text */
 }
-
 
 /* ==========================
    Margin Notes and Sidenotes Styling
