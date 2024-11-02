@@ -57,10 +57,12 @@ h1 {
   font-size: 2.5em;          /* Large font for main heading */
   font-weight: normal;       /* Normal weight for clean look */
   color: #222;               /* Dark color */
+  margin-top: 124px;         /* Add space after paragrafs*/
 }
 
 /* Secondary headings (h2, h3) */
 h2, h3 {
+  font-size: 1.2em;
   color: #555;               /* Softer color for readability */
 }
 
@@ -280,6 +282,47 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, p code, li code, span code
 .smaller {
   font-size: 0.5em; /* Reducer fontstørrelsen yderligere */
   line-height: 1; /* Juster linjeafstand for bedre læsbarhed, hvis nødvendigt */
+}
+
+
+
+
+
+/* Ensure the tabs are displayed above the code content */
+.panel-tabset {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-tabset > .panel-heading {
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  font-weight: bold;
+}
+
+/* Base styling for the tabset pills */
+.nav-pills .nav-link {
+  background-color: #f0f0f0; /* Background color for inactive tabs */
+  color: #333333; /* Text color for inactive tabs */
+  border-radius: 5px; /* Optional: rounded corners */
+  margin: 2px; /* Space between tabs */
+}
+
+/* Styling for the active pill */
+.nav-pills .nav-link.active {
+  background-color: #ddd; /* Background color for the active tab */
+  color: #222; /* Text color for the active tab */
+  border-radius: 5px; /* Optional: rounded corners for active tab */
+}
+
+/* Optional: Hover effect for inactive tabs */
+.nav-pills .nav-link:hover {
+  background-color: #aaa; /* Hover color for inactive tabs */
+  color: #222; /* Text color on hover */
 }
 
 

@@ -62,8 +62,28 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 
 # Machine Learning and AI {#ai}
 
-Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+ML handler i bund og grund om at få computere til at lære af data, uden at vi behøver at programmere dem direkte til at udføre specifikke opgaver.
 
+**ML bruges i mange applikationer, som vi anvender dagligt**: fx:
+* anbefalingssystemer på streamingservices,
+* selvkørende biler,
+* ...
+
+I stedet for at programmere alle regler selv--**`if`** *`something`* **`then`** *`do` `this`*, **`else`** *`this`*--kan vi give modellen data, så den kan "lære" mønstre og træffe beslutninger baseret på de data.
+
+Machine Learning opdeles typisk i tre hovedtyper:
+
+  * **Supervised** learning (superviseret læring)
+  * **Unsupervised** learning (usuperviseret læring)
+  * **Reinforcement** learning (forstærkningslæring)
+  
+## Natural Language Processing 
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/nlp.qmd"
+```
 
 ## Naive Bayes {#nb}
 
@@ -84,12 +104,28 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 :::
 
 ```{r}
-#| child: "workshop/nb.qmd"
+#| child: "workshop/lda.qmd"
 ```
 
 # Programming  {#programming}
 
 Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+
+## Python {#python}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/python.qmd"
+```
+
+## R {#r}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/r-intro.qmd"
+```
 
 ## CommandLine and file organization [*da*] {#cli}
 

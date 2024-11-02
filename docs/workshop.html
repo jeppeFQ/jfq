@@ -78,7 +78,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="styles.css">
+}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script><link rel="stylesheet" href="styles.css">
 </head>
 <body class="nav-fixed">
 
@@ -142,14 +167,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li>
 <a href="#ai" id="toc-ai" class="nav-link" data-scroll-target="#ai">Machine Learning and AI</a>
   <ul class="collapse">
-<li><a href="#nb" id="toc-nb" class="nav-link" data-scroll-target="#nb">Naive Bayes</a></li>
+<li><a href="#natural-language-processing" id="toc-natural-language-processing" class="nav-link" data-scroll-target="#natural-language-processing">Natural Language Processing</a></li>
+  <li><a href="#nb" id="toc-nb" class="nav-link" data-scroll-target="#nb">Naive Bayes</a></li>
   <li><a href="#lda" id="toc-lda" class="nav-link" data-scroll-target="#lda">LDA</a></li>
   </ul>
 </li>
   <li>
 <a href="#programming" id="toc-programming" class="nav-link" data-scroll-target="#programming">Programming</a>
   <ul class="collapse">
-<li><a href="#cli" id="toc-cli" class="nav-link" data-scroll-target="#cli">CommandLine and file organization [<em>da</em>]</a></li>
+<li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#cli" id="toc-cli" class="nav-link" data-scroll-target="#cli">CommandLine and file organization [<em>da</em>]</a></li>
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git [<em>da</em>]</a></li>
   <li><a href="#plaintext" id="toc-plaintext" class="nav-link" data-scroll-target="#plaintext">Plain text</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API’s</a></li>
@@ -220,17 +248,606 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section></section><section id="sna" class="level2"><h2 class="anchored" data-anchor-id="sna">SNA and VNA</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
 </section></section><section id="ai" class="level1 page-columns page-full"><h1>Machine Learning and AI</h1>
-<p>Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
-<section id="nb" class="level2"><h2 class="anchored" data-anchor-id="nb">Naive Bayes</h2>
+<p>ML handler i bund og grund om at få computere til at lære af data, uden at vi behøver at programmere dem direkte til at udføre specifikke opgaver.</p>
+<p><strong>ML bruges i mange applikationer, som vi anvender dagligt</strong>: fx: * anbefalingssystemer på streamingservices, * selvkørende biler, * …</p>
+<p>I stedet for at programmere alle regler selv–<strong><code>if</code></strong> <em><code>something</code></em> <strong><code>then</code></strong> <em><code>do</code> <code>this</code></em>, <strong><code>else</code></strong> <em><code>this</code></em>–kan vi give modellen data, så den kan “lære” mønstre og træffe beslutninger baseret på de data.</p>
+<p>Machine Learning opdeles typisk i tre hovedtyper:</p>
+<ul>
+<li>
+<strong>Supervised</strong> learning (superviseret læring)</li>
+<li>
+<strong>Unsupervised</strong> learning (usuperviseret læring)</li>
+<li>
+<strong>Reinforcement</strong> learning (forstærkningslæring)</li>
+</ul>
+<section id="natural-language-processing" class="level2"><h2 class="anchored" data-anchor-id="natural-language-processing">Natural Language Processing</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
-</section><section id="lda" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="lda">LDA</h2>
+<section id="hvad-er-nlp" class="level3"><h3 class="anchored" data-anchor-id="hvad-er-nlp">Hvad er NLP?</h3>
+<p>Natural Language Processing (<strong>NLP</strong>) er et centralt felt indenfor <strong>AI</strong> (kunstig intellegens). Grundlæggende handler NLP om hvordan en computer kan forstå og fortolke <em>naturligt sprog</em>, dvs. menneskeligt talt sprog. Gerne opgaven er at maskiner kan bearbejde dette sprog (og endda kunne producere det).</p>
+<p>I dag spiller NLP en stor rolle i vores hverdag, da det påvirker den måde vi interagerer med teknologi og gør denne interaktion meget mere effektiv. Vi kan kun forvente at dette samspil, takket være NLP, fortsat blive mere effektivt og af større betydning i fremtiden.</p>
+<section id="i-kender-allerede-til-nlp" class="level4"><h4 class="anchored" data-anchor-id="i-kender-allerede-til-nlp">I kender allerede til NLP</h4>
+<p>NLP er allerede dybt integreret i mange af de værktøjer og teknologier vi anvender eller bliver eksponeret til dagligt:</p>
+<ul>
+<li><p><strong>Søgemaskinger</strong>: Google (og konkurrenter) bruger NLP til at forstå de input og returnere det du faktisk efterspørger. Det er derfor søgemaskiner i dag kan “overkomme” stavefejl, synonymer, kontekst specikke forespørgsler, osv.</p></li>
+<li><p><strong>Siri, Alexa, Google Assistant</strong>: De lytter til os hele tiden, hvis først vi tænder for dem …</p></li>
+<li><p><strong>Oversættelser</strong> (mellem menneskelige sprog): Services som Google Translate oversætter ikke bare ord-for-ord men forstår sig også på forskelle i syntaks, grammatik og (sproglige) kontekster og konventioner.</p></li>
+<li><p><strong>Chatbots</strong> …</p></li>
+<li><p><strong>Spamfiltrering</strong>: Som vi kommer til at lære i dag.</p></li>
+</ul></section><section id="et-oversættelsesperspektiv" class="level4"><h4 class="anchored" data-anchor-id="et-oversættelsesperspektiv">Et oversættelsesperspektiv</h4>
+<p>Computeren forstår ikke sprog på samme måde som mennesker gør. De kan læse <code>1</code> og de kan læse <code>0</code>; men de kan sætte disse tegn sammen i uendelige rækker af varierende kompleksitet. Dvs. mønstre af binære numeriske inputs. NLP handler om at bygge bro mellem den måde, mennesker kommunikerer på, og hvordan maskiner forstår data.</p>
+<p><strong>En IKKE-UDTØMMENDE liste af grundlæggende elementer i oversættelse af naturligt sprog til maskin-læsbart sprog</strong>:</p>
+<ul>
+<li><p><strong><em>Tokenization</em></strong>, som handler om at dele en tekst op i mindre dele, ofte ord eller sætninger. En sætning som “Jeg elsker data!” blive delt op i tre(fire) tokens: [“Jeg”, “elsker”, “data”, “!”].</p></li>
+<li><p><strong>Stemming og Lemmatization</strong>, som reducerer ord til deres grundform. Fx bliver “løbende” og “løber” reduceret til roden, “løb”.</p></li>
+<li><p><strong>Part-of-Speech Tagging</strong> (POS Tagging), som identificerer ordklasser (som verber, substantiver osv.) for hvert ord i en sætning, hvilket gør det muligt at forstå ordenes funktion i sætningen.</p></li>
+<li><p><strong>Named Entity Recognition</strong> (NER), som identificerer navne på personer, steder eller organisationer i en tekst. For eksempel i sætningen “Aalborg Universitet er et universitet i Danmark” vil “Aalborg Universitet” blive genkendt som en organisation og “Danmark” som et land.</p></li>
+</ul>
+<p>Dette oversættelsesperspektiv i en digital kontekst er centralt i dagens workshop.</p>
+</section></section></section><section id="nb" class="level2"><h2 class="anchored" data-anchor-id="nb">Naive Bayes</h2>
+<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
+<section id="case" class="level3"><h3 class="anchored" data-anchor-id="case">Case …</h3>
+</section><section id="superviseret-machine-learning-sml" class="level3"><h3 class="anchored" data-anchor-id="superviseret-machine-learning-sml">Superviseret Machine Learning (SML)</h3>
+<p>I dag er fokus kun på superviseret ML, da vi kun har en enkelt workshop i dag og der vil være for mange statistiske forudsætninger til de to andre hovedtyper.</p>
+<p><strong>SML</strong> fungerer ved, at vi giver <code>modellen</code> data, hvor vi kender det rigtige svar. Det kunne være, om en besked er <em>spam eller ej</em>, om et produkt er populær baseret på salgsdata, eller hvilken temperatur der vil være i morgen baseret på historiske målinger.</p>
+<blockquote class="blockquote">
+<p>I besked-eksemplet vil det altså sige at vi har et datasæt bestående af SMSer, hvor hver SMS i den data vi træner vores model på er <code>kodet</code>, dvs. tilskrevet et <code>label</code>, der indikerer om SMSen er spam (<code>label=1</code>) eller ikke-spam – “ham” – (<code>label=0</code>).</p>
+</blockquote>
+<p>Modellen lærer sammenhænge mellem de inputdata (<code>features</code>, ord), som vi fodrer den med, og de kendte svar (<code>labels</code>, spam/ham). Når modellen er trænet, og den er vurderet til at være god nok, kan vi bruge den til at forudsige <code>labels</code> for nye data, hvor vi ikke kender svaret på forhånd.</p>
+<p>Det største problem i at arbejde med tekst i ML er at ML-algoritme ikke kan arbejde direkte med tekst. De kræver numeriske inputs for at kunne udføre matematiske operationer (<em>se grundbog</em>).</p>
+<p>Vi er altså nødt til at konvertere tekst til en <strong>numerisk repræsentation</strong>. I denne kontekst kaldes denne proces for <code>vectorisering</code>.</p>
+<p>I denne proces transformerer og repræsenterer vi hvert tekstdokument (fx en SMS) som en <code>række tal</code> eller en <code>vektor</code>.</p>
+</section><section id="klassifikationsalgoritme" class="level3"><h3 class="anchored" data-anchor-id="klassifikationsalgoritme">Klassifikationsalgoritme</h3>
+<p><strong>Naive Bayes</strong> er en algoritme til at løse et konkret klassifikationsproblem relateret til <em>naturligt sprog</em></p>
+<p>Naive Bayes er en <strong>probabilistisk klassifikationsmodel</strong>, baseret på <strong>Bayes’ teorem</strong>. Algoritmen fungerer ved at beregne sandsynligheden for, at en besked tilhører en bestemt klasse, givet dens indhold (dvs. de ord, der optræder i beskeden).</p>
+<p>Modellen kaldes for “Naiv” grundet en central antagelse om at alle features (i vores tilfælde ord) er uafhængige af hinanden. Denne antagelse er ikke realistisk, da ord normalt ikke optræder helt uafhængigt af hinanden (ord i sætninger er ofte afhængige af hinanden). Det gør algoritmen enkel og hurtig, og den fungerer alligevel godt i praksis, som er blevet illustreret i tekniske detaljer mange steder.</p>
+<p>Modellens formål er at lære forholdet mellem de inputdata, vi giver den (<code>features</code>), og de kendte <code>labels</code>, så den kan <strong>forudsige</strong> <code>labels</code> for <em>nye, ukendte data</em>.</p>
+<p>Det vil altså sige at vi har med et <strong>klassifikationsproblem</strong> at gøre. Modellen skal forudsige, hvilken kategori noget tilhører, og virke som et spam-filter, hvor vi klassificerer beskeder som enten “spam” eller “ikke-spam”, og i en praktisk applikation kan sende indkomne beskeder ind i forskellige mapper, som I kender fra jeres e-mail.</p>
+<section id="bayes-teorem" class="level4"><h4 class="anchored" data-anchor-id="bayes-teorem">Bayes’ Teorem</h4>
+<p><strong>Bayes’ Theorem</strong> handler om at beregne <strong>betingede sandsynligheder</strong>, der giver os en måde at opdatere vores viden baseret på nye data. Det har givet navn til en hel gren i statistikke, <em>bayesisk statistik</em>, som står i kontrast til frekvensstatistik (som er det i med al sandsynlighed kender fra gymnasiet og det i skal lære på 4. semester).</p>
+<p><em>Bayes’ teorem</em> er givet ved:</p>
+<p><span class="math display">\[P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\]</span></p>
+<p>Hvor,</p>
+<ul>
+<li>
+<span class="math inline">\(P(A∣B)\)</span>: Sandsynligheden for <strong>A</strong>, givet <strong>B</strong>. Dette kalder vi den <strong>posterior sandsynligheden</strong>.</li>
+<li>
+<span class="math inline">\(P(B∣A)\)</span>: Sandsynligheden for <strong>B</strong>, givet <strong>A</strong>. Dette kalder vi <strong>likelihood</strong> (betinget sandsynlighed).</li>
+<li>
+<span class="math inline">\(P(A)\)</span>: Sandsynligheden for <strong>A</strong> uden at tage hensyn til <strong>B</strong>. Dette kalder vi <strong>prior sandsynligheden</strong>.</li>
+<li>
+<span class="math inline">\(P(B)\)</span>: Sandsynligheden for <strong>B</strong>, uanset hvad <strong>A</strong> er.</li>
+</ul>
+<p>I kontekst og i en klassifikationssammenhæng er:</p>
+<ul>
+<li>
+<strong>A</strong> <code>klassen</code> (spam eller ham), og</li>
+<li>
+<strong>B</strong> er de <code>observerede data</code> (de ord, der optræder i beskeden).</li>
+</ul>
+<p>og det vi er interesserde i er at bestemme <span class="math inline">\(P(spam∣ord)\)</span>: <em>sandsynligheden for, at en besked er spam, <strong>givet</strong> at visse ord optræder</em>.</p>
+<p>Repitation af formål og hvad vi vil implementere i Python er:</p>
+<blockquote class="blockquote">
+<p>Sandsynligheden for at en SMS er spam, baseret på fremkomsten/tilstedeværelsen af et givent ord, er proportionelt til sandsynligheden for at ordet fremkommer i spam-SMSer og den <em>a priori</em> sandsynlighed for at en tilfældig SMS er spam.</p>
+</blockquote>
+<p><span class="math display">\[
+P(\text{spam}|ord)\propto P(ord|\text{spam}) P(\text{spam})
+\]</span></p>
+<blockquote class="blockquote">
+<p><strong>Spg.:</strong> Hvordan implimenterer vi denne model i Python på en måde, der kan “lære” maskinen at genkende spam-SMSer?</p>
+</blockquote>
+</section><section id="anvendelse-af-algoritmen-til-tekstklassificering" class="level4"><h4 class="anchored" data-anchor-id="anvendelse-af-algoritmen-til-tekstklassificering">Anvendelse af algoritmen til tekstklassificering</h4>
+<p>Vi bruger Naive Bayes til tekstklassifikation for at forudsige om en besked er <code>spam</code> eller <code>ham</code> baseret på <strong>sandsynligheden for de enkelte ord, der optræder i beskeden, tilhører en given klasse</strong>.</p>
+<p>Den generelle Naive Bayes-klassifikator for to klasser (spam eller ikke-spam) er formuleret som:</p>
+<p><span class="math display">\[ \hat{y} = \underset{c}{\operatorname{argmax}} \ P(c) \prod_{i=1}^{n} P(x_i | c) \]</span></p>
+<p>Hvor,</p>
+<ul>
+<li>
+<span class="math inline">\(\hat{y}\)</span> er den forudsagte klasse.</li>
+<li>
+<span class="math inline">\(c\)</span> er en af klasserne (spam eller ikke-spam).</li>
+<li>
+<span class="math inline">\(P(c)\)</span> er <strong>prior sandsynligheden</strong> for klassen <span class="math inline">\(c\)</span> (<strong>sandsynligheden</strong> <em>for, at en tilfældig besked er spam</em>).</li>
+<li>
+<span class="math inline">\(P(x_{i}∣c)\)</span> er sandsynligheden for ordet <span class="math inline">\(x_{i}\)</span>, givet klassen <span class="math inline">\(c\)</span>.</li>
+<li>
+<span class="math inline">\(n\)</span> er antallet af ord i beskeden.</li>
+</ul>
+<p>Med formlen beregner vi sandsynligheden for, at en besked tilhører hver <code>klasse</code> (spam eller ikke-spam), og vælger den <code>klasse</code>, der har den <strong>højeste sandsynlighed</strong>: Vi vælger den klasse (<span class="math inline">\(c\)</span>), hvor <span class="math inline">\(P(c|x)\)</span> er størst, indikeret i formlen med <span class="math inline">\(\underset{c}{\operatorname{argmax}}\)</span></p>
+<p>Fremgangsmåde:</p>
+<ol type="1">
+<li><p><strong>Prior sandsynlighed</strong>, <span class="math inline">\(P(c)\)</span>, beregnes ved at tælle, hvor mange af vores <code>trænings</code>beskeder, der er spam i forhold til det samlede antal beskeder: <span class="math inline">\(P(spam)= \frac{\text{Antal spam-beskeder}}{\text{Totalt antal beskeder}}\)</span></p></li>
+<li><p><strong>Likelihood</strong> (betinget sandsynlighed), <span class="math inline">\(P(x_{i}∣c)\)</span> beregnes som: <span class="math inline">\(P(x_{i}∣spam)= \frac{\text{Antal spam-beskeder, der indeholder } x_{i}}{\text{Antal spam-beskeder totalt}}\)</span></p></li>
+</ol>
+<p><strong><em>Hvad vi er udregner, er hvor ofte hvert unikke ord i vores SAMLEDE TEKSTMATERIALE optræder i spam-beskeder (eller ikke-spam-beskeder), og produktet af sandsynlighederne for hvert enkelt ord i en given tekst, definere om teksten sandsynligvis er spam (eller ikke-spam)</em></strong></p>
+<p>Selvom algoritmen er “naiv” og antagelsen om at alle ord er uafhængige, i praksis som udgangspunkt ikke holder, bestemmer vi stadig sandsynligheden for om en besked er spam eller ham som produktet af sandsynlighederne for de enkelte ord. Det er mange gange vist at denne “fejlantagelse” ikke er et problem i større mængder tekstdata.</p>
+<ol type="1">
+<li>Vi bruger <code>træningsdata</code> til at beregne <span class="math inline">\(P(spam)\)</span> og <span class="math inline">\(P(ham)\)</span>
+</li>
+<li>Vi beregner <strong>sandsynlighederne</strong> for ordene “Congratulations”, “won”, “free”, osv. under begge klasser (spam og ham). Altså, hvad er sandsynligheden for at “free” (<span class="math inline">\(x_{free}\)</span>) tilhører hhv. <code>spam</code> og <code>ham</code> klassen, givet fremkomsten af <span class="math inline">\(x_{free}\)</span> i SMSer klassificeret som spam eller ham.</li>
+<li>Vi <strong>multiplicerer sandsynlighederne</strong> for de enkelte ord – $x_{Congratulation} + x_{won} + x_{free} + $ – og vælger den <code>klasse</code> med den <em>højeste sandsynlighed</em>. Altså, hvert ord i en SMS har en sandsynlighed for at tilhører spam eller ham, og givet disse enkelte ord, hvor sandsynligt er det så for at SMS <em>i sin helhed</em> er spam eller ham.</li>
+</ol>
+<p><strong><em>Altså, hvis ord som “won” og “free” ofte forekommer i spam-beskeder, vil Naive Bayes tildele beskeder med (store) fremkomster af disse ord en høj sandsynlighed for at være spam, og med denne sandsynlighedsargumentation klassificere SMSen som spam.</em></strong></p>
+</section><section id="en-lille-men-central-sidebemærkning" class="level4"><h4 class="anchored" data-anchor-id="en-lille-men-central-sidebemærkning">En lille, men central, sidebemærkning…</h4>
+<p>Der kan opstå en problematisk udfordring, hvis et ord i udenfor vores træningsdata ikke fremgår i træningsdataen, da det vil “nulstille” den samlede sandsynlighed når vi multiplicerer.</p>
+<p>Dette overkommes ved at inkludere en metode, der kaldes <strong>Laplace-smoothing</strong>, hvor alle betingede sandsynligheder tilføjes en lille konstant (værdi), således at ingen sandsynligheder er 0:</p>
+<p><span class="math display">\[P(x_{i}∣c)= \frac{\text{Totalt antal ord i klassen }+V}{\text{Antal gange ordet optræder i klassen} +1}\]</span></p>
+<p>Hvor, <span class="math inline">\(V\)</span> er størrelsen af ordforrådet i vores corpus (antallet af unikke ord i træningsdataene). <strong><em>Med dette undgår vi nul-sandsynligheder.</em></strong></p>
+</section><section id="model-træning" class="level4"><h4 class="anchored" data-anchor-id="model-træning">Model-<strong>træning</strong>
+</h4>
+<p>I arbejdet med superviseret Machine Learning arbejder vi med vores data som opdelt i hhv. <code>trænings-</code> og <code>testdata</code>. Den data vi arbejder med, er et datasæt som vi har <strong>kvalitativt kodet</strong> med de korrekte labels ud fra vores forhåndsviden. Med denne opdeling er det muligt både at <em>træne vores model</em> og <em>evaluere vores model</em>, for at kunne vurdere hvordan modellen performer på nye, usete data.</p>
+</section><section id="træningsdata" class="level4"><h4 class="anchored" data-anchor-id="træningsdata">
+<strong>Træning</strong>sdata</h4>
+<p>Træningsdataen er det datasæt, som vi træner vores model på. Datasættet indeholder både <code>features</code> (ord) og <code>labels</code> (korrekte kategorier). Det vil sige, vi ved altså hvad den rigtige kategori til vores tekster er, for at vores model at udregne det mønster, der kendetegner hver kategori.</p>
+<p>Med andre ord, når vi træner en Naive Bayes-model, “lærer” den at forstå sammenhængen mellem de input og de tilknyttede labels.</p>
+<p>En klassisk opdeling er, at træningsdataen udgør 80% af den kvalitativt kodet data.</p>
+</section><section id="testdata" class="level4"><h4 class="anchored" data-anchor-id="testdata">
+<strong>Test</strong>data</h4>
+<p>Testdata udgør den anden del af den kvalitativt kodede data (her 20%). Testdataene bruges til at evaluere modelens præstation og generaliseringsevne og formålet med testdata er at give et mål for, hvordan modellen vil præstere på nye, usete data. Det vil altså sige at modellen ikke har “set” denne data (og er grunden til at vi skal have Laplace Smoothing…)</p>
+</section></section><section id="eksempel" class="level3"><h3 class="anchored" data-anchor-id="eksempel">Eksempel …</h3>
+<section id="klargøring-af-tekstdata" class="level4"><h4 class="anchored" data-anchor-id="klargøring-af-tekstdata">Klargøring af tekstdata</h4>
+<p>Der er flere måde, hvorpå vi kan vektoriserer tekster, men centrale of typiske i denne form for analyse er:</p>
+<ul>
+<li>Bag of Words (BoW)</li>
+<li>TF-IDF (Term Frequency-Inverse Document Frequency)</li>
+</ul>
+<section id="bow" class="level5"><h5 class="anchored" data-anchor-id="bow">BoW</h5>
+<p><code>Bag of Words</code> er den mest simpel metode til at <em>transformere tekst til numerisk form</em>. Det fungerer ved at <em>tælle, hvor mange gange hvert ord forekommer i et dokument, uden at tage højde for ordets rækkefølge eller kontekst</em>. Resultatet er en vektor, der repræsenterer frekvensen af hvert ord i dokumentet. Eksempel på BoW:</p>
+<p><strong>Tekst 1</strong>: <em>Jeg elsker spam</em></p>
+<p><strong>Tekst 2</strong>: <em>Jeg kan ikke fordrage spam</em></p>
+<p>Først opretter vi et ordforråd (<code>vocabulary</code>) baseret på alle de unikke ord i vores dokumenter:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">sessionInfo</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">...</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> [<span class="st">'Jeg'</span>, <span class="st">'elsker'</span>, <span class="st">'spam'</span>, <span class="st">'kan'</span>, <span class="st">'ikke'</span>, <span class="st">'fordrage'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur ... 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    
+ [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      
+ [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0
+[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        
+[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  
+[21] knitr_1.45       </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>ffffffffffff</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Python</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">sessionInfo</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">...</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tekst1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tekst2 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame([tekst1, tekst2], columns<span class="op">=</span>vocab, index<span class="op">=</span>[<span class="st">'tekst1'</span>, <span class="st">'tekst2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur ... 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    
+ [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      
+ [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0
+[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        
+[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  
+[21] knitr_1.45       </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>ffffffffffff</p>
+</section><section id="tf-idf" class="level5"><h5 class="anchored" data-anchor-id="tf-idf">TF-IDF</h5>
+<p><strong>TF-IDF</strong> tager, i modsætning til BoW, højde for, hvor ofte et ord forekommer i en tekst, i forhold til hvor ofte det forekommer i hele datasættet. Dette hjælper med at nedvægte meget almindelige ord (såsom “is”, “am,”the”, osv.), som sandsynligvis ikke bidrager meget til meningen af dokumentet, og fremhæve ord, der er særligt vigtige for den specifikke besked (såsom “free”, “won”).</p>
+<p>TF-IDF for et ord <span class="math inline">\(x\)</span> i et dokument <span class="math inline">\(d\)</span> er givet ved:</p>
+<p><span class="math display">\[\text{TF-IDF}(x,d)=\text{TF}(x,d) \times \text{IDF}(x)\]</span></p>
+<p>Hvor:</p>
+<ul>
+<li>TF (Term Frequency): Måler hvor ofte ordet <span class="math inline">\(x\)</span> forekommer i dokumentet <span class="math inline">\(d\)</span>.</li>
+<li>IDF (Inverse Document Frequency): <span class="math inline">\(log ⁡\left( \frac{N}{df(x)} \right )\)</span>, hvor <span class="math inline">\(N\)</span> er det totale antal dokumenter, og <span class="math inline">\(df(x)\)</span> er antallet af dokumenter, som indeholder <span class="math inline">\(x\)</span>.</li>
+</ul>
+<p><strong><em>Hermed sikrer vi at vi ikke vægter almindelige ord for højt, men i stedet fokuserer på de vigtigere ord.</em></strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Python</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">sessionInfo</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">...</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>corpus <span class="op">=</span> [<span class="st">"Jeg elsker spam"</span>,<span class="st">"Jeg kan ikke fordrage spam"</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'dokument'</span>: corpus})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur ... 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    
+ [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      
+ [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0
+[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        
+[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  
+[21] knitr_1.45       </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>ffffffffffff</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Python</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">sessionInfo</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">...</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beregn TF for hvert ord i dokumentet:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenisere dokumenter:</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># hvad kalder vi det når vi skriver .apply(lambda x: ...)?</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># og hvad sker der?</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'tokens'</span>] <span class="op">=</span> df[<span class="st">'dokument'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.split())</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Beregn antallet af ord i hvert dokument</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Hvad sker der her?</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_ord'</span>] <span class="op">=</span> df[<span class="st">'tokens'</span>].<span class="bu">apply</span>(<span class="bu">len</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># En liste af alle tokens:</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Vi looper først over hver sublist i df['tokens'], der er alle ord i en tekst. Dvs. vi looper over hver række i kolonnen 'tokens'.</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Når vi har en specifik sublist, "liste_med_ord", looper vi nu over hvert enkelt token (ord, x) i denne subliste.</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. For hvert token i hver sublist, føjes dette token til den nye liste alle_tokens med .append().</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>alle_tokens <span class="op">=</span> []</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> liste_med_ord <span class="kw">in</span> df[<span class="st">'tokens'</span>]:</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> liste_med_ord:</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        alle_tokens.append(x)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Find de unikke tokens:</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># "set()" funktion er kun at gemme unikke elementer/værdier</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co"># "sorted()" er med for at organisere vores tokens alfabetisk, men er som sådan ikke nødvendig. Prøv evt. uden.</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>unikke_tokens <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">set</span>(alle_tokens))</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Udregn TF for hvert dokument for hvert ord</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">ord</span> <span class="kw">in</span> unikke_tokens:</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    df[<span class="bu">ord</span>] <span class="op">=</span> df[<span class="st">'tokens'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.count(<span class="bu">ord</span>) <span class="op">/</span> <span class="bu">len</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur ... 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    
+ [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      
+ [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0
+[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        
+[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  
+[21] knitr_1.45       </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>fffffffffff</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Python</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">sessionInfo</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">...</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beregn IDF for hvert ord i dokumentet:</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math <span class="co"># For at få log()-funktionen</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Beregne IDF for hvert ord</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Definer funktion</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bestem_idf(<span class="bu">ord</span>, df):</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Antal dokumenter der indeholder ordet</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2.: df['tokens'] er en kollonne i vores DataFrame (df)</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3.: .apply(lambda x: ord in x) for hvert dokument (SMS),</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     repræsenteret som en liste af ord, tjekker vi om ordet er til stede</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     i dokumentet. Funktionen returnerer TRUE eller FALSE (ord in x: True or False?)</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4.: TRUE og FALSE repræsenteres nummerisk som 1 og 0. Ved at summere alle 1ere og 0ere,</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     får vi antallet af dokumenter, der indeholder ord x.</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    doks_med_ord <span class="op">=</span> df[<span class="st">'tokens'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">ord</span> <span class="kw">in</span> x).<span class="bu">sum</span>()</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Beregn IDF</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 5.: len() giver en værdi for antallet af dokumenter (SMSer). Tælleren i formlen.</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     (1 + doks_med_ord) er nævneren i formlen</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">#     .log(...) tager logaritmen.</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> math.log(<span class="bu">len</span>(df) <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> doks_med_ord))</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Beregn IDF for hvert unikke ord</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 6. Dette kalder vi en "dictionary comprehension", fordi koden her går</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">#    gennem alle ord i unikke_tokens og for HVERT ORD i unikke_tokens</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">#    kaldes vores definerede funktion "bestem_idf" og tilknytter en IDF-score</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">#    til dette ord.</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>idf_scores <span class="op">=</span> {<span class="bu">ord</span>: bestem_idf(<span class="bu">ord</span>, df) <span class="cf">for</span> <span class="bu">ord</span> <span class="kw">in</span> unikke_tokens}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur ... 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    
+ [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      
+ [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0
+[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        
+[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  
+[21] knitr_1.45       </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>fffffffffff</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Python</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">sessionInfo</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">...</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beregn TF-IDF for hvert ord i hvert dokument</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.: df består af entelte ord (tokens) med en TF værdi (udregnet ovenfor),</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     hvor unikke_tokens repræsenterer alle unikke ord, som vi looper henover.</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.: Hvert ord har en tilknyttet IDF-værdi, som er udregnet med "bestem_idf",</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     og gemt i "idf_scores".</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Det som dette loop gør er at multiplicere hver enkelt ord TF med IDF, og får</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># dermed TF-IDF for HVERT ORD i vores samlede dokumentdata.</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="bu">ord</span> <span class="kw">in</span> unikke_tokens:</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    df[<span class="bu">ord</span>] <span class="op">=</span> df[<span class="bu">ord</span>] <span class="op">*</span> idf_scores[<span class="bu">ord</span>]</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Print beregnede scores:</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Hvad sker der her, hvor jeg indenfor [[...]] også anvender en vektor med alle unikke ord?</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[[<span class="st">'dokument'</span>] <span class="op">+</span> unikke_tokens])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur ... 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    
+ [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      
+ [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0
+[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        
+[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  
+[21] knitr_1.45       </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="tldr" class="level5"><h5 class="anchored" data-anchor-id="tldr">TL;DR</h5>
+<p>Opsummeret,</p>
+<ol type="1">
+<li>Koden gennemgår hvert unikt ord i dokumenterne.</li>
+<li>Vi tæller, hvor mange dokumenter (SMSer) der indeholder det specifikke ord.</li>
+<li>Vi beregner IDF for hvert ord baseret på, hvor mange dokumenter det optræder i.</li>
+<li>IDF-værdierne gemmes i en <code>dictionary</code> (idf_scores), hvor hvert ord har en tilknyttet IDF-værdi.</li>
+<li>For hvert ord multiplicerer vi den tilhørende TF og IDF værdi for at få TF-IDF</li>
+</ol></section></section><section id="træning" class="level4"><h4 class="anchored" data-anchor-id="træning">Træning</h4>
+</section><section id="test" class="level4"><h4 class="anchored" data-anchor-id="test">Test</h4>
+</section><section id="evaluering" class="level4"><h4 class="anchored" data-anchor-id="evaluering">Evaluering</h4>
+</section></section></section><section id="lda" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="lda">LDA</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
 
 <div class="no-row-height column-margin column-container"><div class="" style="color: #222;">
 <p>Hi! I’m a side note …………………………………. ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, !</p>
-</div></div></section></section><section id="programming" class="level1"><h1>Programming</h1>
+</div></div><section id="xxx" class="level3"><h3 class="anchored" data-anchor-id="xxx">XXX</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">R</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Python</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">sessionInfo</a></li>
+</ul>
+<div class="tab-content nav-pills">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">...</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.2.1 (2022-06-23)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur ... 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    
+ [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      
+ [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0
+[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        
+[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  
+[21] knitr_1.45       </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section></section><section id="programming" class="level1"><h1>Programming</h1>
 <p>Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
-<section id="cli" class="level2"><h2 class="anchored" data-anchor-id="cli">CommandLine and file organization [<em>da</em>]</h2>
+<section id="python" class="level2"><h2 class="anchored" data-anchor-id="python">Python</h2>
+<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
+</section><section id="r" class="level2"><h2 class="anchored" data-anchor-id="r">R</h2>
+<p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
+</section><section id="cli" class="level2"><h2 class="anchored" data-anchor-id="cli">CommandLine and file organization [<em>da</em>]</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
 <section id="terminalen-interaktion-med-computeren-og-filsystemet" class="level3"><h3 class="anchored" data-anchor-id="terminalen-interaktion-med-computeren-og-filsystemet">Terminalen: <em>interaktion med computeren (og filsystemet)</em>
 </h3>
@@ -343,7 +960,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="5,6,7,8" data-code-annotation="2">Skifter til en anden mappe. <code>cd ..</code> går én mappe op (til forældermappen). <code>cd ~</code> går til brugerens hjemmemappe. <code>cd -</code> skifter tilbage til den seneste mappe, du var i.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="5,6,7,8" data-code-annotation="2">Skifter til en anden mappe. <code>cd ..</code> går én mappe op/tilbage (til forældermappen). <code>cd ~</code> går til brugerens hjemmemappe. <code>cd -</code> skifter tilbage til den seneste mappe, du var i.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
@@ -364,6 +981,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dl>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>Er navigation med CML nødvendigt? <strong>Nej.</strong> Men det kan give et flow, hvis vi primært laver kodearbejde da terminalen kan tilgås “indeni” programmer som <code>Rstudio</code> eller <code>vscode</code>. Men uanset om man bruger <strong>mus</strong> eller <strong>tastetur</strong> til at navigere på sin computer, er det vigtigt at vide, hvordan filer er organiseret, hvis man har en computer-baseret stilling.</p>
+</blockquote>
 </section></section></section><section id="git" class="level2"><h2 class="anchored" data-anchor-id="git">Git [<em>da</em>]</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
 <section id="git-and-versioncontrol" class="level3"><h3 class="anchored" data-anchor-id="git-and-versioncontrol">
