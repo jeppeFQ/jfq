@@ -99,7 +99,7 @@ h2, h3 {
   font-family: 'Roboto', sans-serif;  /* Custom font */
   text-transform: none;               /* Normal text */
   font-size: 14px;                    /* Link font size */
-  padding: 8px 10px;                  /* Adjust padding */
+  padding: 5px 0px;                  /* Adjust padding */
   line-height: 1.2 !important;        /* Line height for spacing */
   display: inline-block;              /* Inline display for links */
   align-items: center;
@@ -134,7 +134,7 @@ h2, h3 {
 }
 
 /* ==========================
-   Sidebar and TOC Styling
+   Sidebar (contact card) Styling
    ========================== */
 
 /* Sidebar styling for custom fixed sidebar */
@@ -174,7 +174,7 @@ h2, h3 {
   bottom: 60px;                /* Distance above the icon */
   right: 20px;                 /* Align with the icon */
   width: 240px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.03);
   z-index: 1000;
 }
 
@@ -250,18 +250,3 @@ h1, h2, h3, h4, h5, h6 {
   color: grey;
 }
 
-
-
-/* Ensure ToC remains permanently expanded */
-.toc .collapse {
-  display: block !important;   /* Always display ToC items */
-  visibility: visible !important;
-  opacity: 1 !important;       /* Ensure full visibility */
-  height: auto !important;     /* Ensure it doesn't collapse */
-  overflow: visible !important;
-}
-
-/* Optional: Remove the 'On this page' folding icon */
-.toc .toc-title::after {
-  content: none !important;    /* Removes the collapse icon if present */
-}
