@@ -231,12 +231,24 @@ h2, h3 {
 
 /* Apply font to body */
 body {
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 /* Apply custom font to all headers and override all-caps */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
+h1 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: none !important;  /* Remove uppercase styling */
+}
+
+/* Apply custom font to all headers and override all-caps */
+h2, h3, h4, h5, h6 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 900;
+  font-style: normal;
   text-transform: none !important;  /* Remove uppercase styling */
 }
 

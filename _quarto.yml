@@ -27,7 +27,7 @@ format:
     theme:
       - lux # morph, superhero, united, lux
     include-before-body:
-      - https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Lora:wght@700&family=Roboto+Mono:wght@400&display=swap
+      - https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap
     toc: true
 
 execute:
