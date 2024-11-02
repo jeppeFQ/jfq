@@ -4,6 +4,80 @@ code-annotations: hover
 
 ### `.git` and versioncontrol 
 
+For installation, se ... 
+
+Versionkontrol er et system (*software*), der holder styr på ændringer af filer **over tid**, der gør det muligt at **genskabe** vores tidligere arbejde. Virker for (stort set) alle filer.
+
+På større projekter---hvor flere er involveret---er det vigtigt at have kontrol over, hvem der foretager ændringer, hvilke ændringer der er blevet foretaget, og hvordan man kan rulle tilbage til tidligere versioner, hvis noget går galt.
+
+I et *langsigtet perspektiv* vil Git hjælpe dig med at holde et projekt organiseret, muliggøre (mere) effektivt samarbejde og sikre, at vi altid har en backup af dine fremskridt.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**Gør dette ...**
+
+```
+/projektarbejde
+└──/backup
+    ├── projekt_281024.docx
+    ├── projekt_311024.docx
+    ├── projekt_041224.docx
+    ├── projekt_final.docx
+    ├── projekt_final2.docx
+    ├── projekt_final3.docx
+    ├── projekt_final_final.docx
+    └── projekt_FINAL.docx
+```
+:::
+
+::: {.column width="50%"}
+
+**... til dette**
+
+```
+/projektarbejde
+├── .git
+└── projekt.docx
+```
+:::
+
+::::
+
+#### Git i praksis 
+
+**Versionsstyrings*processen*** med afsæt i `.git` skelletet består af 3 stadier: 
+
+1. <u>***Working Directory***</u>: den mappe, hvor vi kørte `git init`. Alt der ændres her spores af Git, *men det gemmes (**committes**) ikke automatisk* . Arbejdsområdet er der hvor `.git` er gemt og indeholder vores faktiske filer og mapper, som vi ser og redigerer på din computer. Når vi redigerer en fil i vores projekt, bliver ændringen først gjort i arbejdsområdet. Filer, der arbejdes på, får tagget `M` (modified), som betyder at Git har registeret en ændring, men den er ikke blevet gemt i versionshistorikken endnu. 
+
+2. <u>***Staging Area***</u>: De ændringer, som du ønsker registreret i næste **commit** bliver flyttet til et *staging area* med `git add .` (se &#9315; nedenfor). Det er ikke som sådan et "sted", men et snarer et "tag" til de filer, som Git skal gemme. *Ingen ændringer er blevet gemt endnu*. Det tekniske navn er `index`, og *Stating Area* er ikke et "sted" på computeren men en fil i `.git` mappen, der noterer hvad der skal sendes til versionshistorikken i næste `git commit` (se &#9317; nedenfor) og er et mellemstadie mellem **Working Directory** og **Repository**. Se det som et kladdeområde, hvor du forbereder de ændringer, der skal indgå i en commit. Vi sender filer til Staging Area med:  `git add`. Den primære funktion er at holde vores versionshistorik ren og logisk opdelt. Hvilket gør det lettere at spore ændringer og identificere bugs senere. For at se hvad der er *modificeret* og/eller *staged* bruger vi: `git status` (se &#9314 nedenfor). 
+
+3. <u>***Repository***</u>: Når vi bruger kommandoen `git commit -m "besked"` gemmes alt *staged* data i vores Git-repository og alle ændringer siden **sidste commit** bliver en permanent del af projektets versionshistorik. Vores repository er commit-historikken, hvor hver commit repræsenterer en version af projektet  på et bestemt tidspunkt. Når filer er committed er det sikkert gemt i vores lokale database.  Vi sender filer til versionshistorikken med: `git commit <fil>` (se &#9317; nedenfor). Vi tilgår historikken med: `git log` (se &#9318; nedenfor).
+
+#### Branching
+
+Hver `commit` repræsenterer et punkt i projektets `branch`, og du kan navigere frem og tilbage i projektets historie efter behov.
+
+En `branch` i Git repræsenterer en **uafhængig udviklingslinje**. Vi kan lave ændringer i denne branch uden at påvirke andre branches. Vi kan **droppe en branch**, hvis ideer var dårlig, eller **merge den med vores primære branch**, hvis det virkede. (Teknisk relaterer alt dette sig til `HEAD`-pointeren).  
+
+*"This makes using Git a joy because we know we can experiment without the danger of severely screwing things up."* (REF)
+
+##### Et sikkert workflow
+
+- **Isolering**: Hver branch er isoleret fra andre branches, hvilket betyder, at ændringer i én branch ikke påvirker arbejdet i andre branches.
+- **Samarbejde**: Udviklere kan arbejde på separate branches uden at forstyrre hinandens arbejde. Git gør det muligt at flette branches sammen, når arbejdet er færdigt.
+- **Eksperimentering**: Branches gør det nemt at eksperimentere med nye ideer uden risiko. Hvis noget går galt, kan du altid slette branch'en og vende tilbage til en stabil version.   
+
+##### Tilgå versionshistorikken og genskab tidligere stadie
+
+```
+git log
+git checkout <commit-id>
+```
+
+### Kommandoer 
+
 ```{r, eval=F}
 git config # <1>
 git init # <2>
@@ -19,7 +93,7 @@ git remote # <11>
 ```
 
 1. Indstilling af konfigurationsindstillinger (fx brugernavn og e-mail).
-2. Initialiserer et nyt Git-repository i den aktuelle mappe.
+2. Initialiserer et nyt Git-repository i den aktuelle mappe. I skal være opmærksom på hvilken mappe I befinder jer i, når i kører `git init`. 
 3. Viser status for ændringer i arbejdsområdet (fx hvilke filer der er ændret og klar til staging).
 4. Tilføjer filer til staging-området, så de er klar til næste commit.
 5. Viser forskelle mellem ændringer i filer, enten fra arbejdsområdet eller staging-området.
@@ -31,13 +105,35 @@ git remote # <11>
 11. Administrerer forbindelser til eksterne repositories. 
 
 
-I &#9312; ... &#9313; ... &#9314; ... &#9315; ... &#9316; ... &#9317; ... &#9318; ... &#9319; ... &#9320; ... &#9321; ... &#9322; ...
+I &#9312; ... 
+&#9313; Kommandoen skaber en ny undermappe (`.git`) og er "skelettet" for vores **repository**. Denne mappe indeholder alle Git’s interne data, der bruges til at spore og administrere versionshistorikken for dit projekt.
+&#9314; ... 
+&#9315; ... 
+&#9316; ... 
+&#9317; ... 
+&#9318; ... 
+&#9319; ... 
+&#9320; ... 
+&#9321; ... 
+&#9322; ...
 
 
 
-```{r}
+#### Lokalt repository 
 
-sum(1, 5, 9)
+Det lokale repository, er det ligger på vores lokalecomputer (`.git` mappen). 
 
-```
+#### Fjern repository
 
+Grundlæggende fungerer et fjernrepositoryet som et centralt lager på en server, som flere udviklere kan samarbejde om. Disser servere er typisk hostet på platforme som GitHub eller GitLab.
+
+Et fjernrepositoty kan `klones` (se &#9319; ovenfor) til vores lokale computer, således vi har en lokal kopi af projektet. Herefter kan vi pull'e og push'e ændringer:
+
+- `Pull`: Henter ændringer fra fjernrepository'et til dit lokale repository.
+- `Push`: Skubber ændringer fra dit lokale repository til fjernrepository'et.
+
+#### Distribueret versionskontrol 
+
+Git er et *distribueret* versionskontrolsystem, hvilket betyder, at hver udvikler har en fuld kopi af hele repositoryet (inklusive historik og branches) på deres egen computer.
+
+### Øvelse

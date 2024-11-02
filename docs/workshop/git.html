@@ -156,6 +156,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="git-and-versioncontrol" class="level3">
 <h3 class="anchored" data-anchor-id="git-and-versioncontrol"><code>.git</code> and versioncontrol</h3>
+<p>Versionkontrol er et system (<em>software</em>), der holder styr på ændringer af filer <strong>over tid</strong>, der gør det muligt at <strong>genskabe</strong> vores tidligere arbejde. Virker for (stort set) alle filer.</p>
+<p>På større projekter—hvor flere er involveret—er det vigtigt at have kontrol over, hvem der foretager ændringer, hvilke ændringer der er blevet foretaget, og hvordan man kan rulle tilbage til tidligere versioner, hvis noget går galt.</p>
+<p>I et <em>langsigtet perspektiv</em> vil Git hjælpe dig med at holde et projekt organiseret, muliggøre (mere) effektivt samarbejde og sikre, at vi altid har en backup af dine fremskridt.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Gør dette …</strong></p>
+<pre><code>/projektarbejde
+└──/backup
+    ├── projekt_281024.docx
+    ├── projekt_311024.docx
+    ├── projekt_041224.docx
+    ├── projekt_final.docx
+    ├── projekt_final2.docx
+    ├── projekt_final3.docx
+    ├── projekt_final_final.docx
+    └── projekt_FINAL.docx</code></pre>
+</div><div class="column" style="width:50%;">
+<p><strong>… til dette</strong></p>
+<pre><code>/projektarbejde
+├── .git
+└── projekt.docx</code></pre>
+</div>
+</div>
+<section id="git-i-praksis" class="level4">
+<h4 class="anchored" data-anchor-id="git-i-praksis">Git i praksis</h4>
+<p><strong>Versionsstyrings<em>processen</em></strong> med afsæt i <code>.git</code> skelletet består af 3 stadier:</p>
+<ol type="1">
+<li><p><code>Working Directory</code>: den mappe, hvor vi kørte <code>git init</code>. Alt der ændres her spores af Git, <em>men det gemmes (<strong>committes</strong>) ikke automatisk</em> . Arbejdsområdet er der hvor <code>.git</code> er gemt og indeholder vores faktiske filer og mapper, som vi ser og redigerer på din computer. Når vi redigerer en fil i vores projekt, bliver ændringen først gjort i arbejdsområdet. Filer, der arbejdes på, får tagget <code>M</code> (modified), som betyder at Git har registeret en ændring, men den er ikke blevet gemt i versionshistorikken endnu.</p></li>
+<li><p><code>Staging Area</code>: De ændringer, som du ønsker registreret i næste <strong>commit</strong> bliver flyttet til et <em>staging area</em> med <code>git add .</code> (se ④ nedenfor). Det er ikke som sådan et “sted”, men et snarer et “tag” til de filer, som Git skal gemme. <em>Ingen ændringer er blevet gemt endnu</em>. Det tekniske navn er <code>index</code>, og <em>Stating Area</em> er ikke et “sted” på computeren men en fil i <code>.git</code> mappen, der noterer hvad der skal sendes til versionshistorikken i næste <code>git commit</code> (se ⑥ nedenfor) og er et mellemstadie mellem <strong>Working Directory</strong> og <strong>Repository</strong>.</p></li>
+</ol>
+<p>Se det som et kladdeområde, hvor du forbereder de ændringer, der skal indgå i en commit. Vi sender filer til Staging Area med: <code>git add</code>. Den primære funktion er at holde vores versionshistorik ren og logisk opdelt. Hvilket gør det lettere at spore ændringer og identificere bugs senere. For at se hvad der er <em>modificeret</em> og/eller <em>staged</em> bruger vi: <code>git status</code> (se &amp;#9314 nedenfor).</p>
+<ol start="3" type="1">
+<li><code>Repository</code>: Når vi bruger kommandoen <code>git commit -m "besked"</code> gemmes alt <em>staged</em> data i vores Git-repository og alle ændringer siden <strong>sidste commit</strong> bliver en permanent del af projektets versionshistorik. Vores repository er commit-historikken, hvor hver commit repræsenterer en version af projektet på et bestemt tidspunkt. Når filer er committed er det sikkert gemt i vores lokale database. Vi sender filer til versionshistorikken med: <code>git commit &lt;fil&gt;</code> (se ⑥ nedenfor). Vi tilgår historikken med: <code>git log</code> (se ⑦ nedenfor).</li>
+</ol>
+</section>
+<section id="kommandoer" class="level4">
+<h4 class="anchored" data-anchor-id="kommandoer">Kommandoer</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>git config</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>git init</span>
@@ -176,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">Initialiserer et nyt Git-repository i den aktuelle mappe.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">Initialiserer et nyt Git-repository i den aktuelle mappe. I skal være opmærksom på hvilken mappe I befinder jer i, når i kører <code>git init</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
@@ -217,15 +254,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dl>
 </div>
 </div>
-<p>I ① … ② … ③ … ④ … ⑤ … ⑥ … ⑦ … ⑧ … ⑨ … ⑩ … ⑪ …</p>
+<p>I ① … ② Kommandoen skaber en ny undermappe (<code>.git</code>) og er “skelettet” for vores <strong>repository</strong>. Denne mappe indeholder alle Git’s interne data, der bruges til at spore og administrere versionshistorikken for dit projekt. ③ … ④ … ⑤ … ⑥ … ⑦ … ⑧ … ⑨ … ⑩ … ⑪ …</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 15</code></pre>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -91,7 +91,7 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 
 Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
-## CommandLine and file organization {#cli}
+## CommandLine and file organization [*da*] {#cli}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -99,7 +99,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/cli-file.qmd"
 ```
 
-## Git {#git}
+## Git [*da*] {#git}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 

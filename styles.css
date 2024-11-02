@@ -265,13 +265,21 @@ h2, h3, h4, h5, h6 {
 
 
 
-/* Remove background for inline code */
-code {
-  background-color: transparent;  /* No background */
-  padding: 0;                     /* Remove any padding */
-  border-radius: 0;               /* No rounded corners */
-  font-size: 0.85em;              /* Optional: adjust font size */
+/* Fjern baggrund og indstillinger for alle inline-kodeelementer */
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, p code, li code, span code {
+  background-color: transparent !important;  /* Fjern baggrund */
+  padding: 0 !important;                     /* Fjern padding */
+  border-radius: 0 !important;               /* Fjern afrundede hjørner */
+  font-size: 0.85em;                         /* Juster fontstørrelse, hvis ønsket */
 }
 
+
+
+
+/* Gør teksten i .smaller endnu mindre */
+.smaller {
+  font-size: 0.5em; /* Reducer fontstørrelsen yderligere */
+  line-height: 1; /* Juster linjeafstand for bedre læsbarhed, hvis nødvendigt */
+}
 
 
