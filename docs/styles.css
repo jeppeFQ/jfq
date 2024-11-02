@@ -74,7 +74,7 @@ h2, h3 {
   box-shadow: none;            /* No shadow */
   border: none;                /* No border */
   justify-content: center;     /* Center navbar items */
-  padding-top: 0 !important;   /* Remove extra padding */
+  padding-top: 30px !important;   /* Remove extra padding */
   width: 100%;                 /* Full width for small screens */
 }
 
@@ -99,8 +99,8 @@ h2, h3 {
   font-family: 'Roboto', sans-serif;  /* Custom font */
   text-transform: none;               /* Normal text */
   font-size: 14px;                    /* Link font size */
-  padding: 8px 10px;                  /* Adjust padding */
-  line-height: 1.2 !important;        /* Line height for spacing */
+  padding: 5px 0px;                  /* Adjust padding */
+  line-height: .5 !important;        /* Line height for spacing */
   display: inline-block;              /* Inline display for links */
   align-items: center;
   transition: color 0.3s ease;        /* Smooth color transition */
@@ -134,7 +134,7 @@ h2, h3 {
 }
 
 /* ==========================
-   Sidebar and TOC Styling
+   Sidebar (contact card) Styling
    ========================== */
 
 /* Sidebar styling for custom fixed sidebar */
@@ -174,7 +174,7 @@ h2, h3 {
   bottom: 60px;                /* Distance above the icon */
   right: 20px;                 /* Align with the icon */
   width: 240px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.03);
   z-index: 1000;
 }
 
@@ -231,37 +231,32 @@ h2, h3 {
 
 /* Apply font to body */
 body {
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
 /* Apply custom font to all headers and override all-caps */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
+h1 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 900;
+  font-style: italic;
   text-transform: none !important;  /* Remove uppercase styling */
 }
 
-/* Default color for navbar links */
-.navbar a {
-  color: #222;
+/* Apply custom font to all headers and override all-caps */
+h2, h3, h4, h5, h6 {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: none !important;  /* Remove uppercase styling */
 }
 
-/* Hover color for navbar links */
-.navbar a:hover {
-  color: grey;
+/* Apply custom font to navbar */
+.navbar, .navbar a, .navbar-brand, .navbar-nav .nav-link {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;      
+  font-style: normal;
+  color: #333;                      
 }
 
-
-
-/* Ensure ToC remains permanently expanded */
-.toc .collapse {
-  display: block !important;   /* Always display ToC items */
-  visibility: visible !important;
-  opacity: 1 !important;       /* Ensure full visibility */
-  height: auto !important;     /* Ensure it doesn't collapse */
-  overflow: visible !important;
-}
-
-/* Optional: Remove the 'On this page' folding icon */
-.toc .toc-title::after {
-  content: none !important;    /* Removes the collapse icon if present */
-}

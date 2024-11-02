@@ -9,12 +9,11 @@ format:
 ```{=html}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <div class="custom-sidebar">
-    <!-- Replace hamburger icon with Font Awesome icon -->
     <div class="sidebar-icon" onclick="toggleSidebar()">
         <i class="fa-solid fa-address-book"></i>
     </div> 
     <div class="sidebar-content">
-        <h3>Contact</h3>
+        <h3>Get in touch</h3>
         <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
         <p><i class="fas fa-phone-alt phone-icon"></i> Phone: (123) 456-7890</p>
         <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
@@ -22,7 +21,7 @@ format:
 </div>
 ```
 
-<!--- TEXT ----->
+<!--- MAKES CONTACT CARD VISIBLE WHEN CLICKED ----->
 <script>
   function toggleSidebar() {
     const sidebarContent = document.querySelector('.sidebar-content');
@@ -30,17 +29,8 @@ format:
   }
 </script>
 
-<!---- TEXT ----->
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Select all collapsible ToC sections and force them open
-    const tocSections = document.querySelectorAll(".toc .collapse");
-    tocSections.forEach(section => {
-      section.classList.add("show"); // Bootstrap uses 'show' to indicate expanded
-    });
-  });
-</script>
+
 
 
 
@@ -126,7 +116,7 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 
 Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
-## CLI and file organization {#cli}
+## CommandLine and file organization {#cli}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 

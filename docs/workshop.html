@@ -65,6 +65,10 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="dropdown-header">
+ <span class="menu-text">Jeppe Fjeldgaard Qvist</span></li>
+</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
@@ -120,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#programming" id="toc-programming" class="nav-link" data-scroll-target="#programming">Programming</a>
   <ul class="collapse">
-  <li><a href="#cli" id="toc-cli" class="nav-link" data-scroll-target="#cli">CLI and file organization</a></li>
+  <li><a href="#cli" id="toc-cli" class="nav-link" data-scroll-target="#cli">CommandLine and file organization</a></li>
   <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
   <li><a href="#plaintext" id="toc-plaintext" class="nav-link" data-scroll-target="#plaintext">Plain text</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API’s</a></li>
@@ -152,33 +156,22 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <div class="custom-sidebar">
-    <!-- Replace hamburger icon with Font Awesome icon -->
     <div class="sidebar-icon" onclick="toggleSidebar()">
         <i class="fa-solid fa-address-book"></i>
     </div> 
     <div class="sidebar-content">
-        <h3 class="anchored">Contact</h3>
+        <h3 class="anchored">Get in touch</h3>
         <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
         <p><i class="fas fa-phone-alt phone-icon"></i> Phone: (123) 456-7890</p>
         <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
     </div>
 </div>
-<!--- TEXT ----->
+<!--- MAKES CONTACT CARD VISIBLE WHEN CLICKED ----->
 <script>
   function toggleSidebar() {
     const sidebarContent = document.querySelector('.sidebar-content');
     sidebarContent.classList.toggle('visible');
   }
-</script>
-<!---- TEXT ----->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Select all collapsible ToC sections and force them open
-    const tocSections = document.querySelectorAll(".toc .collapse");
-    tocSections.forEach(section => {
-      section.classList.add("show"); // Bootstrap uses 'show' to indicate expanded
-    });
-  });
 </script>
 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.</p>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
@@ -261,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Programming</h1>
 <p>Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
 <section id="cli" class="level2">
-<h2 class="anchored" data-anchor-id="cli">CLI and file organization</h2>
+<h2 class="anchored" data-anchor-id="cli">CommandLine and file organization</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
 </section>
 <section id="git" class="level2">
