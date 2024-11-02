@@ -249,3 +249,19 @@ h1, h2, h3, h4, h5, h6 {
 .navbar a:hover {
   color: grey;
 }
+
+
+
+/* Ensure ToC remains permanently expanded */
+.toc .collapse {
+  display: block !important;   /* Always display ToC items */
+  visibility: visible !important;
+  opacity: 1 !important;       /* Ensure full visibility */
+  height: auto !important;     /* Ensure it doesn't collapse */
+  overflow: visible !important;
+}
+
+/* Optional: Remove the 'On this page' folding icon */
+.toc .toc-title::after {
+  content: none !important;    /* Removes the collapse icon if present */
+}

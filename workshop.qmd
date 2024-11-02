@@ -22,7 +22,7 @@ format:
 </div>
 ```
 
-
+<!--- TEXT ----->
 <script>
   function toggleSidebar() {
     const sidebarContent = document.querySelector('.sidebar-content');
@@ -30,8 +30,40 @@ format:
   }
 </script>
 
+<!---- TEXT ----->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Select all collapsible ToC sections and force them open
+    const tocSections = document.querySelectorAll(".toc .collapse");
+    tocSections.forEach(section => {
+      section.classList.add("show"); // Bootstrap uses 'show' to indicate expanded
+    });
+  });
+</script>
+
+
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+
+# Methods {#methods}
+
+Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+
+## Descriptive statistics {#descriptive}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+
+```{r}
+#| child: "workshop/descriptive-stat.qmd"
+```
+
+## Regression {#regression}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
 ```{r}
 #| echo: false
@@ -43,27 +75,11 @@ knitr::kable(
 )
 ```
 
-Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
-
-::: {.column-margin style="color: #222;"}
-
-Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, !
-
-:::
-
-# Methods
-
-Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
-
-## Regression {#project1}
-
-Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
-
 ```{r}
 #| child: "workshop/regression.qmd"
 ```
 
-## Project 2 {#project2}
+## Decomposition {#decomposition}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -71,15 +87,92 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/decomposition.qmd"
 ```
 
+## SNA and VNA {#sna}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/sna-vna.qmd"
+```
+
+# Machine Learning and AI {#ai}
+
+Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
 
-<!-- Right Margin Sidebar -->
-<div class="contact-sidebar">
-  <h3>Contact Me</h3>
-  <p>Email: youremail@example.com</p>
-  <p>Phone: (123) 456-7890</p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
-</div>
+## Naive Bayes {#nb}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/nb.qmd"
+```
+
+## LDA {#lda}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+::: {.column-margin style="color: #222;"}
+
+Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, !
+
+:::
+
+```{r}
+#| child: "workshop/nb.qmd"
+```
+
+# Programming  {#programming}
+
+Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+
+## CLI and file organization {#cli}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/cli-file.qmd"
+```
+
+## Git {#git}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/git.qmd"
+```
+
+## Plain text {#plaintext}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/plaintext.qmd"
+```
+
+## API's {#api}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/api.qmd"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -142,32 +235,3 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 
 ```
 :::
-
-
-# Programming  
-
-Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
-
-## Git {#git}
-
-Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
-
-```{r}
-#| child: "workshop/git.qmd"
-```
-
-## Plain text {#plaintext}
-
-Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
-
-```{r}
-#| child: "workshop/plaintext.qmd"
-```
-
-## API's {#api}
-
-Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
-
-```{r}
-#| child: "workshop/api.qmd"
-```

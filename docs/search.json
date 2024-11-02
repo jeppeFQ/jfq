@@ -35,11 +35,11 @@
     "text": "Plain text"
   },
   {
-    "objectID": "workshop/api.html",
-    "href": "workshop/api.html",
+    "objectID": "workshop/regression.html",
+    "href": "workshop/regression.html",
     "title": "",
     "section": "",
-    "text": "API’s"
+    "text": "Regression"
   },
   {
     "objectID": "workshop/decomposition.html",
@@ -56,18 +56,67 @@
     "text": ".git and versioncontrol"
   },
   {
-    "objectID": "workshop/regression.html",
-    "href": "workshop/regression.html",
+    "objectID": "workshop/api.html",
+    "href": "workshop/api.html",
     "title": "",
     "section": "",
-    "text": "Regression"
+    "text": "API’s"
   },
   {
     "objectID": "workshop.html",
     "href": "workshop.html",
     "title": "Workshops and teaching",
     "section": "",
-    "text": "Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.\nmpg\ncyl\ndisp\n\n\n\n\nMazda RX4\n21.0\n6\n160\n\n\nMazda RX4 Wag\n21.0\n6\n160\n\n\nDatsun 710\n22.8\n4\n108\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae."
+    "text": "Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae."
+  },
+  {
+    "objectID": "workshop.html#descriptive",
+    "href": "workshop.html#descriptive",
+    "title": "Workshops and teaching",
+    "section": "Descriptive statistics",
+    "text": "Descriptive statistics\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem."
+  },
+  {
+    "objectID": "workshop.html#regression",
+    "href": "workshop.html#regression",
+    "title": "Workshops and teaching",
+    "section": "Regression",
+    "text": "Regression\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\n\n\n\n\nMazda RX4\n21.0\n6\n160\n\n\nMazda RX4 Wag\n21.0\n6\n160\n\n\nDatsun 710\n22.8\n4\n108\n\n\n\n\n\nRegression"
+  },
+  {
+    "objectID": "workshop.html#decomposition",
+    "href": "workshop.html#decomposition",
+    "title": "Workshops and teaching",
+    "section": "Decomposition",
+    "text": "Decomposition\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.\n\nDecomposition"
+  },
+  {
+    "objectID": "workshop.html#sna",
+    "href": "workshop.html#sna",
+    "title": "Workshops and teaching",
+    "section": "SNA and VNA",
+    "text": "SNA and VNA\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem."
+  },
+  {
+    "objectID": "workshop.html#nb",
+    "href": "workshop.html#nb",
+    "title": "Workshops and teaching",
+    "section": "Naive Bayes",
+    "text": "Naive Bayes\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem."
+  },
+  {
+    "objectID": "workshop.html#lda",
+    "href": "workshop.html#lda",
+    "title": "Workshops and teaching",
+    "section": "LDA",
+    "text": "LDA\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.\n\n\nHi! I’m a side note …………………………………. ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, !"
+  },
+  {
+    "objectID": "workshop.html#cli",
+    "href": "workshop.html#cli",
+    "title": "Workshops and teaching",
+    "section": "CLI and file organization",
+    "text": "CLI and file organization\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem."
   },
   {
     "objectID": "workshop.html#git",
@@ -89,20 +138,6 @@
     "title": "Workshops and teaching",
     "section": "API’s",
     "text": "API’s\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.\n\nAPI’s"
-  },
-  {
-    "objectID": "workshop.html#project1",
-    "href": "workshop.html#project1",
-    "title": "Workshops and teaching",
-    "section": "Regression",
-    "text": "Regression\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.\n\nRegression"
-  },
-  {
-    "objectID": "workshop.html#project2",
-    "href": "workshop.html#project2",
-    "title": "Workshops and teaching",
-    "section": "Project 2",
-    "text": "Project 2\nFaucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.\n\nDecomposition\n\n\n\nContact Me\n\n\nEmail: youremail@example.com\n\n\nPhone: (123) 456-7890\n\n\nLinkedIn: yourprofile"
   },
   {
     "objectID": "projects/direk.html",
