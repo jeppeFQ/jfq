@@ -74,7 +74,7 @@ h2, h3 {
   box-shadow: none;            /* No shadow */
   border: none;                /* No border */
   justify-content: center;     /* Center navbar items */
-  padding-top: 0 !important;   /* Remove extra padding */
+  padding-top: 30px !important;   /* Remove extra padding */
   width: 100%;                 /* Full width for small screens */
 }
 
@@ -100,7 +100,7 @@ h2, h3 {
   text-transform: none;               /* Normal text */
   font-size: 14px;                    /* Link font size */
   padding: 5px 0px;                  /* Adjust padding */
-  line-height: 1.2 !important;        /* Line height for spacing */
+  line-height: .5 !important;        /* Line height for spacing */
   display: inline-block;              /* Inline display for links */
   align-items: center;
   transition: color 0.3s ease;        /* Smooth color transition */
@@ -252,13 +252,11 @@ h2, h3, h4, h5, h6 {
   text-transform: none !important;  /* Remove uppercase styling */
 }
 
-/* Default color for navbar links */
-.navbar a {
-  color: #222;
-}
-
-/* Hover color for navbar links */
-.navbar a:hover {
-  color: grey;
+/* Apply custom font to navbar */
+.navbar, .navbar a, .navbar-brand, .navbar-nav .nav-link {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;      
+  font-style: normal;
+  color: #333;                      
 }
 
