@@ -163,11 +163,22 @@ ul.task-list li input[type="checkbox"] {
         <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
     </div>
 </div>
+<!--- TEXT ----->
 <script>
   function toggleSidebar() {
     const sidebarContent = document.querySelector('.sidebar-content');
     sidebarContent.classList.toggle('visible');
   }
+</script>
+<!---- TEXT ----->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Select all collapsible ToC sections and force them open
+    const tocSections = document.querySelectorAll(".toc .collapse");
+    tocSections.forEach(section => {
+      section.classList.add("show"); // Bootstrap uses 'show' to indicate expanded
+    });
+  });
 </script>
 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.</p>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
