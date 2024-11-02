@@ -1,3 +1,6 @@
 ---
 title: "cv"
+format:
+  html:
+    include-after-body: contact-card.html
 ---

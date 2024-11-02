@@ -1,4 +1,7 @@
 ---
-title: "pubs"
+title: "Publications"
+format:
+  html:
+    include-after-body: contact-card.html
 ---
 

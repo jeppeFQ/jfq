@@ -2,6 +2,7 @@
 title: "Projects"
 format:
   html:
+    include-after-body: contact-card.html
     toc: true
     toc-depth: 2 
 ---

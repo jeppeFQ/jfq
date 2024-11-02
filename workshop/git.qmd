@@ -1,2 +1,40 @@
+---
+code-annotations: hover
+---
 
 ### `.git` and versioncontrol 
+
+```{r, eval=F}
+git config # <1>
+git init # <2>
+git status # <3>
+git add # <4>
+git diff # <5>
+git commit # <6>
+git log # <7>
+git clone # <8>
+git push # <9>
+git pull # <10>
+git remote # <11>
+```
+
+1. Indstilling af konfigurationsindstillinger (fx brugernavn og e-mail).
+2. Initialiserer et nyt Git-repository i den aktuelle mappe.
+3. Viser status for ændringer i arbejdsområdet (fx hvilke filer der er ændret og klar til staging).
+4. Tilføjer filer til staging-området, så de er klar til næste commit.
+5. Viser forskelle mellem ændringer i filer, enten fra arbejdsområdet eller staging-området.
+6. Gemmer de ændringer, der er i staging-området, som en ny version i repository.
+7. Viser en log over commits i repository, ofte med detaljer som forfatter, dato og commit-besked.
+8. Henter et eksisterende repository fra en ekstern kilde (fx GitHub) og opretter en lokal kopi.
+9. Sender lokale commits til et eksternt repository.
+10. Henter og integrerer ændringer fra et eksternt repository til den lokale kopi.
+11. Administrerer forbindelser til eksterne repositories. 
+
+
+
+```{r}
+
+sum(1, 5, 9)
+
+```
+

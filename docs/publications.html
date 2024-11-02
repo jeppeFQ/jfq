@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>pubs</title>
+<title>Publications</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +65,10 @@ ul.task-list li input[type="checkbox"] {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="dropdown-header">
+ <span class="menu-text">Jeppe Fjeldgaard Qvist</span></li>
+</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
@@ -88,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./cv.html"> 
-<span class="menu-text">CV</span></a>
+<span class="menu-text">cv</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -109,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">pubs</h1>
+<h1 class="title">Publications</h1>
 </div>
 
 
@@ -130,6 +134,26 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<div class="custom-sidebar">
+    <div class="sidebar-icon" onclick="toggleSidebar()">
+        <i class="fa-solid fa-address-book"></i>
+    </div> 
+    <div class="sidebar-content">
+        <h3>Get in touch</h3>
+        <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        <p><i class="fa-brands fa-github"></i> <a href="https://github.com/yourprofile" target="_blank">yourprofile</a></p>
+        <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+    </div>
+</div>
+
+<!-- JavaScript to toggle the sidebar -->
+<script>
+  function toggleSidebar() {
+    const sidebarContent = document.querySelector('.sidebar-content');
+    sidebarContent.classList.toggle('visible');
+  }
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

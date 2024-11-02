@@ -203,7 +203,7 @@ h2, h3 {
 }
 
 /* Icon styling */
-.email-icon, .phone-icon, .linkedin-icon {
+.email-icon, .fa-github, .linkedin-icon {
   margin-right: 4px;         /* Space between icon and text */
 }
 
@@ -259,4 +259,19 @@ h2, h3, h4, h5, h6 {
   font-style: normal;
   color: #333;                      
 }
+
+
+
+
+
+
+/* Remove background for inline code */
+code {
+  background-color: transparent;  /* No background */
+  padding: 0;                     /* Remove any padding */
+  border-radius: 0;               /* No rounded corners */
+  font-size: 0.85em;              /* Optional: adjust font size */
+}
+
+
 
