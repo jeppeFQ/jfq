@@ -145,6 +145,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#git-and-versioncontrol" id="toc-git-and-versioncontrol" class="nav-link active" data-scroll-target="#git-and-versioncontrol"><code>.git</code> and versioncontrol</a></li>
+  <li><a href="#kommandoer" id="toc-kommandoer" class="nav-link" data-scroll-target="#kommandoer">Kommandoer</a></li>
+  <li><a href="#øvelse" id="toc-øvelse" class="nav-link" data-scroll-target="#øvelse">Øvelse</a></li>
   </ul>
 </nav>
     </div>
@@ -156,6 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="git-and-versioncontrol" class="level3">
 <h3 class="anchored" data-anchor-id="git-and-versioncontrol"><code>.git</code> and versioncontrol</h3>
+<p>For installation, se …</p>
 <p>Versionkontrol er et system (<em>software</em>), der holder styr på ændringer af filer <strong>over tid</strong>, der gør det muligt at <strong>genskabe</strong> vores tidligere arbejde. Virker for (stort set) alle filer.</p>
 <p>På større projekter—hvor flere er involveret—er det vigtigt at have kontrol over, hvem der foretager ændringer, hvilke ændringer der er blevet foretaget, og hvordan man kan rulle tilbage til tidligere versioner, hvis noget går galt.</p>
 <p>I et <em>langsigtet perspektiv</em> vil Git hjælpe dig med at holde et projekt organiseret, muliggøre (mere) effektivt samarbejde og sikre, at vi altid har en backup af dine fremskridt.</p>
@@ -183,87 +186,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="git-i-praksis">Git i praksis</h4>
 <p><strong>Versionsstyrings<em>processen</em></strong> med afsæt i <code>.git</code> skelletet består af 3 stadier:</p>
 <ol type="1">
-<li><p><code>Working Directory</code>: den mappe, hvor vi kørte <code>git init</code>. Alt der ændres her spores af Git, <em>men det gemmes (<strong>committes</strong>) ikke automatisk</em> . Arbejdsområdet er der hvor <code>.git</code> er gemt og indeholder vores faktiske filer og mapper, som vi ser og redigerer på din computer. Når vi redigerer en fil i vores projekt, bliver ændringen først gjort i arbejdsområdet. Filer, der arbejdes på, får tagget <code>M</code> (modified), som betyder at Git har registeret en ændring, men den er ikke blevet gemt i versionshistorikken endnu.</p></li>
-<li><p><code>Staging Area</code>: De ændringer, som du ønsker registreret i næste <strong>commit</strong> bliver flyttet til et <em>staging area</em> med <code>git add .</code> (se ④ nedenfor). Det er ikke som sådan et “sted”, men et snarer et “tag” til de filer, som Git skal gemme. <em>Ingen ændringer er blevet gemt endnu</em>. Det tekniske navn er <code>index</code>, og <em>Stating Area</em> er ikke et “sted” på computeren men en fil i <code>.git</code> mappen, der noterer hvad der skal sendes til versionshistorikken i næste <code>git commit</code> (se ⑥ nedenfor) og er et mellemstadie mellem <strong>Working Directory</strong> og <strong>Repository</strong>.</p></li>
-</ol>
-<p>Se det som et kladdeområde, hvor du forbereder de ændringer, der skal indgå i en commit. Vi sender filer til Staging Area med: <code>git add</code>. Den primære funktion er at holde vores versionshistorik ren og logisk opdelt. Hvilket gør det lettere at spore ændringer og identificere bugs senere. For at se hvad der er <em>modificeret</em> og/eller <em>staged</em> bruger vi: <code>git status</code> (se &amp;#9314 nedenfor).</p>
-<ol start="3" type="1">
-<li><code>Repository</code>: Når vi bruger kommandoen <code>git commit -m "besked"</code> gemmes alt <em>staged</em> data i vores Git-repository og alle ændringer siden <strong>sidste commit</strong> bliver en permanent del af projektets versionshistorik. Vores repository er commit-historikken, hvor hver commit repræsenterer en version af projektet på et bestemt tidspunkt. Når filer er committed er det sikkert gemt i vores lokale database. Vi sender filer til versionshistorikken med: <code>git commit &lt;fil&gt;</code> (se ⑥ nedenfor). Vi tilgår historikken med: <code>git log</code> (se ⑦ nedenfor).</li>
+<li><p><u><strong><em>Working Directory</em></strong></u>: den mappe, hvor vi kørte <code>git init</code>. Alt der ændres her spores af Git, <em>men det gemmes (<strong>committes</strong>) ikke automatisk</em> . Arbejdsområdet er der hvor <code>.git</code> er gemt og indeholder vores faktiske filer og mapper, som vi ser og redigerer på din computer. Når vi redigerer en fil i vores projekt, bliver ændringen først gjort i arbejdsområdet. Filer, der arbejdes på, får tagget <code>M</code> (modified), som betyder at Git har registeret en ændring, men den er ikke blevet gemt i versionshistorikken endnu.</p></li>
+<li><p><u><strong><em>Staging Area</em></strong></u>: De ændringer, som du ønsker registreret i næste <strong>commit</strong> bliver flyttet til et <em>staging area</em> med <code>git add .</code> (se ④ nedenfor). Det er ikke som sådan et “sted”, men et snarer et “tag” til de filer, som Git skal gemme. <em>Ingen ændringer er blevet gemt endnu</em>. Det tekniske navn er <code>index</code>, og <em>Stating Area</em> er ikke et “sted” på computeren men en fil i <code>.git</code> mappen, der noterer hvad der skal sendes til versionshistorikken i næste <code>git commit</code> (se ⑥ nedenfor) og er et mellemstadie mellem <strong>Working Directory</strong> og <strong>Repository</strong>. Se det som et kladdeområde, hvor du forbereder de ændringer, der skal indgå i en commit. Vi sender filer til Staging Area med: <code>git add</code>. Den primære funktion er at holde vores versionshistorik ren og logisk opdelt. Hvilket gør det lettere at spore ændringer og identificere bugs senere. For at se hvad der er <em>modificeret</em> og/eller <em>staged</em> bruger vi: <code>git status</code> (se &amp;#9314 nedenfor).</p></li>
+<li><p><u><strong><em>Repository</em></strong></u>: Når vi bruger kommandoen <code>git commit -m "besked"</code> gemmes alt <em>staged</em> data i vores Git-repository og alle ændringer siden <strong>sidste commit</strong> bliver en permanent del af projektets versionshistorik. Vores repository er commit-historikken, hvor hver commit repræsenterer en version af projektet på et bestemt tidspunkt. Når filer er committed er det sikkert gemt i vores lokale database. Vi sender filer til versionshistorikken med: <code>git commit &lt;fil&gt;</code> (se ⑥ nedenfor). Vi tilgår historikken med: <code>git log</code> (se ⑦ nedenfor).</p></li>
 </ol>
 </section>
-<section id="kommandoer" class="level4">
-<h4 class="anchored" data-anchor-id="kommandoer">Kommandoer</h4>
+<section id="branching" class="level4">
+<h4 class="anchored" data-anchor-id="branching">Branching</h4>
+<p>Hver <code>commit</code> repræsenterer et punkt i projektets <code>branch</code>, og du kan navigere frem og tilbage i projektets historie efter behov.</p>
+<p>En <code>branch</code> i Git repræsenterer en <strong>uafhængig udviklingslinje</strong>. Vi kan lave ændringer i denne branch uden at påvirke andre branches. Vi kan <strong>droppe en branch</strong>, hvis ideer var dårlig, eller <strong>merge den med vores primære branch</strong>, hvis det virkede. (Teknisk relaterer alt dette sig til <code>HEAD</code>-pointeren).</p>
+<p><em>“This makes using Git a joy because we know we can experiment without the danger of severely screwing things up.”</em> (REF)</p>
+<section id="et-sikkert-workflow" class="level5">
+<h5 class="anchored" data-anchor-id="et-sikkert-workflow">Et sikkert workflow</h5>
+<ul>
+<li><strong>Isolering</strong>: Hver branch er isoleret fra andre branches, hvilket betyder, at ændringer i én branch ikke påvirker arbejdet i andre branches.</li>
+<li><strong>Samarbejde</strong>: Udviklere kan arbejde på separate branches uden at forstyrre hinandens arbejde. Git gør det muligt at flette branches sammen, når arbejdet er færdigt.</li>
+<li><strong>Eksperimentering</strong>: Branches gør det nemt at eksperimentere med nye ideer uden risiko. Hvis noget går galt, kan du altid slette branch’en og vende tilbage til en stabil version.</li>
+</ul>
+</section>
+<section id="tilgå-versionshistorikken-og-genskab-tidligere-stadie" class="level5">
+<h5 class="anchored" data-anchor-id="tilgå-versionshistorikken-og-genskab-tidligere-stadie">Tilgå versionshistorikken og genskab tidligere stadie</h5>
+<pre><code>git log
+git checkout &lt;commit-id&gt;</code></pre>
+</section>
+</section>
+</section>
+<section id="kommandoer" class="level3">
+<h3 class="anchored" data-anchor-id="kommandoer">Kommandoer</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>git config</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>git init</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3">3</button><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a>git status</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4">4</button><span id="annotated-cell-1-4" class="code-annotation-target"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a>git add</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5">5</button><span id="annotated-cell-1-5" class="code-annotation-target"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a>git diff</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6">6</button><span id="annotated-cell-1-6" class="code-annotation-target"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a>git commit</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7">7</button><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a>git log</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8">8</button><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a>git clone</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9">9</button><span id="annotated-cell-1-9" class="code-annotation-target"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a>git push</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="10">10</button><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a>git pull</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="11">11</button><span id="annotated-cell-1-11" class="code-annotation-target"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a>git remote</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a>git config</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>git init</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a>git status</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4">4</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a>git add</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5">5</button><span id="annotated-cell-2-5" class="code-annotation-target"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a>git diff</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6">6</button><span id="annotated-cell-2-6" class="code-annotation-target"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a>git commit</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="7">7</button><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a>git log</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="8">8</button><span id="annotated-cell-2-8" class="code-annotation-target"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a>git clone</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="9">9</button><span id="annotated-cell-2-9" class="code-annotation-target"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a>git push</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="10">10</button><span id="annotated-cell-2-10" class="code-annotation-target"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a>git pull</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="11">11</button><span id="annotated-cell-2-11" class="code-annotation-target"><a href="#annotated-cell-2-11" aria-hidden="true" tabindex="-1"></a>git remote</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="1" data-code-annotation="1">Indstilling af konfigurationsindstillinger (fx brugernavn og e-mail).</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">Indstilling af konfigurationsindstillinger (fx brugernavn og e-mail).</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="2">Initialiserer et nyt Git-repository i den aktuelle mappe. I skal være opmærksom på hvilken mappe I befinder jer i, når i kører <code>git init</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="2">Initialiserer et nyt Git-repository i den aktuelle mappe. I skal være opmærksom på hvilken mappe I befinder jer i, når i kører <code>git init</code>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="3">Viser status for ændringer i arbejdsområdet (fx hvilke filer der er ændret og klar til staging).</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="3">Viser status for ændringer i arbejdsområdet (fx hvilke filer der er ændret og klar til staging).</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="4" data-code-annotation="4">Tilføjer filer til staging-området, så de er klar til næste commit.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="4">Tilføjer filer til staging-området, så de er klar til næste commit.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="5" data-code-annotation="5">Viser forskelle mellem ændringer i filer, enten fra arbejdsområdet eller staging-området.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="5">Viser forskelle mellem ændringer i filer, enten fra arbejdsområdet eller staging-området.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="6" data-code-annotation="6">Gemmer de ændringer, der er i staging-området, som en ny version i repository.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="6" data-code-annotation="6">Gemmer de ændringer, der er i staging-området, som en ny version i repository.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="7">Viser en log over commits i repository, ofte med detaljer som forfatter, dato og commit-besked.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="7">Viser en log over commits i repository, ofte med detaljer som forfatter, dato og commit-besked.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="8">Henter et eksisterende repository fra en ekstern kilde (fx GitHub) og opretter en lokal kopi.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="8" data-code-annotation="8">Henter et eksisterende repository fra en ekstern kilde (fx GitHub) og opretter en lokal kopi.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="9">Sender lokale commits til et eksternt repository.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="9" data-code-annotation="9">Sender lokale commits til et eksternt repository.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="10">10</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="10">10</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="10">Henter og integrerer ændringer fra et eksternt repository til den lokale kopi.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="10" data-code-annotation="10">Henter og integrerer ændringer fra et eksternt repository til den lokale kopi.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="11">11</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="11">11</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="11" data-code-annotation="11">Administrerer forbindelser til eksterne repositories.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="11" data-code-annotation="11">Administrerer forbindelser til eksterne repositories.</span>
 </dd>
 </dl>
 </div>
 </div>
 <p>I ① … ② Kommandoen skaber en ny undermappe (<code>.git</code>) og er “skelettet” for vores <strong>repository</strong>. Denne mappe indeholder alle Git’s interne data, der bruges til at spore og administrere versionshistorikken for dit projekt. ③ … ④ … ⑤ … ⑥ … ⑦ … ⑧ … ⑨ … ⑩ … ⑪ …</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 15</code></pre>
-</div>
-</div>
-
-
+<section id="lokalt-repository" class="level4">
+<h4 class="anchored" data-anchor-id="lokalt-repository">Lokalt repository</h4>
+<p>Det lokale repository, er det ligger på vores lokalecomputer (<code>.git</code> mappen).</p>
 </section>
+<section id="fjern-repository" class="level4">
+<h4 class="anchored" data-anchor-id="fjern-repository">Fjern repository</h4>
+<p>Grundlæggende fungerer et fjernrepositoryet som et centralt lager på en server, som flere udviklere kan samarbejde om. Disser servere er typisk hostet på platforme som GitHub eller GitLab.</p>
+<p>Et fjernrepositoty kan <code>klones</code> (se ⑧ ovenfor) til vores lokale computer, således vi har en lokal kopi af projektet. Herefter kan vi pull’e og push’e ændringer:</p>
+<ul>
+<li><code>Pull</code>: Henter ændringer fra fjernrepository’et til dit lokale repository.</li>
+<li><code>Push</code>: Skubber ændringer fra dit lokale repository til fjernrepository’et.</li>
+</ul>
+</section>
+<section id="distribueret-versionskontrol" class="level4">
+<h4 class="anchored" data-anchor-id="distribueret-versionskontrol">Distribueret versionskontrol</h4>
+<p>Git er et <em>distribueret</em> versionskontrolsystem, hvilket betyder, at hver udvikler har en fuld kopi af hele repositoryet (inklusive historik og branches) på deres egen computer.</p>
+</section>
+</section>
+<section id="øvelse" class="level3">
+<h3 class="anchored" data-anchor-id="øvelse">Øvelse</h3>
+
+
 </section>
 
 </main> <!-- /main -->
