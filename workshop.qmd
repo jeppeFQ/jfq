@@ -1,23 +1,32 @@
 ---
-title: "Workshops and teaching"
+title: ""
 format:
   html:
     include-after-body: 
       - contact-card.html
+    anchor-sections: false
     toc: true
     toc-depth: 2
     toc-location: left
+    toc-title: "On this page:"
+    other-links:
+      - text: NASA Open Data
+        href: https://data.nasa.gov/
+    code-links:
+      - text: Data Import Code
+        icon: file-code
+        href: data-import.py
 code-annotations: hover
 code-link: true
 ---
 
-
+# Workshops and teaching
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
-# Methods {#methods}
+# ***Methods*** {#methods}
 
 Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
@@ -64,7 +73,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/sna-vna.qmd"
 ```
 
-# Machine Learning and AI {#ai}
+# ***Machine Learning and AI*** {#ai}
 
 ML handler i bund og grund om at få computere til at lære af data, uden at vi behøver at programmere dem direkte til at udføre specifikke opgaver.
 
@@ -111,7 +120,7 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 #| child: "workshop/lda.qmd"
 ```
 
-# Programming  {#programming}
+# ***Programming***  {#programming}
 
 Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 

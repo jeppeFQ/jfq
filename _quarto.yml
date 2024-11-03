@@ -29,9 +29,8 @@ format:
     theme:
       - lux # morph, superhero, united, lux 
     highlight-style: zenburn
-    include-before-body:
-      - https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap
     toc: true
+    html-math-method: katex
 
 execute:
   freeze: auto

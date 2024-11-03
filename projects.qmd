@@ -2,9 +2,11 @@
 title: "Projects"
 format:
   html:
-    include-after-body: contact-card.html
+    anchor-sections: false
     toc: true
-    toc-depth: 2 
+    toc-depth: 2
+    toc-location: left
+    toc-title: "On this page:"
 ---
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
@@ -18,7 +20,7 @@ Hi! I'm a side note!
 :::
 
 
-## DIREK {#DIREK}
+# **DIREK** {#DIREK}
 
 
 ```{r}
@@ -26,7 +28,7 @@ Hi! I'm a side note!
 ```
 
 
-## MNcontact {#MNcontact}
+# **MNcontact** {#MNcontact}
 
 ```{r}
 #| child: "projects/mncontact.qmd"

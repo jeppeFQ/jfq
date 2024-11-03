@@ -1,35 +1,56 @@
+
 /* ==========================
    General Page Styling
    ========================== */
 
-/* Set the container to full width */
+/* Base styles for full width */
 body, .content, .container, main {
-  width: 100%;              /* Use the full width of the screen */
-  max-width: 100%;          /* Remove any max-width constraint */
-  margin: 0;                /* Remove default margins */
-  padding: 0;               /* Optional: Adjust for readability */
-  box-sizing: border-box;   /* Include padding in element width */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;           /* Center content on larger screens */
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Responsive max-width settings for different screen sizes */
-@media (min-width: 1200px) {
+/* Extra Small Devices (Up to 576px) */
+@media (max-width: 576px) {
   body, .content, .container, main {
-    max-width: 2000px;      /* Limit width for large screens */
+    max-width: 100%;       /* Full width */
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+
+/* Small Devices (577px to 767px) */
+@media (min-width: 577px) and (max-width: 767px) {
   body, .content, .container, main {
-    max-width: 992px;       /* Medium screen width */
+    max-width: 540px;
   }
 }
+
+/* Medium Devices (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   body, .content, .container, main {
-    max-width: 768px;       /* Tablet screen width */
+    max-width: 720px;
   }
 }
-@media (max-width: 767px) {
+
+/* Large Devices (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
   body, .content, .container, main {
-    max-width: 100%;        /* Full width for small screens */
+    max-width: 960px;
+  }
+}
+
+/* Extra Large Devices (1200px to 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  body, .content, .container, main {
+    max-width: 1140px;
+  }
+}
+
+/* Extra Extra Large Devices (1400px and above) */
+@media (min-width: 1400px) {
+  body, .content, .container, main {
+    max-width: 1320px;
   }
 }
 
@@ -41,6 +62,9 @@ body, .content, .container, main {
 body {
   background-color: #f5f5f5; /* Light grey */
   color: #222;               /* Dark text color */
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 100;          /* Regular weight */
+  font-style: normal;
 }
 
 /* Set background for containers to match body */
@@ -49,22 +73,95 @@ body {
 }
 
 /* ==========================
+   Importing the Font
+   ========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* ==========================
+   Body Styling
+   ========================== */
+
+body {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 100; /* Thin weight */
+  font-style: normal;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+/* ==========================
    Header Styling
    ========================== */
 
-/* Styling for main page title (h1) */
+/* Main page title (h1) */
 h1 {
-  font-size: 2.5em;          /* Large font for main heading */
-  font-weight: normal;       /* Normal weight for clean look */
-  color: #222;               /* Dark color */
-  margin-top: 124px;         /* Add space after paragrafs*/
+  font-size: 2.1em;
+  font-weight: 900;
+  font-style: normal;
+  color: #222;
+  margin-top: 124px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  text-transform: none !important;
 }
 
-/* Secondary headings (h2, h3) */
-h2, h3 {
+/* Secondary headings (h2) */
+h2 {
   font-size: 1.2em;
-  color: #555;               /* Softer color for readability */
+  font-weight: 700;
+  color: #222;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-style: normal;
+  text-transform: none !important;
 }
+
+/* Tertiary headings (h3) */
+h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #555;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-style: normal;
+  text-transform: none !important;
+}
+
+/* Other headings (h4, h5, h6) */
+h4, h5, h6 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #555;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-style: normal;
+  text-transform: none !important;
+}
+
+/* ==========================
+   Additional Styles
+   ========================== */
+
+/* Remove background and styling for inline code elements */
+code {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 0.85em;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ==========================
+   Additional Adjustments
+   ========================== */
+
+/* Remove any conflicting font-weight settings */
+body, h1, h2, h3, h4, h5, h6, p, li, span, a {
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+
+
 
 /* ==========================
    Navbar Styling
@@ -98,14 +195,17 @@ h2, h3 {
 
 /* Set navbar link font and remove all-caps transformation */
 .navbar .navbar-nav .nav-link {
-  font-family: 'Roboto', sans-serif;  /* Custom font */
-  text-transform: none;               /* Normal text */
-  font-size: 14px;                    /* Link font size */
-  padding: 5px 0px;                  /* Adjust padding */
-  line-height: .5 !important;        /* Line height for spacing */
-  display: inline-block;              /* Inline display for links */
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;              /* Regular weight */
+  font-style: normal;
+  text-transform: none;          /* Normal text */
+  font-size: 14px;               /* Link font size */
+  padding: 5px 0px;              /* Adjust padding */
+  line-height: 1.2 !important;   /* Line height for spacing */
+  display: inline-block;         /* Inline display for links */
   align-items: center;
-  transition: color 0.3s ease;        /* Smooth color transition */
+  transition: color 0.3s ease;   /* Smooth color transition */
+  color: #333;
 }
 
 /* Add hollow circle to left of navbar links */
@@ -168,7 +268,7 @@ h2, h3 {
 /* Sidebar content (contact info) styling */
 .sidebar-content {
   display: none;               /* Hidden by default */
-  background-color: #f5f5f5; 
+  background-color: #f5f5f5;
   color: #222;
   padding: 10px;
   border-radius: 8px;
@@ -178,6 +278,9 @@ h2, h3 {
   width: 240px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.03);
   z-index: 1000;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Show sidebar content when it has the 'visible' class */
@@ -189,17 +292,21 @@ h2, h3 {
 .sidebar-content h3 {
   margin-top: 0;
   font-size: 15px;
+  font-weight: 700;
 }
+
 .sidebar-content p {
   margin: 0.5em 0;
   display: flex;
   align-items: center;
 }
+
 .sidebar-content a {
   font-size: 13px;
   color: #222;
   text-decoration: none;
 }
+
 .sidebar-content a:hover {
   color: #aaa;               /* Change color on hover */
 }
@@ -228,65 +335,30 @@ h2, h3 {
 }
 
 /* ==========================
-   Font and Header Text Settings
+   Font and Text Settings
    ========================== */
 
-/* Apply font to body */
-body {
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-/* Apply custom font to all headers and override all-caps */
-h1 {
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  text-transform: none !important;  /* Remove uppercase styling */
-}
-
-/* Apply custom font to all headers and override all-caps */
-h2, h3, h4, h5, h6 {
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  text-transform: none !important;  /* Remove uppercase styling */
-}
-
-/* Apply custom font to navbar */
-.navbar, .navbar a, .navbar-brand, .navbar-nav .nav-link {
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-weight: 400;      
-  font-style: normal;
-  color: #333;                      
-}
-
-
-
-
-
-
-/* Fjern baggrund og indstillinger for alle inline-kodeelementer */
+/* Remove background and styling for inline code elements */
 h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, p code, li code, span code {
-  background-color: transparent !important;  /* Fjern baggrund */
-  padding: 0 !important;                     /* Fjern padding */
-  border-radius: 0 !important;               /* Fjern afrundede hjørner */
-  font-size: 0.85em;                         /* Juster fontstørrelse, hvis ønsket */
+  background-color: transparent !important;  /* Remove background */
+  padding: 0 !important;                     /* Remove padding */
+  border-radius: 0 !important;               /* Remove rounded corners */
+  font-size: 0.85em;                         /* Adjust font size if desired */
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-
-
-
-/* Gør teksten i .smaller endnu mindre */
+/* Make text in .smaller class even smaller */
 .smaller {
-  font-size: 0.5em; /* Reducer fontstørrelsen yderligere */
-  line-height: 1; /* Juster linjeafstand for bedre læsbarhed, hvis nødvendigt */
+  font-size: 0.5em; /* Reduce font size further */
+  line-height: 1;   /* Adjust line spacing for better readability if needed */
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
-
-
-
+/* ==========================
+   Tabset Styling
+   ========================== */
 
 /* Ensure the tabs are displayed above the code content */
 .panel-tabset {
@@ -302,38 +374,68 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, p code, li code, span code
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   font-weight: bold;
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 /* Base styling for the tabset pills */
 .nav-pills .nav-link {
-  background-color: #f0f0f0; /* Background color for inactive tabs */
-  color: #333333; /* Text color for inactive tabs */
-  border-radius: 5px; /* Optional: rounded corners */
-  margin: 2px; /* Space between tabs */
+  background-color: #f5f5f5; /* Background color for inactive tabs */
+  color: #333333;            /* Text color for inactive tabs */
+  border-radius: 5px;        /* Optional: rounded corners */
+  margin: 2px;               /* Space between tabs */
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Styling for the active pill */
 .nav-pills .nav-link.active {
   background-color: #ddd; /* Background color for the active tab */
-  color: #222; /* Text color for the active tab */
-  border-radius: 5px; /* Optional: rounded corners for active tab */
+  color: #222;           /* Text color for the active tab */
+  border-radius: 5px;    /* Optional: rounded corners for active tab */
 }
 
 /* Optional: Hover effect for inactive tabs */
 .nav-pills .nav-link:hover {
   background-color: #aaa; /* Hover color for inactive tabs */
-  color: #222; /* Text color on hover */
+  color: #222;            /* Text color on hover */
 }
 
+/* ==========================
+   Table of Contents Styling
+   ========================== */
 
-
-/* styles.css */
+/* Ensure the ToC background is transparent */
 .sidebar,
 .sidebar-toc {
-    background: transparent !important;
-    background-color: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
+/* Override the sidebar background color variable */
 :root {
-    --color-sidebar-background: transparent;
+  --color-sidebar-background: transparent;
 }
+
+/* Style second-level ToC entries (## headers) */
+.sidebar-toc .toc-entry.toc-h2 > a {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700 !important;   /* Semi-bold weight */
+  font-size: 1.5em !important;   /* Larger size */
+  color: #222 !important;        /* Ensure text color is set */
+}
+
+/* Style third-level ToC entries (### headers) */
+.sidebar-toc .toc-entry.toc-h3 > a {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400 !important;   /* Regular weight */
+  font-size: 1em !important;     /* Standard size */
+  color: #555 !important;        /* Softer color for distinction */
+}
+
+/* Ensure ToC uses the correct font */
+.sidebar-toc a {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-style: normal;
+}
+
