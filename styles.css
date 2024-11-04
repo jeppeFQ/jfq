@@ -377,16 +377,12 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, p code, li code, span code
   font-family: 'Fira Sans Condensed', sans-serif;
 }
 
-/* Base styling for the tabset pills */
-.nav-pills .nav-link {
-  background-color: #4CAF50 !important; /* Background color for inactive tabs */
-  color: #333333;            /* Text color for inactive tabs */
-  border-radius: 5px;        /* Optional: rounded corners */
-  margin: 2px;               /* Space between tabs */
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #92278f;
+    background-color: white;
+    font-family: 'Roboto Mono', monospace;
 }
+
 
 /* ==========================
    Table of Contents Styling

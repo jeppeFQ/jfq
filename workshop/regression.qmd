@@ -1,2 +1,13 @@
 
+```{r}
+#| echo: false
+#| eval: false
+library(tidyverse)
+```
+
+
 ### Regression 
+
+
+
+- Data ... 

@@ -206,7 +206,6 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
   /* Styling for h2 headers with fold icons */
   main h2 {
     cursor: pointer;
-    font-weight: bold;
     color: #333;
   }
 
