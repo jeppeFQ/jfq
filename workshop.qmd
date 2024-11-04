@@ -8,7 +8,7 @@ format:
     toc: true
     toc-depth: 2
     toc-location: left
-    toc-title: "On this page:"
+    toc-title: "On this page"
     other-links:
       - text: NASA Open Data
         href: https://data.nasa.gov/

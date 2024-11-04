@@ -1,17 +1,21 @@
 
-### MNcontact
+### **Majority and Minority Exposure in Childhood**
 
-Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
+<div style="display: flex; align-items: flex-start; gap: 20px;">
 
-Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
+<div style="width: 350px;"> <!-- Try setting to 400px or higher -->
 
-Fames vivamus ante fames velit sapien, bibendum magna habitasse laoreet. Lobortis eros metus dignissim taciti conubia ex. Semper mattis nam maecenas aliquam torquent tempus mus. Finibus diam natoque nam neque rhoncus suscipit. Imperdiet senectus porta cursus dui fames taciti vel? Est lorem nibh ut sem, bibendum vel malesuada orci. At sed rhoncus penatibus ultrices suspendisse.
+  ![](phd-cover.png){width="100%"}
+</div>
 
-Ut inceptos natoque lacus risus massa facilisis. Pretium imperdiet dictum fusce vehicula ac magnis sollicitudin suscipit vel. Ornare semper aliquam mollis tristique integer maximus eros. Phasellus ac fusce potenti sit eros in nulla duis vulputate. Vivamus nostra est mi consequat varius laoreet accumsan morbi. Lectus faucibus facilisi nunc pulvinar et faucibus ultricies cursus.
+<div style="flex: 2;">
 
-Massa efficitur consequat augue non rutrum ut lobortis adipiscing nulla. Ornare euismod mi varius; mauris phasellus bibendum mus metus sagittis. Facilisi arcu a congue nascetur quam varius morbi. Luctus dictumst sapien rhoncus commodo facilisis maecenas ad. Efficitur sapien nibh ullamcorper at semper ridiculus suspendisse. Id aptent nullam semper leo magnis. Blandit diam hac pellentesque ex litora sagittis convallis ornare convallis. Semper convallis volutpat auctor taciti mi habitasse finibus nunc.
+Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit. Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam a. SKAL IKKE VÆRE LÆNGERE END DETTE.
 
-### Massa efficitur
+</div>
+
+</div>
+
 
 Integer habitant varius hendrerit torquent sodales. Fusce consectetur consectetur bibendum mattis justo aenean mauris nam sed. Potenti vel a; cubilia turpis porta faucibus donec. Luctus tempor feugiat elit ligula mollis. Efficitur risus consectetur tellus cras in scelerisque. Tincidunt faucibus convallis neque elit, potenti purus ac convallis. Luctus pharetra condimentum per vitae blandit eleifend ac condimentum. Arcu arcu ut ullamcorper class semper.
 

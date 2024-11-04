@@ -6,7 +6,7 @@ format:
     toc: true
     toc-depth: 2
     toc-location: left
-    toc-title: "On this page:"
+    toc-title: "Research Projects"
 ---
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
@@ -19,6 +19,7 @@ Hi! I'm a side note!
 
 :::
 
+<div style="height: 100px;"></div>
 
 # **DIREK** {#DIREK}
 
@@ -27,6 +28,7 @@ Hi! I'm a side note!
 #| child: "projects/direk.qmd"
 ```
 
+<div style="height: 50px;"></div>
 
 # **MNcontact** {#MNcontact}
 
