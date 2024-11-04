@@ -207,7 +207,7 @@ window.Quarto = {
 <section id="workshops-and-teaching" class="level1"><h1>Workshops and teaching</h1>
 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.</p>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
-</section><section id="methods" class="level1 page-columns page-full"><h1><strong><em>Methods</em></strong></h1>
+</section><section id="methods" class="level1"><h1><strong><em>Methods</em></strong></h1>
 <p>Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.</p>
 <section id="descriptive" class="level2"><h2 data-anchor-id="descriptive">Descriptive statistics</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
@@ -264,40 +264,8 @@ loaded via a namespace (and not attached):
 </div>
 </div>
 </div>
-</section><section id="regression" class="level2 page-columns page-full"><h2 data-anchor-id="regression">Regression</h2>
+</section><section id="regression" class="level2"><h2 data-anchor-id="regression">Regression</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
-<div class="cell custom-margin-note page-columns page-full">
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: right;">mpg</th>
-<th style="text-align: right;">cyl</th>
-<th style="text-align: right;">disp</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Mazda RX4</td>
-<td style="text-align: right;">21.0</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">160</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Mazda RX4 Wag</td>
-<td style="text-align: right;">21.0</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">160</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Datsun 710</td>
-<td style="text-align: right;">22.8</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">108</td>
-</tr>
-</tbody>
-</table>
-</div></div></div>
 <section id="regression-1" class="level3"><h3 data-anchor-id="regression-1">Regression</h3>
 </section></section><section id="segregation" class="level2"><h2 data-anchor-id="segregation">Segregation Indices</h2>
 <p>Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem.</p>
@@ -1178,27 +1146,29 @@ git checkout &lt;commit-id&gt;</code></pre>
 <section id="apis" class="level3"><h3 data-anchor-id="apis">API’s</h3>
 <div class="cell">
 <style>
-
   /* Styling for h2 headers with fold icons */
   main h2 {
     cursor: pointer;
     font-weight: bold;
     color: #333;
   }
-  main h2::after {
-    content: " ▼"; /* Adds an arrow icon for visibility */
-  }
-  main h2.collapsed::after {
-    content: " ►"; /* Changes icon when section is collapsed */
+
+  main h2 .fa-arrow-right, main h2 .fa-arrow-down {
+    margin-right: 8px; /* Space between icon and heading text */
   }
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Select all Section headers (h2) within the main content
+    // Ensure Font Awesome icons are added as toggle indicators
     const sections = document.querySelectorAll("main h2");
 
     sections.forEach(section => {
       section.style.cursor = "pointer";
+
+      // Add the initial icon (right arrow) to the header
+      const icon = document.createElement("i");
+      icon.classList.add("fa-solid", "fa-arrow-right");
+      section.prepend(icon);
 
       // Collect all elements under this Section until the next h2 or h1
       let nextSibling = section.nextElementSibling;
@@ -1212,14 +1182,19 @@ git checkout &lt;commit-id&gt;</code></pre>
       // Hide the Section content by default
       sectionContent.forEach(element => element.style.display = "none");
 
-      // Toggle visibility of the Section content on click
+      // Toggle visibility of the Section content and icon on click
       section.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevents toggling the parent
+        event.stopPropagation();
         const isVisible = sectionContent[0].style.display === "block";
+        
+        // Toggle content visibility
         sectionContent.forEach(element => {
           element.style.display = isVisible ? "none" : "block";
         });
-        section.classList.toggle("collapsed", !isVisible);
+        
+        // Update the icon
+        icon.classList.toggle("fa-arrow-right", isVisible);
+        icon.classList.toggle("fa-arrow-down", !isVisible);
       });
     });
   });

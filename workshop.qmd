@@ -47,16 +47,6 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
 ```{r}
-#| echo: false
-#| column: margin
-#| class: custom-margin-note
-
-knitr::kable(
-  mtcars[1:3, 1:3]
-)
-```
-
-```{r}
 #| child: "workshop/regression.qmd"
 ```
 
@@ -213,28 +203,30 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 
 ```{=html}
 <style>
-
   /* Styling for h2 headers with fold icons */
   main h2 {
     cursor: pointer;
     font-weight: bold;
     color: #333;
   }
-  main h2::after {
-    content: " ▼"; /* Adds an arrow icon for visibility */
-  }
-  main h2.collapsed::after {
-    content: " ►"; /* Changes icon when section is collapsed */
+
+  main h2 .fa-arrow-right, main h2 .fa-arrow-down {
+    margin-right: 8px; /* Space between icon and heading text */
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Select all Section headers (h2) within the main content
+    // Ensure Font Awesome icons are added as toggle indicators
     const sections = document.querySelectorAll("main h2");
 
     sections.forEach(section => {
       section.style.cursor = "pointer";
+
+      // Add the initial icon (right arrow) to the header
+      const icon = document.createElement("i");
+      icon.classList.add("fa-solid", "fa-arrow-right");
+      section.prepend(icon);
 
       // Collect all elements under this Section until the next h2 or h1
       let nextSibling = section.nextElementSibling;
@@ -248,18 +240,22 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
       // Hide the Section content by default
       sectionContent.forEach(element => element.style.display = "none");
 
-      // Toggle visibility of the Section content on click
+      // Toggle visibility of the Section content and icon on click
       section.addEventListener("click", (event) => {
-        event.stopPropagation(); // Prevents toggling the parent
+        event.stopPropagation();
         const isVisible = sectionContent[0].style.display === "block";
+        
+        // Toggle content visibility
         sectionContent.forEach(element => {
           element.style.display = isVisible ? "none" : "block";
         });
-        section.classList.toggle("collapsed", !isVisible);
+        
+        // Update the icon
+        icon.classList.toggle("fa-arrow-right", isVisible);
+        icon.classList.toggle("fa-arrow-down", !isVisible);
       });
     });
   });
 </script>
-
 ```
 :::
