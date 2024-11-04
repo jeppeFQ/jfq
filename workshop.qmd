@@ -72,7 +72,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/decomposition.qmd"
 ```
 
-## SNA and VNA [*da*] {#sna}
+## SNA and VNA [*en*] {#sna}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
