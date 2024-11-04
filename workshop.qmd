@@ -20,7 +20,10 @@ code-annotations: hover
 code-link: true
 ---
 
-# Workshops and teaching
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+# Workshops and teaching 
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
 
@@ -210,11 +213,6 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 
 ```{=html}
 <style>
-  /* Styling for all h1 headers (visible by default, no icon) */
-  main h1 {
-    font-weight: bold;
-    color: #333;
-  }
 
   /* Styling for h2 headers with fold icons */
   main h2 {

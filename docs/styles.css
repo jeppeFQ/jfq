@@ -379,26 +379,13 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, p code, li code, span code
 
 /* Base styling for the tabset pills */
 .nav-pills .nav-link {
-  background-color: #f5f5f5; /* Background color for inactive tabs */
+  background-color: #4CAF50 !important; /* Background color for inactive tabs */
   color: #333333;            /* Text color for inactive tabs */
   border-radius: 5px;        /* Optional: rounded corners */
   margin: 2px;               /* Space between tabs */
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-/* Styling for the active pill */
-.nav-pills .nav-link.active {
-  background-color: #ddd; /* Background color for the active tab */
-  color: #222;           /* Text color for the active tab */
-  border-radius: 5px;    /* Optional: rounded corners for active tab */
-}
-
-/* Optional: Hover effect for inactive tabs */
-.nav-pills .nav-link:hover {
-  background-color: #aaa; /* Hover color for inactive tabs */
-  color: #222;            /* Text color on hover */
 }
 
 /* ==========================
