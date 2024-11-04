@@ -12,8 +12,6 @@ website:
     right:
       - text: Home
         href: index.qmd
-      - text: About
-        href: about.qmd
       - text: Projects
         href: projects.qmd
       - text: Workshops

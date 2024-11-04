@@ -1,11 +1,12 @@
 ---
 title: "Jeppe Fjeldgaard Qvist"
+format:
+  html:
+    include-after-body: contact-card.html
 ---
 
-This is a Quarto website.
+## About me 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Research 
 
-```{r}
-1 + 1
-```
+## Teaching
