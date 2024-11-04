@@ -23,7 +23,11 @@ code-link: true
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-# Workshops and teaching 
+# Workshops and teaching
+
+Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
 
@@ -34,6 +38,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 - Bilingual ... as a consequence of time constraints ... 
 
 
+<div style="height: 100px;"></div>
 
 # ***Methods*** {#methods}
 
@@ -72,7 +77,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/decomposition.qmd"
 ```
 
-## SNA and VNA [*en*] {#sna}
+## Network Analysis [*en*] {#sna}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -80,7 +85,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/sna-vna.qmd"
 ```
 
-## Spatial stuff [*en*] {#spatial}
+## Spatial stuff: *Mapping* [*en*] {#spatial}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -89,9 +94,9 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 ```
 
 
+## Spatial stuff: *Analysis* [*en*] {#spatial-analysis}
 
-
-
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
 
 

@@ -12,7 +12,7 @@ website:
     right:
       - text: Home
         href: index.qmd
-      - text: Projects
+      - text: Research
         href: projects.qmd
       - text: Workshops
         href: workshop.qmd
