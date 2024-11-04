@@ -29,11 +29,17 @@ Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesua
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
+- Motivation
+
+- Bilingual ... as a consequence of time constraints ... 
+
+
+
 # ***Methods*** {#methods}
 
 Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
-## Descriptive statistics {#descriptive}
+## Descriptive statistics [*en*] {#descriptive}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -42,7 +48,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/descriptive-stat.qmd"
 ```
 
-## Regression {#regression}
+## Regression [*en*] {#regression}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -50,7 +56,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/regression.qmd"
 ```
 
-## Segregation Indices {#segregation}
+## Segregation Indices [*da*] {#segregation}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -58,7 +64,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/segregation.qmd"
 ```
 
-## Decomposition {#decomposition}
+## Decomposition [*en*] {#decomposition}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -66,13 +72,41 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/decomposition.qmd"
 ```
 
-## SNA and VNA {#sna}
+## SNA and VNA [*da*] {#sna}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
 ```{r}
 #| child: "workshop/sna-vna.qmd"
 ```
+
+## Spatial stuff [*en*] {#spatial}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/spatial.qmd"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ***Machine Learning and AI*** {#ai}
 
@@ -90,8 +124,17 @@ Machine Learning opdeles typisk i tre hovedtyper:
   * **Supervised** learning (superviseret læring)
   * **Unsupervised** learning (usuperviseret læring)
   * **Reinforcement** learning (forstærkningslæring)
-  
-## Natural Language Processing {#nlp}
+
+## Supervised Machine Learning [*en*] {#sml}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/sml.qmd"
+```
+
+
+## Natural Language Processing [*da*] {#nlp}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -99,7 +142,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/nlp.qmd"
 ```
 
-## Naive Bayes {#nb}
+## Naive Bayes [*da*] {#nb}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -107,7 +150,13 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/nb.qmd"
 ```
 
-## LDA {#lda}
+## Clustering techniques [*en*] {#ml-exp} 
+
+```{r}
+#| child: "workshop/ml-exp.qmd"
+```
+
+## LDA [*da*] {#lda}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -121,11 +170,29 @@ Hi! I'm a side note ........................................ ,,,,,,,,,,,,,,,,,,,
 #| child: "workshop/lda.qmd"
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ***Programming***  {#programming}
 
 Libero sociosqu lacinia nibh; potenti elit viverra. Senectus fames fringilla praesent nascetur lacus lobortis dui tortor. Felis ridiculus lorem senectus convallis conubia nec phasellus nisi. Potenti sodales rhoncus et penatibus auctor morbi erat augue iaculis. Egestas dictumst phasellus class nec facilisis sapien lectus maximus iaculis. Quam nascetur fusce vivamus proin dolor; magna tempus curae.
 
-## Python {#python}
+## Python [*da*] {#python}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -133,7 +200,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/python.qmd"
 ```
 
-## R {#r}
+## R [*da*] {#r}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -141,7 +208,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/r-intro.qmd"
 ```
 
-## Quarto {#quarto}
+## Quarto [*da*] {#quarto}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -165,7 +232,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/git.qmd"
 ```
 
-## Plain text {#plaintext}
+## Plain text [*da*] {#plaintext}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -173,7 +240,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 #| child: "workshop/plaintext.qmd"
 ```
 
-## API's {#api}
+## API's [*da*] {#api}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -209,22 +276,22 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
     color: #333;
   }
 
-  main h2 .fa-arrow-right, main h2 .fa-arrow-down {
+  main h2 .fa-circle-chevron-right, main h2 .fa-angle-down {
     margin-right: 8px; /* Space between icon and heading text */
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Ensure Font Awesome icons are added as toggle indicators
+    // Select all Section headers (h2) within the main content
     const sections = document.querySelectorAll("main h2");
 
     sections.forEach(section => {
       section.style.cursor = "pointer";
 
-      // Add the initial icon (right arrow) to the header
+      // Add the initial icon (right chevron inside a circle) to the header
       const icon = document.createElement("i");
-      icon.classList.add("fa-solid", "fa-arrow-right");
+      icon.classList.add("fa-solid", "fa-circle-chevron-right");
       section.prepend(icon);
 
       // Collect all elements under this Section until the next h2 or h1
@@ -241,7 +308,7 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 
       // Toggle visibility of the Section content and icon on click
       section.addEventListener("click", (event) => {
-        event.stopPropagation();
+        event.stopPropagation(); // Prevents toggling the parent
         const isVisible = sectionContent[0].style.display === "block";
         
         // Toggle content visibility
@@ -250,8 +317,8 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
         });
         
         // Update the icon
-        icon.classList.toggle("fa-arrow-right", isVisible);
-        icon.classList.toggle("fa-arrow-down", !isVisible);
+        icon.classList.toggle("fa-circle-chevron-right", isVisible);
+        icon.classList.toggle("fa-angle-down", !isVisible);
       });
     });
   });
