@@ -57,6 +57,14 @@ knitr::kable(
 #| child: "workshop/regression.qmd"
 ```
 
+## Segregation Indices {#segregation}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/segregation.qmd"
+```
+
 ## Decomposition {#decomposition}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
@@ -90,7 +98,7 @@ Machine Learning opdeles typisk i tre hovedtyper:
   * **Unsupervised** learning (usuperviseret læring)
   * **Reinforcement** learning (forstærkningslæring)
   
-## Natural Language Processing 
+## Natural Language Processing {#nlp}
 
 Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
 
@@ -138,6 +146,14 @@ Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dig
 
 ```{r}
 #| child: "workshop/r-intro.qmd"
+```
+
+## Quarto {#quarto}
+
+Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. 
+
+```{r}
+#| child: "workshop/quarto.qmd"
 ```
 
 ## CommandLine and file organization [*da*] {#cli}
