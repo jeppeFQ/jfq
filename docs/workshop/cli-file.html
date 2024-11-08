@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title></title>
+<title>cli-file</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,21 +20,55 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -71,23 +105,23 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./workshop.html"> 
+    <a class="nav-link" href="../workshop.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="../cv.html"> 
 <span class="menu-text">cv</span></a>
   </li>  
 </ul>
@@ -106,12 +140,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#jeppe-f.-larsen" id="toc-jeppe-f.-larsen" class="nav-link active" data-scroll-target="#jeppe-f.-larsen">Jeppe F. Larsen</a>
-  <ul class="collapse">
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About Me</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><strong>Skills</strong></a></li>
-  <li><a href="#additional-activities" id="toc-additional-activities" class="nav-link" data-scroll-target="#additional-activities">Additional Activities</a></li>
-  </ul></li>
+  <li><a href="#terminalen-interaktion-med-computeren-og-filsystemet" id="toc-terminalen-interaktion-med-computeren-og-filsystemet" class="nav-link active" data-scroll-target="#terminalen-interaktion-med-computeren-og-filsystemet">Terminalen: <em>interaktion med computeren (og filsystemet)</em></a></li>
+  <li><a href="#filorganisering" id="toc-filorganisering" class="nav-link" data-scroll-target="#filorganisering">Fil<em>organisering</em></a></li>
+  <li><a href="#et-filsystem" id="toc-et-filsystem" class="nav-link" data-scroll-target="#et-filsystem">Et filsystem</a></li>
   </ul>
 </nav>
     </div>
@@ -121,87 +152,152 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="jeppe-f.-larsen" class="level1">
-<h1>Jeppe F. Larsen</h1>
-<p>Research Assistant, Aalborg University<br>
-<strong>Contact:</strong> Aalborg, Denmark | +45 30594555 | <a href="mailto:jeppe.fjeldgaard@gmail.com">jeppe.fjeldgaard@gmail.com</a></p>
-<hr>
-<section id="about-me" class="level3">
-<h3 class="anchored" data-anchor-id="about-me">About Me</h3>
-<p>As a researcher, I am passionate about utilizing register data and quantitative methods to investigate social and political phenomena. My expertise lies in effectively leveraging and managing Danish register data, as well as integrating external datasets such as survey or spatial data. Additionally, I have a strong interest in communicating quantitative findings through data visualization.</p>
-</section>
-<div style="display: flex; align-items: flex-start; gap: 20px;">
-<section id="education-and-experience" class="level3" style="width: 400px;">
-<h3 class="anchored" data-anchor-id="education-and-experience"><strong>Education and Experience</strong></h3>
-<section id="phd-in-political-science" class="level4">
-<h4 class="anchored" data-anchor-id="phd-in-political-science">PhD in Political Science</h4>
-<p><strong>Aalborg University, Denmark</strong><br>
-Feb.&nbsp;2021 — Jan.&nbsp;2024<br>
-Thesis: <em>Majority and Minority Exposure in Childhood – Studies of ethnic segregation in early life in Denmark and its consequences</em></p>
-</section>
-<section id="visiting-scholar" class="level4">
-<h4 class="anchored" data-anchor-id="visiting-scholar">Visiting Scholar</h4>
-<p><strong>NIDI (Netherlands Interdisciplinary Demographic Institute)</strong><br>
-The Hague, The Netherlands<br>
-Mar.&nbsp;2023 – Sep.&nbsp;2023</p>
-</section>
-</section>
-<div style="flex: 2;">
-<section id="teaching-experience" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-experience"><strong>Teaching Experience</strong></h3>
-</section>
-<section id="microeconometrics" class="level3">
-<h3 class="anchored" data-anchor-id="microeconometrics">Microeconometrics</h3>
-<p>Economics (OECON), 2nd semester MSc<br>
-<strong>Aalborg University, Denmark</strong><br>
-2024 - Present<br>
-Principal lecturer for a specialized course on Survival Analysis, using R.</p>
-<p>….</p>
-</section>
-</div>
-</div>
-<section id="skills" class="level3">
-<h3 class="anchored" data-anchor-id="skills"><strong>Skills</strong></h3>
+<section id="terminalen-interaktion-med-computeren-og-filsystemet" class="level3">
+<h3 class="anchored" data-anchor-id="terminalen-interaktion-med-computeren-og-filsystemet">Terminalen: <em>interaktion med computeren (og filsystemet)</em></h3>
+<p><strong>Terminalen</strong> er det, der giver os adgang til <strong>kommandolinjegrænsefladen</strong> (CLI). Selvom den har miste meget af sin position blandt den gennemsnitlige computer-bruger—grundet <strong>grafiske brugergrænseflader</strong> (GUI)—er den fortsat en <em>meget effektiv</em> måde at interagere med computeren. Særligt på Unix-systemer.</p>
+<section id="shell" class="level4">
+<h4 class="anchored" data-anchor-id="shell">Shell</h4>
+<p>Når vi anvender CLI, bruger vi en <code>shell</code>, der er et program til fortolkning af kommandoer. De to mest almindelige shell-programmer er:</p>
 <ul>
-<li><strong>R</strong>: 7 years</li>
-<li><strong>Python</strong>: 3 years</li>
-<li><strong>Geographical Information Systems (QGIS, ArcMap)</strong>: 7 years</li>
-<li><strong>Rmarkdown/Quarto</strong>: 5 years</li>
+<li><strong>Bash</strong> (Bourne Again Shell): Standard på mange Linux-distributioner og tidligere på macOS.</li>
+<li><strong>Zsh</strong> (Z Shell): Standard på macOS fra og med version 10.15 Catalina.</li>
 </ul>
 </section>
-<section id="additional-activities" class="level2">
-<h2 class="anchored" data-anchor-id="additional-activities">Additional Activities</h2>
+</section>
+<section id="filorganisering" class="level3">
+<h3 class="anchored" data-anchor-id="filorganisering">Fil<em>organisering</em></h3>
+<p>Referer til hvordan vores filer (<strong>data</strong>) og mapper (<strong>directories</strong>) er struktureret og lagret på vores <strong>lagringsenhed</strong> (harddisk, SSD, ekstern enhed, …).</p>
+<p>Denne struktur bestemmer hvordan data <strong>hentes og gemmes</strong>, og gør det muligt for brugeren eller programmer at finde, tilgå og anvende filer.</p>
+<p>En mappe (<strong>directory</strong>) er en <em>container</em>, som indeholder filer og andre mapper, og danner grundlaget for en <strong>hierakisk struktur</strong> (tree-/<strong>træstruktur</strong>). Opbygningen er med afsæt i en root-mappe (ikke den egentlige <code>root</code>-mappe, men brugerens hjemmemappe), som indeholder undermapper og filer. Herfra indeholder hver undermappe andre undermapper og filer, hvilket danner et træ af mapper og filer, hvis vi zoomer ud. Med andre ord, (træ-)hierakiet giver en logisk og <em>navigérbar organisering</em> på computeren.</p>
 <ul>
-<li><strong>Code-desk</strong> (2022-2023): CALSDISS, Aalborg University – Provided code-related assistance and feedback to students.</li>
-<li><strong>Student Assistant</strong> (2018-2020): Department of Politics and Society, Aalborg University.</li>
+<li><p><strong>root directory</strong>: I Unix-systemer (MacOS, Linux) betegnes den <code>/</code>. I Windows er der en root-mappe i hvert drev, betegnet med bogstavet for drevet, fx <code>C:\</code></p></li>
+<li><p><strong>Undermapper</strong>: Mapper, der findes inde i andre mapper, fx <code>/home/user/documents</code> eller <code>C:\Users\Username\Documents</code>.</p></li>
 </ul>
-<p>…</p>
+</section>
+<section id="et-filsystem" class="level3">
+<h3 class="anchored" data-anchor-id="et-filsystem">Et filsystem</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="smaller">
+<p><strong>UNIX</strong> (MacOS, Linux)</p>
+<pre><code>/
+├── bin                  # Vigtige eksekverbare systemfiler
+├── sbin                 # Systemadministrative eksekverbare filer
+├── etc                  # Systemkonfigurationsfiler
+├── home                 # Brugermapper (personlige filer)
+│   └── jeppe            # Brugeren "jeppe"'s hjemmemappe
+│       ├── Documents    # jeppes dokumenter
+│       ├── Downloads    # jeppes downloadede filer
+│       ├── Music        # jeppes musikfiler
+│       ├── Pictures     # jeppes billeder
+│       ├── Videos       # jeppes videofiler
+│       └── Projects     # Personlige kodeprojekter og scripts
+│           └── snake_game
+│               ├── main.py # Python-kode til et snake-spil
+│               └── assets  # Grafikfiler til spillet
+├── root                 # Superbrugerens hjemmemappe
+├── usr                  # Bruger- og systemprogrammer
+│   ├── bin              # Programmer installeret til brugere
+│   ├── lib              # Systemets biblioteker
+│   └── local            # Lokalt installerede programmer
+├── var                  # Variable data som logs og mails
+│   ├── log              # Systemets logfiler
+│   └── tmp              # Midlertidige filer
+├── tmp                  # Midlertidige filer (slettes ved genstart)
+├── dev                  # Systemets enheder som harddiske og terminaler
+├── mnt                  # Monteringspunkt for midlertidige enheder
+│   └── usb-drive        # En USB-nøgle monteret her
+└── media                # Monteringspunkt for eksterne enheder
+    └── jeppe-usb        # jeppes eksterne harddisk hvis monteret</code></pre>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="smaller">
+<p><strong>Windows</strong></p>
+<pre><code>C:\
+├── Program Files            # Programmer installeret for alle brugere
+├── Program Files (x86)      # 32-bit versioner (på 64-bit systemer)
+├── Users                    # Brugermapper (til hver bruger på systemet)
+│   └── jeppe                # Brugeren "jeppe"'s hjemmemappe
+│       ├── Documents        # jeppes dokumenter
+│       ├── Downloads        # jeppes downloadede filer
+│       ├── Music            # jeppes musikfiler
+│       ├── Pictures         # jeppes billeder
+│       ├── Videos           # jeppes videofiler
+│       ├── Desktop          # Filer og genveje på jeppes skrivebord
+│       ├── AppData          # jeppes personlige app-data og indstillinger
+│       └── Projects         # Personlige kodeprojekter og scripts
+│           └── snake_game
+│               ├── main.py  # Python-kode til et snake-spil
+│               └── assets   # Grafikfiler til spillet
+├── Windows                  # Operativsystemets filer
+│   ├── System32             # Vigtige systemfiler 
+│   └── Temp                 # Midlertidige filer, der bruges af systemet
+├── ProgramData              # Data, der deles af applikationer på systemet
+└── Temp                     # Midlertidige filer</code></pre>
+</div>
+</div>
+</div>
+<section id="navigation-absolutte-og-relative-stier" class="level4">
+<h4 class="anchored" data-anchor-id="navigation-absolutte-og-relative-stier"><em>Navigation</em>: Absolutte og relative stier</h4>
+<ul>
+<li><p><strong>Absolut sti</strong>: En sti, der beskriver placeringen af en fil eller mappe i forhold til root-mappen. Fx <code>/home/user/documents/projekt.docs</code> eller <code>C:\Users\Username\Documents\projekt.docx</code>.</p></li>
+<li><p><strong>Relativ sti</strong>: En sti, der beskriver placeringen af en fil eller mappe i forhold til den nuværende mappe. Hvis vi er i mappen <code>/home/user</code>, kan vi nøjes med den relative sti <code>documents/projekt.docx</code> for at henvise til filen.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-1" class="code-annotation-target"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a>ls</span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>     ls <span class="sc">-</span>l</span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a>     ls <span class="sc">-</span>a</span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-5" class="code-annotation-target"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a>cd</span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a>     cd ..</span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a>     cd <span class="sc">~</span></span>
+<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a>     cd <span class="sc">-</span></span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a>touch filnavn.type</span>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-12" class="code-annotation-target"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a>mkdir ny<span class="sc">-</span>mappe</span>
+<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-14" class="code-annotation-target"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a>rm filnavn.type</span>
+<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-16" class="code-annotation-target"><a href="#annotated-cell-1-16" aria-hidden="true" tabindex="-1"></a>rm <span class="sc">-</span>r ny<span class="sc">-</span>mappe</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="1,2,3" data-code-annotation="1">Lister filer og mapper i den aktuelle mappe. <code>ls -l</code> lister filer og mapper med detaljer (fx rettigheder, størrelse). <code>ls -a</code> viser alle filer, inklusiv skjulte filer.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="5,6,7,8" data-code-annotation="2">Skifter til en anden mappe. <code>cd ..</code> går én mappe op/tilbage (til forældermappen). <code>cd ~</code> går til brugerens hjemmemappe. <code>cd -</code> skifter tilbage til den seneste mappe, du var i.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="3">Opretter en ny, tom fil med angivet navn og type.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="12" data-code-annotation="4">Opretter en ny mappe med det angivne navn.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="14" data-code-annotation="5">Sletter en fil med det angivne navn.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="16" data-code-annotation="6">Sletter en mappe og alt indholdet i den rekursivt.</span>
+</dd>
+</dl>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Er navigation med CML nødvendigt? <strong>Nej.</strong> Men det kan give et flow, hvis vi primært laver kodearbejde da terminalen kan tilgås “indeni” programmer som <code>Rstudio</code> eller <code>vscode</code>. Men uanset om man bruger <strong>mus</strong> eller <strong>tastetur</strong> til at navigere på sin computer, er det vigtigt at vide, hvordan filer er organiseret, hvis man har en computer-baseret stilling.</p>
+</blockquote>
 
 
 </section>
 </section>
 
 </main> <!-- /main -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<div class="custom-sidebar">
-    <div class="sidebar-icon" onclick="toggleSidebar()">
-        <i class="fa-solid fa-address-book"></i>
-    </div> 
-    <div class="sidebar-content">
-        <h3>Get in touch</h3>
-        <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-        <p><i class="fa-brands fa-github"></i> <a href="https://github.com/yourprofile" target="_blank">yourprofile</a></p>
-        <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
-    </div>
-</div>
-
-<!-- JavaScript to toggle the sidebar -->
-<script>
-  function toggleSidebar() {
-    const sidebarContent = document.querySelector('.sidebar-content');
-    sidebarContent.classList.toggle('visible');
-  }
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

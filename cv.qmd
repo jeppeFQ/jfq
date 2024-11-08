@@ -1,6 +1,67 @@
 ---
-title: "cv"
+title: ""
 format:
   html:
     include-after-body: contact-card.html
 ---
+
+
+# Jeppe F. Larsen
+
+Research Assistant, Aalborg University  
+**Contact:** Aalborg, Denmark | +45 30594555 | [jeppe.fjeldgaard@gmail.com](mailto:jeppe.fjeldgaard@gmail.com)
+
+---
+
+### About Me
+
+As a researcher, I am passionate about utilizing register data and quantitative methods to investigate social and political phenomena. My expertise lies in effectively leveraging and managing Danish register data, as well as integrating external datasets such as survey or spatial data. Additionally, I have a strong interest in communicating quantitative findings through data visualization.
+
+
+<div style="display: flex; align-items: flex-start; gap: 20px;">
+
+<div style="width: 400px;"> 
+
+### **Education and Experience**
+
+#### PhD in Political Science  
+**Aalborg University, Denmark**  
+Feb. 2021 — Jan. 2024  
+Thesis: *Majority and Minority Exposure in Childhood – Studies of ethnic segregation in early life in Denmark and its consequences*
+
+#### Visiting Scholar  
+**NIDI (Netherlands Interdisciplinary Demographic Institute)**  
+The Hague, The Netherlands  
+Mar. 2023 – Sep. 2023  
+
+</div>
+
+<div style="flex: 2;">
+
+### **Teaching Experience**
+
+### Microeconometrics  
+Economics (OECON), 2nd semester MSc  
+**Aalborg University, Denmark**  
+2024 - Present  
+Principal lecturer for a specialized course on Survival Analysis, using R.
+
+....
+
+</div>
+
+</div>
+
+### **Skills**
+
+- **R**: 7 years
+- **Python**: 3 years
+- **Geographical Information Systems (QGIS, ArcMap)**: 7 years
+- **Rmarkdown/Quarto**: 5 years
+
+## Additional Activities
+
+- **Code-desk** (2022-2023): CALSDISS, Aalborg University – Provided code-related assistance and feedback to students.
+- **Student Assistant** (2018-2020): Department of Politics and Society, Aalborg University.
+
+... 

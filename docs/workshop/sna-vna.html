@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title></title>
+<title>sna-vna</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,21 +20,55 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -71,23 +105,23 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../projects.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./workshop.html"> 
+    <a class="nav-link" href="../workshop.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html"> 
+    <a class="nav-link" href="../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="../cv.html"> 
 <span class="menu-text">cv</span></a>
   </li>  
 </ul>
@@ -106,12 +140,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#jeppe-f.-larsen" id="toc-jeppe-f.-larsen" class="nav-link active" data-scroll-target="#jeppe-f.-larsen">Jeppe F. Larsen</a>
-  <ul class="collapse">
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About Me</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><strong>Skills</strong></a></li>
-  <li><a href="#additional-activities" id="toc-additional-activities" class="nav-link" data-scroll-target="#additional-activities">Additional Activities</a></li>
-  </ul></li>
+  <li><a href="#case-social-networks" id="toc-case-social-networks" class="nav-link active" data-scroll-target="#case-social-networks">Case: Social networks</a></li>
   </ul>
 </nav>
     </div>
@@ -121,87 +150,143 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="jeppe-f.-larsen" class="level1">
-<h1>Jeppe F. Larsen</h1>
-<p>Research Assistant, Aalborg University<br>
-<strong>Contact:</strong> Aalborg, Denmark | +45 30594555 | <a href="mailto:jeppe.fjeldgaard@gmail.com">jeppe.fjeldgaard@gmail.com</a></p>
-<hr>
-<section id="about-me" class="level3">
-<h3 class="anchored" data-anchor-id="about-me">About Me</h3>
-<p>As a researcher, I am passionate about utilizing register data and quantitative methods to investigate social and political phenomena. My expertise lies in effectively leveraging and managing Danish register data, as well as integrating external datasets such as survey or spatial data. Additionally, I have a strong interest in communicating quantitative findings through data visualization.</p>
-</section>
-<div style="display: flex; align-items: flex-start; gap: 20px;">
-<section id="education-and-experience" class="level3" style="width: 400px;">
-<h3 class="anchored" data-anchor-id="education-and-experience"><strong>Education and Experience</strong></h3>
-<section id="phd-in-political-science" class="level4">
-<h4 class="anchored" data-anchor-id="phd-in-political-science">PhD in Political Science</h4>
-<p><strong>Aalborg University, Denmark</strong><br>
-Feb.&nbsp;2021 — Jan.&nbsp;2024<br>
-Thesis: <em>Majority and Minority Exposure in Childhood – Studies of ethnic segregation in early life in Denmark and its consequences</em></p>
-</section>
-<section id="visiting-scholar" class="level4">
-<h4 class="anchored" data-anchor-id="visiting-scholar">Visiting Scholar</h4>
-<p><strong>NIDI (Netherlands Interdisciplinary Demographic Institute)</strong><br>
-The Hague, The Netherlands<br>
-Mar.&nbsp;2023 – Sep.&nbsp;2023</p>
-</section>
-</section>
-<div style="flex: 2;">
-<section id="teaching-experience" class="level3">
-<h3 class="anchored" data-anchor-id="teaching-experience"><strong>Teaching Experience</strong></h3>
-</section>
-<section id="microeconometrics" class="level3">
-<h3 class="anchored" data-anchor-id="microeconometrics">Microeconometrics</h3>
-<p>Economics (OECON), 2nd semester MSc<br>
-<strong>Aalborg University, Denmark</strong><br>
-2024 - Present<br>
-Principal lecturer for a specialized course on Survival Analysis, using R.</p>
-<p>….</p>
-</section>
+<section id="case-social-networks" class="level3">
+<h3 class="anchored" data-anchor-id="case-social-networks">Case: Social networks</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R packages</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(segregation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<section id="skills" class="level3">
-<h3 class="anchored" data-anchor-id="skills"><strong>Skills</strong></h3>
-<ul>
-<li><strong>R</strong>: 7 years</li>
-<li><strong>Python</strong>: 3 years</li>
-<li><strong>Geographical Information Systems (QGIS, ArcMap)</strong>: 7 years</li>
-<li><strong>Rmarkdown/Quarto</strong>: 5 years</li>
-</ul>
-</section>
-<section id="additional-activities" class="level2">
-<h2 class="anchored" data-anchor-id="additional-activities">Additional Activities</h2>
-<ul>
-<li><strong>Code-desk</strong> (2022-2023): CALSDISS, Aalborg University – Provided code-related assistance and feedback to students.</li>
-<li><strong>Student Assistant</strong> (2018-2020): Department of Politics and Society, Aalborg University.</li>
-</ul>
-<p>…</p>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><i class="fa-solid fa-gears"></i> <code>Session Info</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mat_friendship <span class="op">=</span> pd.read_table(<span class="st">"https://www.dropbox.com/s/0saiulir3pr566k/ELfriend.dat?dl=1"</span>, delim_whitespace<span class="op">=</span><span class="va">True</span>, header<span class="op">=</span><span class="va">None</span>) </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mat_advice <span class="op">=</span> pd.read_table(<span class="st">"https://www.dropbox.com/s/apq42n1grim23k9/ELadv.dat?dl=1"</span>, delim_whitespace<span class="op">=</span><span class="va">True</span>, header<span class="op">=</span><span class="va">None</span>) </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mat_work <span class="op">=</span> pd.read_table(<span class="st">"https://www.dropbox.com/s/dliz0sd7or8tv01/ELwork.dat?dl=1"</span>, delim_whitespace<span class="op">=</span><span class="va">True</span>, header<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>(<span class="at">pkgs =</span> <span class="st">"attached"</span>, <span class="at">info =</span> <span class="fu">c</span>(<span class="st">"platform"</span>, <span class="st">"packages"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>─ Session info ───────────────────────────────────────────────────────────────
+ setting  value
+ version  R version 4.2.1 (2022-06-23)
+ os       macOS Big Sur ... 10.16
+ system   x86_64, darwin17.0
+ ui       X11
+ language (EN)
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
+ tz       Europe/Copenhagen
+ date     2024-11-04
+ pandoc   3.3 @ /usr/local/bin/ (via rmarkdown)
+
+─ Packages ───────────────────────────────────────────────────────────────────
+ package     * version date (UTC) lib source
+ dplyr       * 1.1.4   2023-11-17 [1] CRAN (R 4.2.0)
+ forcats     * 1.0.0   2023-01-29 [1] CRAN (R 4.2.0)
+ ggplot2     * 3.5.1   2024-04-23 [1] CRAN (R 4.2.1)
+ lubridate   * 1.9.3   2023-09-27 [1] CRAN (R 4.2.0)
+ purrr       * 1.0.2   2023-08-10 [1] CRAN (R 4.2.0)
+ readr       * 2.1.5   2024-01-10 [1] CRAN (R 4.2.1)
+ segregation * 1.1.0   2023-12-02 [1] CRAN (R 4.2.0)
+ stringr     * 1.5.1   2023-11-14 [1] CRAN (R 4.2.0)
+ tibble      * 3.2.1   2023-03-20 [1] CRAN (R 4.2.0)
+ tidyr       * 1.3.1   2024-01-24 [1] CRAN (R 4.2.1)
+ tidyverse   * 2.0.0   2023-02-22 [1] CRAN (R 4.2.0)
+
+ [1] /Library/Frameworks/R.framework/Versions/4.2/Resources/library
+
+──────────────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>session_info.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-----
+numpy               1.24.3
+pandas              2.0.3
+session_info        1.0.0
+-----
+Python 3.8.16 | packaged by conda-forge | (default, Feb  1 2023, 16:13:45) [Clang 14.0.6 ]
+macOS-10.16-x86_64-i386-64bit
+-----
+Session information updated at 2024-11-04 13:54</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-svg-example" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-pos="H">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-svg-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/gephi-network-clean.svg" style="width:100.0%" data-fig-pos="H" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-svg-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Visualizing the stylized population network
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+see figure in full screen
+</button>
+<div id="exampleModal" class="modal fade" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered p-8" style="max-width: 90%">
+<div class="modal-content">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="../images/gephi-network-clean.svg" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<div class="custom-sidebar">
-    <div class="sidebar-icon" onclick="toggleSidebar()">
-        <i class="fa-solid fa-address-book"></i>
-    </div> 
-    <div class="sidebar-content">
-        <h3>Get in touch</h3>
-        <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-        <p><i class="fa-brands fa-github"></i> <a href="https://github.com/yourprofile" target="_blank">yourprofile</a></p>
-        <p><i class="fab fa-linkedin linkedin-icon"></i> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
-    </div>
-</div>
-
-<!-- JavaScript to toggle the sidebar -->
-<script>
-  function toggleSidebar() {
-    const sidebarContent = document.querySelector('.sidebar-content');
-    sidebarContent.classList.toggle('visible');
-  }
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

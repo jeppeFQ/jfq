@@ -1,0 +1,54 @@
+
+### Case
+
+### Clustering 
+
+The aim of the analysis is to formulate a framework to meaningfully divide the school landscape into clusters based on grade-based scores and hold these grade-based clusters up against demographic characteristics of the schools. 
+Thus, the aim of the analysis is to categorize schools based on performance in an exploratory framework, which later will be used in further descriptions of the school landscape. 
+
+In clustering analysis, the 'distance' between people is defined as the *Euclidean distance*. The euclidean distance is the shortest path between two point in space (i.e. a straight line). Most often, $Euclidean^2$ $(L^2)$ is used. 
+
+$$
+\begin{aligned}
+d(\mathbf{p}, \mathbf{q}) = d(\mathbf{q}, \mathbf{p}) &= \sqrt{ (q_{1}-p_{1})^2 + (q_{2}-p_{2})^2 + \cdots +  (q_{n}-p_{n})^2 } \\
+&= \sqrt{ \sum_{i=1}^{n} (q_{i}-p_{i})^2}
+\end{aligned}
+$$
+
+There are many merging/linking rules in hierarchical clustering methods -- from *k*-means to *Ward's*. We'll be using Ward's method for this task for hierarchical clustering.  
+
+- In Python, we use the de-facto standard; Pandas.
+- In R, we use the Rstudio standard rather than the classic R dataframe; tibbles. 
+
+::: {.panel-tabset}
+
+## <i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R
+
+```{r}
+#| eval: false
+df <- vroom("wiz-schools_231121.tsv")
+
+# Printing all columns and 10 rows
+head(df) %>% gt()
+```
+
+## <i class="fa-brands fa-python" style="color: #3776AB;"></i> Python
+
+```{python}
+#| eval: false
+data = pd.read_csv("wiz-schools_231121.tsv", sep='\t')
+
+# Printing first 6 columns and first 10 rows of data
+print(data.iloc[0:10, :])
+```
+
+## <i class="fa-solid fa-gears"></i> `sessionInfo()`
+
+```{r}
+sessionInfo()
+```
+
+:::
+
+#### Clean data
+

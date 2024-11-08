@@ -1,0 +1,111 @@
+
+### Hvad er NLP?
+
+Natural Language Processing (**NLP**) er et centralt felt indenfor **AI** (kunstig intellegens). Grundlæggende handler NLP om hvordan en computer kan forstå og fortolke *naturligt sprog*, dvs. menneskeligt talt sprog. Gerne opgaven er at maskiner kan bearbejde dette sprog (og endda kunne producere det).
+
+I dag spiller NLP en stor rolle i vores hverdag, da det påvirker den måde vi interagerer med teknologi og gør denne interaktion meget mere effektiv. Vi kan kun forvente at dette samspil, takket være NLP, fortsat blive mere effektivt og af større betydning i fremtiden.
+
+#### I kender allerede til NLP
+
+NLP er allerede dybt integreret i mange af de værktøjer og teknologier vi anvender eller bliver eksponeret til dagligt:
+
+- **Søgemaskinger**: Google (og konkurrenter) bruger NLP til at forstå de input og returnere det du faktisk efterspørger. Det er derfor søgemaskiner i dag kan "overkomme" stavefejl, synonymer, kontekst specikke forespørgsler, osv.
+
+- **Siri, Alexa, Google Assistant**: De lytter til os hele tiden, hvis først vi tænder for dem ...
+
+- **Oversættelser** (mellem menneskelige sprog): Services som Google Translate oversætter ikke bare ord-for-ord men forstår sig også på forskelle i syntaks, grammatik og (sproglige) kontekster og konventioner.
+
+- **Chatbots** ...
+
+- **Spamfiltrering**: Som vi kommer til at lære i dag.
+
+#### Et oversættelsesperspektiv
+
+Computeren forstår ikke sprog på samme måde som mennesker gør. De kan læse `1` og de kan læse `0`; men de kan sætte disse tegn sammen i uendelige rækker af varierende kompleksitet. Dvs. mønstre af binære numeriske inputs. NLP handler om at bygge bro mellem den måde, mennesker kommunikerer på, og hvordan maskiner forstår data.
+
+**En IKKE-UDTØMMENDE liste af grundlæggende elementer i oversættelse af naturligt sprog til maskin-læsbart sprog**:
+
+- ***Tokenization***, som handler om at dele en tekst op i mindre dele, ofte ord eller sætninger. En sætning som "Jeg elsker data!" blive delt op i tre(fire) tokens: ["Jeg", "elsker", "data", "!"].
+
+- **Stemming og Lemmatization**, som reducerer ord til deres grundform. Fx bliver "løbende" og "løber" reduceret til roden, "løb".
+
+- **Part-of-Speech Tagging** (POS Tagging), som identificerer ordklasser (som verber, substantiver osv.) for hvert ord i en sætning, hvilket gør det muligt at forstå ordenes funktion i sætningen.
+
+- **Named Entity Recognition** (NER), som identificerer navne på personer, steder eller organisationer i en tekst. For eksempel i sætningen "Aalborg Universitet er et universitet i Danmark" vil "Aalborg Universitet" blive genkendt som en organisation og "Danmark" som et land.
+
+Dette oversættelsesperspektiv i en digital kontekst er centralt i dagens workshop.
+
+
+
+
+
+
+
+
+
+
+
+
+### Case: find Elon 
+
+::: {.panel-tabset}
+
+## <i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R packages
+
+```{r}
+library(tidytext)
+```
+
+## <i class="fa-brands fa-python" style="color: #3776AB;"></i> Python 
+
+```{python}
+import numpy as np
+import session_info
+```
+
+:::
+
+::: {.panel-tabset}
+
+## <i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R
+
+```{r}
+#| eval: false
+
+suppressMessages(tweets <- vroom("find_elon"))
+
+elon_tweet_df <- 
+  tibble(tweets) %>% 
+  rename(real = `1`,
+         text = `0`) %>% 
+  mutate(real = as_factor(if_else(real == "1", "real_elon", "fake_elon"))) %>% 
+  mutate(tweet_id = as_factor(row_number())) 
+  
+
+elon_tweet_df %>% head(10) %>% gt()
+```
+
+## <i class="fa-brands fa-python" style="color: #3776AB;"></i> Python
+
+```{python}
+#| eval: false
+1+1
+```
+
+## <i class="fa-solid fa-gears"></i> `sessionInfo()`
+
+```{r}
+devtools::session_info(pkgs = "attached", info = c("platform", "packages"))
+```
+
+
+```{python}
+session_info.show()
+```
+
+:::
+
+
+
+
+

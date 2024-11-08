@@ -1,0 +1,15 @@
+{
+  "hash": "fd4607385c9016b0feca5085c0565d3d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "::: {.cell}\n\n:::\n\n\n\n### Regression \n\n\n\n- Data ... \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

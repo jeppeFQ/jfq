@@ -1,0 +1,420 @@
+
+### Case ... 
+
+### Superviseret Machine Learning (SML)
+
+I dag er fokus kun på superviseret ML, da vi kun har en enkelt workshop i dag og der vil være for mange statistiske forudsætninger til de to andre hovedtyper.
+
+**SML** fungerer ved, at vi giver `modellen` data, hvor vi kender det rigtige svar. Det kunne være, om en besked er *spam eller ej*, om et produkt er populær baseret på salgsdata, eller hvilken temperatur der vil være i morgen baseret på historiske målinger.
+
+> I besked-eksemplet vil det altså sige at vi har et datasæt bestående af SMSer, hvor hver SMS i den data vi træner vores model på er `kodet`, dvs. tilskrevet et `label`, der indikerer om SMSen er spam (`label=1`) eller ikke-spam -- "ham" -- (`label=0`).
+
+Modellen lærer sammenhænge mellem de inputdata (`features`, ord), som vi fodrer den med, og de kendte svar (`labels`, spam/ham). Når modellen er trænet, og den er vurderet til at være god nok, kan vi bruge den til at forudsige `labels` for nye data, hvor vi ikke kender svaret på forhånd.
+
+Det største problem i at arbejde med tekst i ML er at ML-algoritme ikke kan arbejde direkte med tekst. De kræver numeriske inputs for at kunne udføre matematiske operationer (*se grundbog*).
+
+Vi er altså nødt til at konvertere tekst til en **numerisk repræsentation**. I denne kontekst kaldes denne proces for `vectorisering`.
+
+I denne proces transformerer og repræsenterer vi hvert tekstdokument (fx en SMS) som en `række tal` eller en `vektor`.
+
+### Klassifikationsalgoritme
+
+**Naive Bayes** er en algoritme til at løse et konkret klassifikationsproblem relateret til *naturligt sprog*
+
+Naive Bayes er en **probabilistisk klassifikationsmodel**, baseret på **Bayes’ teorem**. Algoritmen fungerer ved at beregne sandsynligheden for, at en besked tilhører en bestemt klasse, givet dens indhold (dvs. de ord, der optræder i beskeden).
+
+Modellen kaldes for "Naiv" grundet en central antagelse om at alle features (i vores tilfælde ord) er uafhængige af hinanden. Denne antagelse er ikke realistisk, da ord normalt ikke optræder helt uafhængigt af hinanden (ord i sætninger er ofte afhængige af hinanden). Det gør algoritmen enkel og hurtig, og den fungerer alligevel godt i praksis, som er blevet illustreret i tekniske detaljer mange steder.
+
+Modellens formål er at lære forholdet mellem de inputdata, vi giver den (`features`), og de kendte `labels`, så den kan **forudsige** `labels` for *nye, ukendte data*.
+
+Det vil altså sige at vi har med et **klassifikationsproblem** at gøre. Modellen skal forudsige, hvilken kategori noget tilhører, og virke som et spam-filter, hvor vi klassificerer beskeder som enten "spam" eller "ikke-spam", og i en praktisk applikation kan sende indkomne beskeder ind i forskellige mapper, som I kender fra jeres e-mail.
+
+#### Bayes' Teorem
+
+**Bayes' Theorem** handler om at beregne **betingede sandsynligheder**, der giver os en måde at opdatere vores viden baseret på nye data. Det har givet navn til en hel gren i statistikke, *bayesisk statistik*, som står i kontrast til frekvensstatistik (som er det i med al sandsynlighed kender fra gymnasiet og det i skal lære på 4. semester).
+
+*Bayes' teorem* er givet ved:
+
+$$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$$
+
+Hvor,
+
+* $P(A∣B)$: Sandsynligheden for **A**, givet **B**. Dette kalder vi den **posterior sandsynligheden**.
+* $P(B∣A)$: Sandsynligheden for **B**, givet **A**. Dette kalder vi **likelihood** (betinget sandsynlighed).
+* $P(A)$: Sandsynligheden for **A** uden at tage hensyn til **B**. Dette kalder vi **prior sandsynligheden**.
+* $P(B)$: Sandsynligheden for **B**, uanset hvad **A** er.
+
+I kontekst og i en klassifikationssammenhæng er:
+
+* **A** `klassen` (spam eller ham), og
+* **B** er de `observerede data` (de ord, der optræder i beskeden).
+
+og det vi er interesserde i er at bestemme $P(spam∣ord)$: *sandsynligheden for, at en besked er spam, **givet** at visse ord optræder*.
+
+Repitation af formål og hvad vi vil implementere i Python er:  
+
+> Sandsynligheden for at en SMS er spam, baseret på fremkomsten/tilstedeværelsen af et givent ord, er proportionelt til sandsynligheden for at ordet fremkommer i spam-SMSer og den *a priori* sandsynlighed for at en tilfældig SMS er spam.
+
+$$
+P(\text{spam}|ord)\propto P(ord|\text{spam}) P(\text{spam})
+$$
+
+> **Spg.:** Hvordan implimenterer vi denne model i Python på en måde, der kan "lære" maskinen at genkende spam-SMSer?
+
+#### Anvendelse af algoritmen til tekstklassificering
+
+Vi bruger Naive Bayes til tekstklassifikation for at forudsige om en besked er `spam` eller `ham` baseret på **sandsynligheden for de enkelte ord, der optræder i beskeden, tilhører en given klasse**.
+
+Den generelle Naive Bayes-klassifikator for to klasser (spam eller ikke-spam) er formuleret som:
+
+
+
+$$ \hat{y} = \underset{c}{\operatorname{argmax}} \ P(c) \prod_{i=1}^{n} P(x_i | c) $$
+
+Hvor,
+
+* $\hat{y}$ er den forudsagte klasse.
+* $c$ er en af klasserne (spam eller ikke-spam).
+* $P(c)$ er **prior sandsynligheden** for klassen $c$ (**sandsynligheden** *for, at en tilfældig besked er spam*).
+* $P(x_{i}∣c)$ er sandsynligheden for ordet $x_{i}$, givet klassen $c$.
+* $n$ er antallet af ord i beskeden.
+
+Med formlen beregner vi sandsynligheden for, at en besked tilhører hver `klasse` (spam eller ikke-spam), og vælger den `klasse`, der har den **højeste sandsynlighed**: Vi vælger den klasse ($c$), hvor $P(c|x)$ er størst, indikeret i formlen med $\underset{c}{\operatorname{argmax}}$
+
+Fremgangsmåde:
+
+1. **Prior sandsynlighed**, $P(c)$, beregnes ved at tælle, hvor mange af vores `trænings`beskeder, der er spam i forhold til det samlede antal beskeder:
+$P(spam)= \frac{\text{Antal spam-beskeder}}{\text{Totalt antal beskeder}}$
+
+2. **Likelihood** (betinget sandsynlighed), $P(x_{i}∣c)$ beregnes som: $P(x_{i}∣spam)= \frac{\text{Antal spam-beskeder, der indeholder } x_{i}}{\text{Antal spam-beskeder totalt}}$
+
+
+***Hvad vi er udregner, er hvor ofte hvert unikke ord i vores SAMLEDE TEKSTMATERIALE optræder i spam-beskeder (eller ikke-spam-beskeder), og produktet af sandsynlighederne for hvert enkelt ord i en given tekst, definere om teksten sandsynligvis er spam (eller ikke-spam)***
+
+Selvom algoritmen er "naiv" og antagelsen om at alle ord er uafhængige, i praksis som udgangspunkt ikke holder, bestemmer vi stadig sandsynligheden for om en besked er spam eller ham som produktet af sandsynlighederne for de enkelte ord. Det er mange gange vist at denne "fejlantagelse" ikke er et problem i større mængder tekstdata.
+
+
+1. Vi bruger `træningsdata` til at beregne $P(spam)$ og $P(ham)$
+2. Vi beregner **sandsynlighederne** for ordene "Congratulations", "won", "free", osv. under begge klasser (spam og ham). Altså, hvad er sandsynligheden for at "free" ($x_{free}$) tilhører hhv. `spam` og `ham` klassen, givet fremkomsten af $x_{free}$ i SMSer klassificeret som spam eller ham.
+3. Vi **multiplicerer sandsynlighederne** for de enkelte ord -- $x_{Congratulation} + x_{won} + x_{free} + \dots $ -- og vælger den `klasse` med den *højeste sandsynlighed*. Altså, hvert ord i en SMS har en sandsynlighed for at tilhører spam eller ham, og givet disse enkelte ord, hvor sandsynligt er det så for at SMS *i sin helhed* er spam eller ham.
+
+***Altså, hvis ord som "won" og "free" ofte forekommer i spam-beskeder, vil Naive Bayes tildele beskeder med (store) fremkomster af disse ord en høj sandsynlighed for at være spam, og med denne sandsynlighedsargumentation klassificere SMSen som spam.***
+
+#### En lille, men central, sidebemærkning...
+
+Der kan opstå en problematisk udfordring, hvis et ord i udenfor vores træningsdata ikke fremgår i træningsdataen, da det vil "nulstille" den samlede sandsynlighed når vi multiplicerer.
+
+Dette overkommes ved at inkludere en metode, der kaldes **Laplace-smoothing**, hvor alle betingede sandsynligheder tilføjes en lille konstant (værdi), således at ingen sandsynligheder er 0:
+
+$$P(x_{i}∣c)= \frac{\text{Totalt antal ord i klassen }+V}{\text{Antal gange ordet optræder i klassen} +1}$$
+
+Hvor, $V$ er størrelsen af ordforrådet i vores corpus (antallet af unikke ord i træningsdataene). ***Med dette undgår vi nul-sandsynligheder.***
+
+#### Model-**træning**
+
+I arbejdet med superviseret Machine Learning arbejder vi med vores data som opdelt i hhv. `trænings-` og `testdata`. Den data vi arbejder med, er et datasæt som vi har **kvalitativt kodet** med de korrekte labels ud fra vores forhåndsviden. Med denne opdeling er det muligt både at *træne vores model* og *evaluere vores model*, for at kunne vurdere hvordan modellen performer på nye, usete data.
+
+#### **Træning**sdata
+
+Træningsdataen er det datasæt, som vi træner vores model på. Datasættet indeholder både `features` (ord) og `labels` (korrekte kategorier). Det vil sige, vi ved altså hvad den rigtige kategori til vores tekster er, for at vores model at udregne det mønster, der kendetegner hver kategori.
+
+Med andre ord, når vi træner en Naive Bayes-model, "lærer" den at forstå sammenhængen mellem de input og de tilknyttede labels.
+
+En klassisk opdeling er, at træningsdataen udgør 80% af den kvalitativt kodet data.
+
+#### **Test**data
+
+Testdata udgør den anden del af den kvalitativt kodede data (her 20%). Testdataene bruges til at evaluere modelens præstation og generaliseringsevne og formålet med testdata er at give et mål for, hvordan modellen vil præstere på nye, usete data. Det vil altså sige at modellen ikke har "set" denne data (og er grunden til at vi skal have Laplace Smoothing...)
+
+### Eksempel ... 
+
+#### Klargøring af tekstdata
+
+Der er flere måde, hvorpå vi kan vektoriserer tekster, men centrale of typiske i denne form for analyse er:
+
+  * Bag of Words (BoW)
+  * TF-IDF (Term Frequency-Inverse Document Frequency)
+
+##### BoW
+
+`Bag of Words` er den mest simpel metode til at *transformere tekst til numerisk form*. Det fungerer ved at *tælle, hvor mange gange hvert ord forekommer i et dokument, uden at tage højde for ordets rækkefølge eller kontekst*. Resultatet er en vektor, der repræsenterer frekvensen af hvert ord i dokumentet. Eksempel på BoW:
+
+**Tekst 1**: *Jeg elsker spam*
+
+**Tekst 2**: *Jeg kan ikke fordrage spam*
+
+Først opretter vi et ordforråd (`vocabulary`) baseret på alle de unikke ord i vores dokumenter:
+
+::: {.panel-tabset}
+
+## R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## Python
+
+```{python}
+#| eval: false
+vocab = ['Jeg', 'elsker', 'spam', 'kan', 'ikke', 'fordrage']
+```
+
+## sessionInfo
+
+```{r}
+sessionInfo()
+```
+
+:::
+
+ffffffffffff
+
+::: {.panel-tabset}
+
+## R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## Python
+
+```{python}
+#| eval: false
+tekst1 = [1, 1, 1, 0, 0, 0]
+tekst2 = [1, 0, 1, 1, 1, 1]
+df = pd.DataFrame([tekst1, tekst2], columns=vocab, index=['tekst1', 'tekst2'])
+```
+
+## sessionInfo
+
+```{r}
+sessionInfo()
+```
+
+:::
+
+ffffffffffff
+
+
+
+##### TF-IDF
+
+**TF-IDF** tager, i modsætning til BoW, højde for, hvor ofte et ord forekommer i en tekst, i forhold til hvor ofte det forekommer i hele datasættet. Dette hjælper med at nedvægte meget almindelige ord (såsom "is", "am, "the", osv.), som sandsynligvis ikke bidrager meget til meningen af dokumentet, og fremhæve ord, der er særligt vigtige for den specifikke besked (såsom "free", "won").
+
+TF-IDF for et ord $x$ i et dokument $d$ er givet ved:
+
+$$\text{TF-IDF}(x,d)=\text{TF}(x,d) \times \text{IDF}(x)$$
+
+Hvor:
+
+ * TF (Term Frequency): Måler hvor ofte ordet $x$ forekommer i dokumentet $d$.
+ * IDF (Inverse Document Frequency): $log ⁡\left( \frac{N}{df(x)} \right )$, hvor $N$ er det totale antal dokumenter, og $df(x)$ er antallet af dokumenter, som indeholder $x$.
+
+***Hermed sikrer vi at vi ikke vægter almindelige ord for højt, men i stedet fokuserer på de vigtigere ord.***
+
+::: {.panel-tabset}
+
+## R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## Python
+
+```{python}
+#| eval: false
+corpus = ["Jeg elsker spam","Jeg kan ikke fordrage spam"]
+
+df = pd.DataFrame({'dokument': corpus})
+
+```
+
+## sessionInfo
+
+```{r}
+sessionInfo()
+```
+
+:::
+
+ffffffffffff
+
+::: {.panel-tabset}
+
+## R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## Python
+
+```{python}
+#| eval: false
+# Beregn TF for hvert ord i dokumentet:
+
+# Tokenisere dokumenter:
+# hvad kalder vi det når vi skriver .apply(lambda x: ...)?
+# og hvad sker der?
+df['tokens'] = df['dokument'].apply(lambda x: x.split())
+
+# Beregn antallet af ord i hvert dokument
+# Hvad sker der her?
+df['total_ord'] = df['tokens'].apply(len)
+
+# En liste af alle tokens:
+# 1. Vi looper først over hver sublist i df['tokens'], der er alle ord i en tekst. Dvs. vi looper over hver række i kolonnen 'tokens'.
+# 2. Når vi har en specifik sublist, "liste_med_ord", looper vi nu over hvert enkelt token (ord, x) i denne subliste.
+# 3. For hvert token i hver sublist, føjes dette token til den nye liste alle_tokens med .append().
+alle_tokens = []
+for liste_med_ord in df['tokens']:
+    for x in liste_med_ord:
+        alle_tokens.append(x)
+
+# Find de unikke tokens:
+# "set()" funktion er kun at gemme unikke elementer/værdier
+# "sorted()" er med for at organisere vores tokens alfabetisk, men er som sådan ikke nødvendig. Prøv evt. uden.
+unikke_tokens = sorted(set(alle_tokens))
+
+# Udregn TF for hvert dokument for hvert ord
+for ord in unikke_tokens:
+    df[ord] = df['tokens'].apply(lambda x: x.count(ord) / len(x))
+
+
+
+
+```
+
+## sessionInfo
+
+```{r}
+sessionInfo()
+```
+
+:::
+
+fffffffffff
+
+::: {.panel-tabset}
+
+## R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## Python
+
+```{python}
+#| eval: false
+# Beregn IDF for hvert ord i dokumentet:
+
+import math # For at få log()-funktionen
+
+# Beregne IDF for hvert ord
+# 1. Definer funktion
+def bestem_idf(ord, df):
+    # Antal dokumenter der indeholder ordet
+    # 2.: df['tokens'] er en kollonne i vores DataFrame (df)
+    # 3.: .apply(lambda x: ord in x) for hvert dokument (SMS),
+    #     repræsenteret som en liste af ord, tjekker vi om ordet er til stede
+    #     i dokumentet. Funktionen returnerer TRUE eller FALSE (ord in x: True or False?)
+    # 4.: TRUE og FALSE repræsenteres nummerisk som 1 og 0. Ved at summere alle 1ere og 0ere,
+    #     får vi antallet af dokumenter, der indeholder ord x.
+    doks_med_ord = df['tokens'].apply(lambda x: ord in x).sum()
+    # Beregn IDF
+    # 5.: len() giver en værdi for antallet af dokumenter (SMSer). Tælleren i formlen.
+    #     (1 + doks_med_ord) er nævneren i formlen
+    #     .log(...) tager logaritmen.
+    return math.log(len(df) / (1 + doks_med_ord))
+
+# Beregn IDF for hvert unikke ord
+    # 6. Dette kalder vi en "dictionary comprehension", fordi koden her går
+    #    gennem alle ord i unikke_tokens og for HVERT ORD i unikke_tokens
+    #    kaldes vores definerede funktion "bestem_idf" og tilknytter en IDF-score
+    #    til dette ord.
+idf_scores = {ord: bestem_idf(ord, df) for ord in unikke_tokens}
+```
+
+## sessionInfo
+
+```{r}
+sessionInfo()
+```
+
+:::
+
+fffffffffff
+
+::: {.panel-tabset}
+
+## R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## Python
+
+```{python}
+#| eval: false
+# Beregn TF-IDF for hvert ord i hvert dokument
+# 1.: df består af entelte ord (tokens) med en TF værdi (udregnet ovenfor),
+#     hvor unikke_tokens repræsenterer alle unikke ord, som vi looper henover.
+# 2.: Hvert ord har en tilknyttet IDF-værdi, som er udregnet med "bestem_idf",
+#     og gemt i "idf_scores".
+# Det som dette loop gør er at multiplicere hver enkelt ord TF med IDF, og får
+# dermed TF-IDF for HVERT ORD i vores samlede dokumentdata.
+for ord in unikke_tokens:
+    df[ord] = df[ord] * idf_scores[ord]
+
+# Print beregnede scores:
+# Hvad sker der her, hvor jeg indenfor [[...]] også anvender en vektor med alle unikke ord?
+print(df[['dokument'] + unikke_tokens])
+```
+
+## sessionInfo
+
+```{r}
+sessionInfo()
+```
+
+:::
+
+##### TL;DR
+
+Opsummeret,
+
+1. Koden gennemgår hvert unikt ord i dokumenterne.
+2. Vi tæller, hvor mange dokumenter (SMSer) der indeholder det specifikke ord.
+3. Vi beregner IDF for hvert ord baseret på, hvor mange dokumenter det optræder i.
+4. IDF-værdierne gemmes i en `dictionary` (idf_scores), hvor hvert ord har en tilknyttet IDF-værdi.
+5. For hvert ord multiplicerer vi den tilhørende TF og IDF værdi for at få TF-IDF
+
+#### Træning 
+
+#### Test 
+
+#### Evaluering 
+

@@ -1,0 +1,78 @@
+
+
+
+### Case: Social networks
+
+::: {.panel-tabset}
+
+## <i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R packages
+
+```{r}
+library(tidyverse)
+library(segregation)
+```
+
+## <i class="fa-brands fa-python" style="color: #3776AB;"></i> Python 
+
+```{python}
+import pandas as pd
+import numpy as np
+import session_info
+```
+
+:::
+
+::: {.panel-tabset}
+
+## <i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R
+
+```{r}
+#| eval: false
+1+1
+```
+
+## <i class="fa-brands fa-python" style="color: #3776AB;"></i> Python
+
+```{python}
+#| eval: false
+mat_friendship = pd.read_table("https://www.dropbox.com/s/0saiulir3pr566k/ELfriend.dat?dl=1", delim_whitespace=True, header=None) 
+mat_advice = pd.read_table("https://www.dropbox.com/s/apq42n1grim23k9/ELadv.dat?dl=1", delim_whitespace=True, header=None) 
+mat_work = pd.read_table("https://www.dropbox.com/s/dliz0sd7or8tv01/ELwork.dat?dl=1", delim_whitespace=True, header=None)
+```
+
+## <i class="fa-solid fa-gears"></i> `Session Info`
+
+```{r}
+#| warning: false
+devtools::session_info(pkgs = "attached", info = c("platform", "packages"))
+```
+
+```{python}
+session_info.show()
+```
+
+:::
+
+```{r}
+#| label: fig-svg-example
+#| fig-cap: "Visualizing the stylized population network"
+#| fig-pos: "H"
+#| out-width: 100%  
+#| out-height: auto
+#| echo: false
+
+knitr::include_graphics(here::here('images/gephi-network-clean.svg'))
+```
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">see figure in full screen</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered p-8" style="max-width: 90%"><div class="modal-content">
+
+```{r}
+#| out-width: 100%  
+#| echo: false
+
+knitr::include_graphics(here::here('images/gephi-network-clean.svg'))
+```
+
+</div></div></div>

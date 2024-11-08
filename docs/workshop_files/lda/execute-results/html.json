@@ -1,0 +1,15 @@
+{
+  "hash": "a45c5dbe949932f54e48f69e8bec92b6",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n\n### XXX\n\n::: {.panel-tabset .nav-pills}\n\n## R\n\n\n::: {.cell}\n\n```{.r .cell-code}\nx <- seq(1, 10)\n...\nplot(x, y)\n```\n:::\n\n\n## Python\n\n\n::: {.cell}\n\n```{.python .cell-code}\nimport matplotlib.pyplot as plt\n...\nplt.show()\n```\n:::\n\n\n## sessionInfo\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsessionInfo()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nR version 4.2.1 (2022-06-23)\nPlatform: x86_64-apple-darwin17.0 (64-bit)\nRunning under: macOS Big Sur ... 10.16\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib\nLAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] Rcpp_1.0.11       lattice_0.22-5    png_0.1-8         digest_0.6.33    \n [5] grid_4.2.1        jsonlite_1.8.8    evaluate_0.23     rlang_1.1.2      \n [9] cli_3.6.2         rstudioapi_0.15.0 Matrix_1.5-3      reticulate_1.34.0\n[13] rmarkdown_2.28    tools_4.2.1       htmlwidgets_1.6.4 xfun_0.42        \n[17] yaml_2.3.8        fastmap_1.1.1     compiler_4.2.1    htmltools_0.5.7  \n[21] knitr_1.45       \n```\n\n\n:::\n:::\n\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

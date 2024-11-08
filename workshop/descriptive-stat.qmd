@@ -1,0 +1,52 @@
+
+Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit.
+
+::: {.panel-tabset}
+
+## <i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R packages
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+## <i class="fa-brands fa-python" style="color: #3776AB;"></i> Python imports
+
+```{python}
+import pandas as pd
+import session_info
+```
+
+:::
+
+::: {.panel-tabset}
+
+## <i class="fa-brands fa-r-project" style="color: #276DC3;"></i> R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## <i class="fa-brands fa-python" style="color: #3776AB;"></i> Python
+
+```{python}
+#| eval: false
+1+1
+```
+
+## <i class="fa-solid fa-gears"></i> `Session Info`
+
+```{r}
+#| warning: false
+devtools::session_info(pkgs = "attached", info = c("platform", "packages"))
+```
+
+
+```{python}
+session_info.show()
+```
+
+:::

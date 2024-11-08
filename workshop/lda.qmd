@@ -1,0 +1,31 @@
+
+
+### XXX
+
+::: {.panel-tabset .nav-pills}
+
+## R
+
+```{r}
+#| eval: false
+x <- seq(1, 10)
+...
+plot(x, y)
+```
+
+## Python
+
+```{python}
+#| eval: false
+import matplotlib.pyplot as plt
+...
+plt.show()
+```
+
+## sessionInfo
+
+```{r}
+sessionInfo()
+```
+
+:::

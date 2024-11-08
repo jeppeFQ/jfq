@@ -1,0 +1,139 @@
+
+### Terminalen: *interaktion med computeren (og filsystemet)*
+
+**Terminalen** er det, der giver os adgang til **kommandolinjegrænsefladen** (CLI). Selvom den har miste meget af sin position blandt den gennemsnitlige computer-bruger---grundet **grafiske brugergrænseflader** (GUI)---er den fortsat en *meget effektiv* måde at interagere med computeren. Særligt på Unix-systemer.
+
+#### Shell 
+
+Når vi anvender CLI, bruger vi en `shell`, der er et program til fortolkning af kommandoer. De to mest almindelige shell-programmer er:
+
+- **Bash** (Bourne Again Shell): Standard på mange Linux-distributioner og tidligere på macOS.
+- **Zsh** (Z Shell): Standard på macOS fra og med version 10.15 Catalina.
+
+### Fil*organisering*
+
+Referer til hvordan vores filer (**data**) og mapper (**directories**) er struktureret og lagret på vores **lagringsenhed** (harddisk, SSD, ekstern enhed, ...). 
+
+Denne struktur bestemmer hvordan data **hentes og gemmes**, og gør det muligt for brugeren eller programmer at finde, tilgå og anvende filer. 
+
+En mappe (**directory**) er en *container*, som indeholder filer og andre mapper, og danner grundlaget for en **hierakisk struktur** (tree-/**træstruktur**). Opbygningen er med afsæt i en root-mappe (ikke den egentlige `root`-mappe, men brugerens hjemmemappe), som indeholder undermapper og filer. Herfra indeholder hver undermappe andre undermapper og filer, hvilket danner et træ af mapper og filer, hvis vi zoomer ud. Med andre ord, (træ-)hierakiet giver en logisk og *navigérbar organisering* på computeren. 
+
+- **root directory**: I Unix-systemer (MacOS, Linux) betegnes den `/`. I Windows er der en root-mappe i hvert drev, betegnet med bogstavet for drevet, fx `C:\`
+
+- **Undermapper**: Mapper, der findes inde i andre mapper, fx `/home/user/documents` eller `C:\Users\Username\Documents`.
+
+
+
+### Et filsystem 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.smaller}
+
+**UNIX** (MacOS, Linux) 
+
+```
+/
+├── bin                  # Vigtige eksekverbare systemfiler
+├── sbin                 # Systemadministrative eksekverbare filer
+├── etc                  # Systemkonfigurationsfiler
+├── home                 # Brugermapper (personlige filer)
+│   └── jeppe            # Brugeren "jeppe"'s hjemmemappe
+│       ├── Documents    # jeppes dokumenter
+│       ├── Downloads    # jeppes downloadede filer
+│       ├── Music        # jeppes musikfiler
+│       ├── Pictures     # jeppes billeder
+│       ├── Videos       # jeppes videofiler
+│       └── Projects     # Personlige kodeprojekter og scripts
+│           └── snake_game
+│               ├── main.py # Python-kode til et snake-spil
+│               └── assets  # Grafikfiler til spillet
+├── root                 # Superbrugerens hjemmemappe
+├── usr                  # Bruger- og systemprogrammer
+│   ├── bin              # Programmer installeret til brugere
+│   ├── lib              # Systemets biblioteker
+│   └── local            # Lokalt installerede programmer
+├── var                  # Variable data som logs og mails
+│   ├── log              # Systemets logfiler
+│   └── tmp              # Midlertidige filer
+├── tmp                  # Midlertidige filer (slettes ved genstart)
+├── dev                  # Systemets enheder som harddiske og terminaler
+├── mnt                  # Monteringspunkt for midlertidige enheder
+│   └── usb-drive        # En USB-nøgle monteret her
+└── media                # Monteringspunkt for eksterne enheder
+    └── jeppe-usb        # jeppes eksterne harddisk hvis monteret
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: {.smaller}
+
+**Windows**
+
+```
+C:\
+├── Program Files            # Programmer installeret for alle brugere
+├── Program Files (x86)      # 32-bit versioner (på 64-bit systemer)
+├── Users                    # Brugermapper (til hver bruger på systemet)
+│   └── jeppe                # Brugeren "jeppe"'s hjemmemappe
+│       ├── Documents        # jeppes dokumenter
+│       ├── Downloads        # jeppes downloadede filer
+│       ├── Music            # jeppes musikfiler
+│       ├── Pictures         # jeppes billeder
+│       ├── Videos           # jeppes videofiler
+│       ├── Desktop          # Filer og genveje på jeppes skrivebord
+│       ├── AppData          # jeppes personlige app-data og indstillinger
+│       └── Projects         # Personlige kodeprojekter og scripts
+│           └── snake_game
+│               ├── main.py  # Python-kode til et snake-spil
+│               └── assets   # Grafikfiler til spillet
+├── Windows                  # Operativsystemets filer
+│   ├── System32             # Vigtige systemfiler 
+│   └── Temp                 # Midlertidige filer, der bruges af systemet
+├── ProgramData              # Data, der deles af applikationer på systemet
+└── Temp                     # Midlertidige filer
+```
+:::
+:::
+
+::::
+
+
+#### *Navigation*: Absolutte og relative stier 
+
+- **Absolut sti**: En sti, der beskriver placeringen af en fil eller mappe i forhold til root-mappen. Fx `/home/user/documents/projekt.docs` eller `C:\Users\Username\Documents\projekt.docx`.
+
+- **Relativ sti**: En sti, der beskriver placeringen af en fil eller mappe i forhold til den nuværende mappe. Hvis vi er i mappen `/home/user`, kan vi nøjes med den relative sti `documents/projekt.docx` for at henvise til filen.
+
+```{r, eval=F}
+ls # <1>
+     ls -l # <1>
+     ls -a # <1>
+
+cd # <2>
+     cd .. # <2>
+     cd ~  # <2>
+     cd -  # <2>
+
+touch filnavn.type # <3>
+
+mkdir ny-mappe # <4>
+
+rm filnavn.type # <5>
+
+rm -r ny-mappe # <6>
+```
+
+1. Lister filer og mapper i den aktuelle mappe. `ls -l` lister filer og mapper med detaljer (fx rettigheder, størrelse). `ls -a` viser alle filer, inklusiv skjulte filer.
+2. Skifter til en anden mappe. `cd ..` går én mappe op/tilbage (til forældermappen). `cd ~` går til brugerens hjemmemappe. `cd -` skifter tilbage til den seneste mappe, du var i.
+3. Opretter en ny, tom fil med angivet navn og type.
+4. Opretter en ny mappe med det angivne navn.
+5. Sletter en fil med det angivne navn.
+6. Sletter en mappe og alt indholdet i den rekursivt.
+
+> Er navigation med CML nødvendigt? **Nej.** Men det kan give et flow, hvis vi primært laver kodearbejde da terminalen kan tilgås "indeni" programmer som `Rstudio` eller `vscode`. Men uanset om man bruger **mus** eller **tastetur** til at navigere på sin computer, er det vigtigt at vide, hvordan filer er organiseret, hvis man har en computer-baseret stilling. 
+
+
+
