@@ -1,0 +1,14 @@
+---
+title: "Om mig"
+format: html
+---
+
+# Om mig
+
+Hej! Jeg er **[Dit Navn]**, og jeg arbejder som **[Din Profession]**. Jeg har en stærk interesse i [nøgleområde], og jeg er passioneret omkring [din arbejdsfilosofi eller værdier].
+
+## Erfaring og Kompetencer
+
+- **Programmeringssprog**: Python, R, SQL
+- **Værktøjer**: Git, Docker, Quarto
+- **Ekspertiseområder**: Dataanalyse, Datavisualisering, Softwareudvikling

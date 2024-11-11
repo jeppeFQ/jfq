@@ -1,0 +1,12 @@
+---
+title: "Welcome"
+format:
+  html:
+    include-after-body: contact-card.html
+---
+
+About this site...
+
+```{r}
+1 + 1
+```
