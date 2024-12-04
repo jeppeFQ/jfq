@@ -1,21 +1,10 @@
 
 ### **Majority and Minority Exposure in Childhood**
 
-<div style="display: flex; align-items: flex-start; gap: 20px;">
+![](phd-cover.png){width="100%"}
 
-<div style="width: 350px;"> <!-- Try setting to 400px or higher -->
-
-  ![](phd-cover.png){width="100%"}
-</div>
-
-<div style="flex: 2;">
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam pretium malesuada potenti commodo rutrum molestie tincidunt sodales. Risus nulla dui faucibus odio est phasellus tempus. Sollicitudin dapibus nunc ex congue nostra sapien velit. Praesent pellentesque vitae sociosqu orci magnis habitant maximus metus quisque. Velit tempus ad sodales hac; suspendisse suscipit. Faucibus accumsan ipsum et tempor fringilla placerat nisl ultrices. Suscipit dignissim finibus platea efficitur inceptos consequat orci sem. Himenaeos adipiscing ultrices ex; rutrum dignissim turpis. Lorem ipsum odor amet, consectetuer adipiscing elit. Quam nullam a. SKAL IKKE VÆRE LÆNGERE END DETTE.
-
-</div>
-
-</div>
-
 
 Integer habitant varius hendrerit torquent sodales. Fusce consectetur consectetur bibendum mattis justo aenean mauris nam sed. Potenti vel a; cubilia turpis porta faucibus donec. Luctus tempor feugiat elit ligula mollis. Efficitur risus consectetur tellus cras in scelerisque. Tincidunt faucibus convallis neque elit, potenti purus ac convallis. Luctus pharetra condimentum per vitae blandit eleifend ac condimentum. Arcu arcu ut ullamcorper class semper.
 
