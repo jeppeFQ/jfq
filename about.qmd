@@ -5,8 +5,4 @@ format:
     include-after-body: contact-card.html
 ---
 
-About this site...
-
-```{r}
-1 + 1
-```
+Hello and welcome to my site. 
