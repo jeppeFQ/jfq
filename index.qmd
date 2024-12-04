@@ -9,7 +9,7 @@ format:
     include-after-body: contact-card.html
 ---
 
-Hello and welcome to my site. On this page, you can read about me; specifically my research interests and teaching profile. Other places on this website, you can read in more detail about [my research](../index.qmd).
+Hello and welcome to my site. On this page, you can read about me; specifically my research interests and teaching profile. Other places on this website, you can read in more detail about [my research](../projects.qmd).
 
 
 ## About me 
